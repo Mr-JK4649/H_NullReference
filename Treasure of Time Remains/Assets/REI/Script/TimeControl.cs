@@ -5,10 +5,15 @@ using Chronos;
 
 public class TimeControl : MonoBehaviour
 {
+    public InvertEffect ie;
+
+    private GlobalClock _GlobalClock;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        _GlobalClock = GetComponent<GlobalClock>();
+        ie.enabled = false;
     }
 
     // Update is called once per frame
@@ -16,10 +21,19 @@ public class TimeControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            if (GetComponent<GlobalClock>().localTimeScale == 0)
-                GetComponent<GlobalClock>().localTimeScale = 1;
-            else
-                GetComponent<GlobalClock>().localTimeScale = 0;
+            _GlobalClock.localTimeScale = 1 - _GlobalClock.localTimeScale;
         }
+        if (_GlobalClock.localTimeScale == 0)
+        {
+           // _GlobalClock.localTimeScale = 1;
+            ie.enabled = true;
+
+        }
+        else
+        {
+           // _GlobalClock.localTimeScale = 0;
+            ie.enabled = false;
+        }
+
     }
 }
