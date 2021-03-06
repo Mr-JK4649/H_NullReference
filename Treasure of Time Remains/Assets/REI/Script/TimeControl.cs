@@ -5,7 +5,7 @@ using Chronos;
 
 public class TimeControl : MonoBehaviour
 {
-    public InvertEffect ie;
+    public InvertEffect ie;//時間停止時の色調反転のシェーダー
 
     private GlobalClock _GlobalClock;
 
@@ -27,7 +27,6 @@ public class TimeControl : MonoBehaviour
         {
            // _GlobalClock.localTimeScale = 1;
             ie.enabled = true;
-
         }
         else
         {
