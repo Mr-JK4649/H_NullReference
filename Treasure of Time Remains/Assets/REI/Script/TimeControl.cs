@@ -19,7 +19,7 @@ public class TimeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("Action1"))
         {
             _GlobalClock.localTimeScale = 1 - _GlobalClock.localTimeScale;
         }

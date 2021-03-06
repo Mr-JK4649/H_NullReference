@@ -3861,7 +3861,7 @@ MonoBehaviour:
   m_GravityMultiplier: 3
   m_RunCycleLegOffset: 2
   m_MoveSpeedMultiplier: 1
-  m_AnimSpeedMultiplier: 1
+  m_AnimSpeedMultiplier: 2
   m_GroundCheckDistance: 0.3
 --- !u!136 &6506103666763583684
 CapsuleCollider:
