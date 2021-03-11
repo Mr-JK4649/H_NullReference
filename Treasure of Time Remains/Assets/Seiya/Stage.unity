@@ -648,7 +648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165677702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 49.492, y: 66.7, z: 355.12}
+  m_LocalPosition: {x: 73.9, y: 66.7, z: 269.1}
   m_LocalScale: {x: 3, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 3818786641929946283}
@@ -756,8 +756,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _recordingInterval: 0.5
-  _mode: 0
-  _globalClockKey: 
+  _mode: 1
+  _globalClockKey: Object
   _rewindable: 1
   _recordingDuration: 30
 --- !u!1 &169765148
@@ -2037,6 +2037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9628f398e525ec4caa5444a65cc0af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GlobalClock: {fileID: 0}
   x: 0
   y: 0
   z: 1
@@ -2641,6 +2642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9628f398e525ec4caa5444a65cc0af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GlobalClock: {fileID: 0}
   x: -1
   y: 0
   z: 0
@@ -4441,6 +4443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9628f398e525ec4caa5444a65cc0af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GlobalClock: {fileID: 0}
   x: 1
   y: 0
   z: 0
@@ -5032,7 +5035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c51122e657bb144c8efb60f322f9c7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: {fileID: 8237465968073568708}
+  time: {fileID: 0}
 --- !u!65 &1035886993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7158,6 +7161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9628f398e525ec4caa5444a65cc0af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GlobalClock: {fileID: 0}
   x: -1
   y: 0
   z: 0
@@ -16244,7 +16248,34 @@ MonoBehaviour:
   m_GroundCheckDistance: 0.3
   Speed_parameters:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.03642273
+      value: 2
+      inSlope: 0.6506358
+      outSlope: 0.6506358
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.27096897
+      value: 2.2
+      inSlope: 0.25012463
+      outSlope: 0.25012463
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.6008759
+      value: 2
+      inSlope: -0.1503865
+      outSlope: -0.1503865
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -19039,7 +19070,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.11
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -19409,6 +19440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9628f398e525ec4caa5444a65cc0af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GlobalClock: {fileID: 0}
   x: -1
   y: 0
   z: 0
@@ -19465,7 +19497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _localTimeScale: 1
   _paused: 0
-  _parentKey: Root
+  _parentKey: Object
   _parentBlend: 0
 --- !u!4 &8237465966809935099
 Transform:
@@ -19849,6 +19881,7 @@ GameObject:
   - component: {fileID: 8237465967184953321}
   - component: {fileID: 8237465967184953322}
   - component: {fileID: 8237465967184953323}
+  - component: {fileID: 8237465967184953325}
   m_Layer: 0
   m_Name: FallCube (1)
   m_TagString: Obj
@@ -19856,6 +19889,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8237465967184953325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237465967184953324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549a47a57234c94b945152a86bb091b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos_o: {x: 46.17183, y: 66.90171, z: 164.1831}
 --- !u!4 &8237465967286216118
 Transform:
   m_ObjectHideFlags: 0
@@ -19963,7 +20009,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!4 &8237465967455837260
 Transform:
@@ -19973,8 +20019,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8237465967455837298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.171833, y: 70.10171, z: -40.826897}
-  m_LocalScale: {x: 8, y: 1, z: 3}
+  m_LocalPosition: {x: 46.171833, y: 121.8, z: -35.1}
+  m_LocalScale: {x: 8, y: 1, z: 5}
   m_Children:
   - {fileID: 8237465967560079584}
   m_Father: {fileID: 3818786641929946283}
@@ -20088,6 +20134,7 @@ GameObject:
   - component: {fileID: 8237465967455837296}
   - component: {fileID: 8237465967455837297}
   - component: {fileID: 8237465967455837259}
+  - component: {fileID: 8237465967455837299}
   m_Layer: 0
   m_Name: FallCube
   m_TagString: Obj
@@ -20095,6 +20142,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8237465967455837299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237465967455837298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549a47a57234c94b945152a86bb091b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos_o: {x: 46.17183, y: 70.10171, z: -35.1}
 --- !u!4 &8237465967560079584
 Transform:
   m_ObjectHideFlags: 0
@@ -20103,8 +20163,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8237465967560079585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09968901, y: -5.9, z: -3.41}
-  m_LocalScale: {x: 0.125, y: 1, z: 0.33333334}
+  m_LocalPosition: {x: 0.09968901, y: -5.9, z: -2.09}
+  m_LocalScale: {x: 0.125, y: 1, z: 0.133}
   m_Children: []
   m_Father: {fileID: 8237465967455837260}
   m_RootOrder: 0
@@ -20238,6 +20298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9628f398e525ec4caa5444a65cc0af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GlobalClock: {fileID: 0}
   x: 0
   y: -1
   z: 0
@@ -20632,8 +20693,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ie: {fileID: 6923642589076141281}
-  _GlobalClock: {fileID: 8237465968073568707}
-  _GlobalClock2: {fileID: 8237465968073568710}
+  _Rewinder: {fileID: 8237465968073568707}
+  _Stopper: {fileID: 8237465968073568710}
   _guage: {fileID: 1537984454222144048}
   _guage_rewind: {fileID: 754250925}
 --- !u!1 &8237465968073568709
@@ -20759,6 +20820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9628f398e525ec4caa5444a65cc0af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GlobalClock: {fileID: 0}
   x: 0
   y: 0
   z: 1

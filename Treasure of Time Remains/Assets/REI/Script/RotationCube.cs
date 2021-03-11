@@ -5,9 +5,9 @@ using Chronos;
 
 public class RotationCube : MonoBehaviour
 {
-    private GlobalClock _GlobalClock;
+    public GlobalClock _GlobalClock;
     GameObject TimeKeeper;
-    GlobalClock script;
+    GlobalClock[] script = new GlobalClock[2];
     public float x;
     public float y;
     public float z;
@@ -16,12 +16,12 @@ public class RotationCube : MonoBehaviour
     void Start()
     {
         TimeKeeper = GameObject.Find("Timekeeper");
-        script = TimeKeeper.GetComponent<GlobalClock>();
+        script = TimeKeeper.GetComponents<GlobalClock>();
     }
     // Update is called once per frame
     void Update()
     {
-        if (script.timeScale == 1)
+        if (script[1].timeScale == 1)
         {
             transform.Rotate(new Vector3(x, y, z));
         }

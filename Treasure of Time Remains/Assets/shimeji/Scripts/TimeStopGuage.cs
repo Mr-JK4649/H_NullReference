@@ -32,7 +32,7 @@ public class TimeStopGuage : MonoBehaviour
         time -= Time.deltaTime;
         if (time <= 0) TimeEnd(); 
         guageCircle.fillAmount = time / limit;
-        tex.text = (guageCircle.fillAmount*5).ToString("0.0");
+        tex.text = (guageCircle.fillAmount*limit).ToString("0.0");
     }
 
 }

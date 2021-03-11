@@ -7,9 +7,9 @@ public class TimeControl : MonoBehaviour
 {
     public InvertEffect ie;//時間停止時の色調反転のシェーダー
 
-    [SerializeField] GlobalClock _GlobalClock;//全体の巻き戻し
+    [SerializeField] GlobalClock _Rewinder;//全体の巻き戻し
 
-    [SerializeField] GlobalClock _GlobalClock2;//オブジェクトの時間停止用
+    [SerializeField] GlobalClock _Stopper;//オブジェクトの時間停止用
 
     [SerializeField] private TimeStopGuage _guage;
     [SerializeField] private TimeRewindGuage _guage_rewind;
@@ -17,7 +17,7 @@ public class TimeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _GlobalClock = GetComponent<GlobalClock>();
+        //_Rewinder = GetComponent<GlobalClock>();
         ie.enabled = false;
     }
 
@@ -26,15 +26,15 @@ public class TimeControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("Action1"))
         {
-            _GlobalClock2.localTimeScale = 1 - _GlobalClock2.localTimeScale;
+            _Stopper.localTimeScale = 1 - _Stopper.localTimeScale;
             _guage.TimeStart();
         }
-        if (_GlobalClock2.localTimeScale == 0)//停止用
+        if (_Stopper.localTimeScale == 0)//停止用
         {
             ie.enabled = true;
             
             _guage.GuageUpdate();
-            if (!_guage.isStop) _GlobalClock2.localTimeScale = 1;
+            if (!_guage.isStop) _Stopper.localTimeScale = 1;
         }
         else
         {
@@ -43,17 +43,17 @@ public class TimeControl : MonoBehaviour
             _guage.TimeEnd();
         }
 
-        if (_GlobalClock.localTimeScale == -1) //巻き戻し用
+        if (_Rewinder.localTimeScale == -1) //巻き戻し用
         {
-            // _GlobalClock.localTimeScale = 1;
+            // _Rewinder.localTimeScale = 1;
             ie.enabled = true;
 
             _guage_rewind.GuageUpdate();
-            if (!_guage_rewind.isRewind) _GlobalClock.localTimeScale = 1;
+            if (!_guage_rewind.isRewind) _Rewinder.localTimeScale = 1;
         }
         else
         {
-            // _GlobalClock.localTimeScale = 0;
+            // _Rewinder.localTimeScale = 0;
             ie.enabled = false;
 
             _guage_rewind.TimeEnd();
@@ -63,7 +63,7 @@ public class TimeControl : MonoBehaviour
 
     public void RewindStart()//死亡時に巻き戻す
     {
-        _GlobalClock.localTimeScale = -1;
+        _Rewinder.localTimeScale = -1;
         _guage_rewind.TimeStart();
     }
 }
