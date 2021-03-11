@@ -29,7 +29,26 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
 
+		//座波龍一編集///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+		//通常速度
+		float _Normalspeed = 1f;
+
+		//入力されたか
+		bool _input_get;
+		//スピードアップ計測時間
+		float _speedup_time_count;
+
+		//AnimetionCurveで加速パラメータ作成
+		[SerializeField]
+		private AnimationCurve Speed_parameters;
+
+		//スキルの時間
+		[SerializeField]
+		private float _Skill_Time = 2;
+
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 		void Start()
 		{
 			m_Animator = GetComponent<Animator>();
@@ -42,7 +61,47 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
 
+		//座波龍一編集
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void Update()
+        {
+			//入力判定
+			if (Input.GetKeyDown("x"))
+			{
+				_input_get = true;
+			}
 
+			//入力されたら計測開始
+			if (_input_get == true) {
+				//時間計測
+				_speedup_time_count += Time.deltaTime;
+
+                //時間で作った値をスピードに代入
+                m_AnimSpeedMultiplier = Speed_parameters.Evaluate(_speedup_time_count);
+                m_MoveSpeedMultiplier = Speed_parameters.Evaluate(_speedup_time_count);
+			}
+
+			//加速状態が制限時間になったらたったらリセット
+			if (_speedup_time_count >= _Skill_Time)
+			{
+				_speedup_time_count = 0;//リセット
+				_input_get = false;//入力状態をオフにする
+				m_AnimSpeedMultiplier = _Normalspeed;//通常速度に戻す
+			}
+
+			//m_AnimSpeedMultiplierがマイナスになったら停止するため(通常速度)1以下になったら通常速度を維持
+			if (m_AnimSpeedMultiplier <= _Normalspeed)
+            {
+				m_AnimSpeedMultiplier = _Normalspeed;
+            }
+
+			//デバック確認用
+			//Debug.Log(_speedup_time_count);
+
+
+		}
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{
 
