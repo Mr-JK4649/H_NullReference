@@ -41,11 +41,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		//AnimetionCurveで加速パラメータ作成
 		[SerializeField]
-		private AnimationCurve Speed_parameters;
+		AnimationCurve Speed_parameters;
 
 		//スキルの時間
 		[SerializeField]
-		private float _Skill_Time = 2;
+		float _Skill_Time = 2;
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
