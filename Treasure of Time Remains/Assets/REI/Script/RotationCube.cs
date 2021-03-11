@@ -26,5 +26,6 @@ public class RotationCube : MonoBehaviour
             transform.Rotate(new Vector3(x, y, z));
         }
 
+
     }
 }

@@ -28,6 +28,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
+		bool m_DoubleJumpPossible;
 
 		//ç¿îgó¥àÍï“èW///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -124,7 +125,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 			else
 			{
-				HandleAirborneMovement();
+				HandleAirborneMovement(jump);
 			}
 
 			ScaleCapsuleForCrouching(crouch);
@@ -212,13 +213,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
-		void HandleAirborneMovement()
+		void HandleAirborneMovement(bool jump)
 		{
-			// apply extra gravity from multiplier:
-			Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
-			m_Rigidbody.AddForce(extraGravityForce);
+			if (m_DoubleJumpPossible && jump)
+			{
+				PerfomDoubleJump();
+			}
+			else
+			{
 
-			m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
+				// apply extra gravity from multiplier:
+				Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
+				m_Rigidbody.AddForce(extraGravityForce);
+
+				m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
+			}
 		}
 
 
@@ -232,7 +241,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_IsGrounded = false;
 				m_Animator.applyRootMotion = false;
 				m_GroundCheckDistance = 0.1f;
+				m_DoubleJumpPossible = true;
 			}
+		}
+
+        void PerfomDoubleJump()
+        {
+			// jump!
+			m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
+			m_IsGrounded = false;
+			m_Animator.applyRootMotion = false;
+			m_GroundCheckDistance = 0.1f;
+			m_DoubleJumpPossible = false;
 		}
 
 		void ApplyExtraTurnRotation()
