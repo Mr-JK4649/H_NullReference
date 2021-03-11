@@ -5,14 +5,15 @@ using UnityEngine;
 public class WarpPoint : MonoBehaviour
 {
     
-    public Vector3 pos;
+    //public Vector3 pos;
 
+    public TimeControl time;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Death")
         {
-        
-            other.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z);
+
+            time.RewindStart();
         }
     }
 }

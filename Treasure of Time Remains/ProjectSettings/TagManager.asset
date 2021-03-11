@@ -10,6 +10,7 @@ TagManager:
   - Right
   - Left
   - Obj
+  - Death
   layers:
   - Default
   - TransparentFX

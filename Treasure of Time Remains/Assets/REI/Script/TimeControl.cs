@@ -7,9 +7,12 @@ public class TimeControl : MonoBehaviour
 {
     public InvertEffect ie;//時間停止時の色調反転のシェーダー
 
-    private GlobalClock _GlobalClock;
+    [SerializeField] GlobalClock _GlobalClock;//全体の巻き戻し
+
+    [SerializeField] GlobalClock _GlobalClock2;//オブジェクトの時間停止用
 
     [SerializeField] private TimeStopGuage _guage;
+    [SerializeField] private TimeRewindGuage _guage_rewind;
 
     // Start is called before the first frame update
     void Start()
@@ -23,24 +26,44 @@ public class TimeControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("Action1"))
         {
-            _GlobalClock.localTimeScale = 1 - _GlobalClock.localTimeScale;
+            _GlobalClock2.localTimeScale = 1 - _GlobalClock2.localTimeScale;
             _guage.TimeStart();
         }
-        if (_GlobalClock.localTimeScale == 0)
+        if (_GlobalClock2.localTimeScale == 0)//停止用
         {
-           // _GlobalClock.localTimeScale = 1;
             ie.enabled = true;
             
             _guage.GuageUpdate();
-            if (!_guage.isStop) _GlobalClock.localTimeScale = 1;
+            if (!_guage.isStop) _GlobalClock2.localTimeScale = 1;
         }
         else
         {
-           // _GlobalClock.localTimeScale = 0;
             ie.enabled = false;
 
             _guage.TimeEnd();
         }
 
+        if (_GlobalClock.localTimeScale == -1) //巻き戻し用
+        {
+            // _GlobalClock.localTimeScale = 1;
+            ie.enabled = true;
+
+            _guage_rewind.GuageUpdate();
+            if (!_guage_rewind.isRewind) _GlobalClock.localTimeScale = 1;
+        }
+        else
+        {
+            // _GlobalClock.localTimeScale = 0;
+            ie.enabled = false;
+
+            _guage_rewind.TimeEnd();
+        }
+
+    }
+
+    public void RewindStart()//死亡時に巻き戻す
+    {
+        _GlobalClock.localTimeScale = -1;
+        _guage_rewind.TimeStart();
     }
 }
