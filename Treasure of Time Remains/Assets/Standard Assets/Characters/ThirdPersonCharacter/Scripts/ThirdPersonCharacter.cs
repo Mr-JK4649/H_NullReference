@@ -67,7 +67,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Update()
         {
 			//“ü—Í”»’è
-			if (Input.GetKeyDown("x"))
+			if (Input.GetKeyDown("x") || Input.GetButtonDown("Action2"))
 			{
 				_input_get = true;
 			}
