@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Rotation
   - Fall
+  - Center
+  - Right
+  - Left
+  - Obj
   layers:
   - Default
   - TransparentFX
