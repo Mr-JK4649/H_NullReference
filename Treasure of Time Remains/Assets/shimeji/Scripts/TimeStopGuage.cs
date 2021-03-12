@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class TimeStopGuage : MonoBehaviour
 {
-    private GameObject me;
+    private GameObject me;                      //ゲームオブジェクト
     [SerializeField] private Image guageCircle; //ゲージ画像
     [SerializeField] private Text tex;          //残り時間表示
     [SerializeField] private float limit;       //タイムリミット

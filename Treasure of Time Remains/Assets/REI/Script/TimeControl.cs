@@ -5,65 +5,62 @@ using Chronos;
 
 public class TimeControl : MonoBehaviour
 {
-    public InvertEffect ie;//時間停止時の色調反転のシェーダー
+    public GameObject ie_obj;//時間停止時の色調反転のシェーダーが入ってるオブジェクト
+    private ImageEffect[] ie;//シェーダー
 
     [SerializeField] GlobalClock _Rewinder;//全体の巻き戻し
 
     [SerializeField] GlobalClock _Stopper;//オブジェクトの時間停止用
 
-    [SerializeField] private TimeStopGuage _guage;
-    [SerializeField] private TimeRewindGuage _guage_rewind;
+    [SerializeField] private TimeGauge _StopGauge;
+    [SerializeField] private TimeGauge _RewindGauge;
 
     // Start is called before the first frame update
     void Start()
     {
-        //_Rewinder = GetComponent<GlobalClock>();
-        ie.enabled = false;
+        ie = ie_obj.GetComponents<ImageEffect>();
+        ie[0].enabled = false;
+        ie[1].enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("Action1"))
-        {
-            _Stopper.localTimeScale = 1 - _Stopper.localTimeScale;
-            _guage.TimeStart();
-        }
-        if (_Stopper.localTimeScale == 0)//停止用
-        {
-            ie.enabled = true;
-            
-            _guage.GuageUpdate();
-            if (!_guage.isStop) _Stopper.localTimeScale = 1;
-        }
-        else
-        {
-            ie.enabled = false;
+        //巻き戻し用
+        Process(ie[0], _Rewinder, _RewindGauge, _Rewinder.localTimeScale);
 
-            _guage.TimeEnd();
-        }
 
-        if (_Rewinder.localTimeScale == -1) //巻き戻し用
+        //停止用
         {
-            // _Rewinder.localTimeScale = 1;
-            ie.enabled = true;
 
-            _guage_rewind.GuageUpdate();
-            if (!_guage_rewind.isRewind) _Rewinder.localTimeScale = 1;
+            if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("Action1"))
+            {
+                _Stopper.localTimeScale = 1 - _Stopper.localTimeScale;
+            }
+            Process(ie[1], _Stopper, _StopGauge, _Stopper.localTimeScale);
+                
+
         }
-        else
-        {
-            // _Rewinder.localTimeScale = 0;
-            ie.enabled = false;
-
-            _guage_rewind.TimeEnd();
-        }
-
     }
 
     public void RewindStart()//死亡時に巻き戻す
     {
         _Rewinder.localTimeScale = -1;
-        _guage_rewind.TimeStart();
+
+    }
+
+    private void Process(ImageEffect ie,GlobalClock cl,TimeGauge ga,float num) {
+
+        if (cl.localTimeScale != 1)
+        {
+            ie.enabled = true;
+
+            ga.GuageUpdate();
+            if (!ga.isActive)
+            {
+                cl.localTimeScale = 1;
+                ie.enabled = false;
+            }
+        }
+        else { ga.TimeEnd(); ie.enabled = false; }
     }
 }
