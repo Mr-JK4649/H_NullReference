@@ -26,20 +26,16 @@ public class TimeControl : MonoBehaviour
     private void FixedUpdate()
     {
         //巻き戻し用
-        Process(ie[0], _Rewinder, _RewindGauge, _Rewinder.localTimeScale);
+        Process(ie[0], _Rewinder, _RewindGauge);
 
 
         //停止用
+        if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("Action1"))
         {
-
-            if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("Action1"))
-            {
-                _Stopper.localTimeScale = 1 - _Stopper.localTimeScale;
-            }
-            Process(ie[1], _Stopper, _StopGauge, _Stopper.localTimeScale);
-                
-
+            _Stopper.localTimeScale = 1 - _Stopper.localTimeScale;
         }
+        Process(ie[1], _Stopper, _StopGauge);
+        
     }
 
     public void RewindStart()//死亡時に巻き戻す
@@ -48,7 +44,7 @@ public class TimeControl : MonoBehaviour
 
     }
 
-    private void Process(ImageEffect ie,GlobalClock cl,TimeGauge ga,float num) {
+    private void Process(ImageEffect ie,GlobalClock cl,TimeGauge ga) {
 
         if (cl.localTimeScale != 1)
         {
