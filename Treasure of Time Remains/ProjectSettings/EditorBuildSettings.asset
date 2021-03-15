@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/shimeji/Result.unity
     guid: 4156c1e6b4b456d4aba9bf2dad4f4430
+  - enabled: 1
+    path: Assets/sei/Title.unity
+    guid: 1f2830c2b4b5a34458e63ca22439cc4d
   m_configObjects: {}
