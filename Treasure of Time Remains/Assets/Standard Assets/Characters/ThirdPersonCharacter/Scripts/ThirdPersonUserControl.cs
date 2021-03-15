@@ -39,7 +39,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
+
+            if (Input.GetKeyDown("x") || Input.GetButtonDown("Action2"))
+            {
+                m_Character._input_get = true;
+            }
         }
+
+        
 
 
         // Fixed update is called in sync with physics
@@ -74,6 +81,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // pass all parameters to the character control script
             m_Character.Move(m_Move, crouch, m_Jump);
             m_Jump = false;
+        }
+
+        public void JumpYeah() {
+            m_Jump = true;
+        }
+
+        public void DashYeah() {
+            m_Character._input_get = true;
         }
     }
 }

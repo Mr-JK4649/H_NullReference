@@ -11,6 +11,8 @@ TagManager:
   - Left
   - Obj
   - Death
+  - AutoJump
+  - AutoDash
   layers:
   - Default
   - TransparentFX
