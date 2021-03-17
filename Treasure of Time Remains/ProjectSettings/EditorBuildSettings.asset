@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Seiya/Stage.unity
     guid: 397585f29a7050c4c890c62153a5035e
+  - enabled: 1
+    path: Assets/Seiya/gameover(kari).unity
+    guid: 000b86b648065724cbb932ad92ad3127
   m_configObjects: {}

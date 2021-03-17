@@ -16033,7 +16033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4609871803358372108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.8, y: 58.6, z: -138}
+  m_LocalPosition: {x: 45.8, y: 58.6, z: -333.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4609871803511229008}
@@ -20290,7 +20290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8237465967455837298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.171833, y: 121.8, z: -35.1}
+  m_LocalPosition: {x: 46.171833, y: 69.93, z: -33.1}
   m_LocalScale: {x: 8, y: 1, z: 5}
   m_Children:
   - {fileID: 8237465967560079584}
@@ -20371,7 +20371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _recordingInterval: 0.5
   _mode: 1
-  _globalClockKey: Object
+  _globalClockKey: Root
   _rewindable: 1
   _recordingDuration: 30
 --- !u!114 &8237465967455837297
@@ -20586,7 +20586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _recordingInterval: 0.5
   _mode: 1
-  _globalClockKey: Object
+  _globalClockKey: Root
   _rewindable: 1
   _recordingDuration: 30
 --- !u!114 &8237465967712610030

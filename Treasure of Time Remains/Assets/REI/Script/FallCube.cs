@@ -19,7 +19,7 @@ public class FallCube : MonoBehaviour
     {
         if (script[0].localTimeScale == 1 && script[1].localTimeScale == 1 && IsFall)//能力使ってないとき
         {
-           this.transform.parent.gameObject.GetComponent<Rigidbody>().useGravity = true;
+           //this.transform.parent.gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
         else if(IsFall == true)
         {
