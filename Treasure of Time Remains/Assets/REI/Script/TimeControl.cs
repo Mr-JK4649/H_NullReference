@@ -26,14 +26,18 @@ public class TimeControl : MonoBehaviour
     private void FixedUpdate()
     {
         //巻き戻し用
+        if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))
+            _Rewinder.localTimeScale = -1;
+        else _Rewinder.localTimeScale = 1; 
+            
         Process(ie[0], _Rewinder, _RewindGauge);
 
 
         //停止用
-        if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("Action1"))
-        {
-            _Stopper.localTimeScale = 1 - _Stopper.localTimeScale;
-        }
+        if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))
+             _Stopper.localTimeScale = 0;
+        else _Stopper.localTimeScale = 1;
+
         Process(ie[1], _Stopper, _StopGauge);
         
     }
@@ -41,11 +45,12 @@ public class TimeControl : MonoBehaviour
     public void RewindStart()//死亡時に巻き戻す
     {
         _Rewinder.localTimeScale = -1;
-
     }
 
+    //時間操作の関数
     private void Process(ImageEffect ie,GlobalClock cl,TimeGauge ga) {
 
+        //時間の速度が通常じゃなければ
         if (cl.localTimeScale != 1)
         {
             ie.enabled = true;
