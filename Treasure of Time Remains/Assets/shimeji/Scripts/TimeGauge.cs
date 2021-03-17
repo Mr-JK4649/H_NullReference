@@ -14,6 +14,7 @@ public class TimeGauge : MonoBehaviour
     {
         me.SetActive(false);
         isActive = false;
+        time = limit;
     }
 
     public void GuageUpdate()
@@ -22,21 +23,23 @@ public class TimeGauge : MonoBehaviour
         {
             me.SetActive(true);
             isActive = true;
-            time = limit;
-            Debug.Log("ああ");
+            //time = limit;
         }
 
-        time -= Time.deltaTime;
-        if (time <= 0) TimeEnd();
-        guageCircle.fillAmount = time / limit;
-        tex.text = (guageCircle.fillAmount * limit).ToString("0.0");
+        if (isActive)
+        {
+            time -= Time.deltaTime;
+            if (time <= 0) { TimeEnd(); time = 0; }
+            guageCircle.fillAmount = time / limit;
+            tex.text = (guageCircle.fillAmount * limit).ToString("0.0");
+        }
     }
 
     public void TimeEnd()
     {
         me.SetActive(false);
         isActive = false;
-        time = 0;
+        //time = 0;
     }
 
     
