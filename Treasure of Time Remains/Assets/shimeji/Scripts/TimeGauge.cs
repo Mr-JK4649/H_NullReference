@@ -42,5 +42,14 @@ public class TimeGauge : MonoBehaviour
         //time = 0;
     }
 
-    
+    public void Recover(float rtime)
+    {
+        time += rtime;
+        if (limit <= time)
+        {
+            time = limit;
+        }
+    }
+
+
 }

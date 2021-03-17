@@ -13,6 +13,8 @@ TagManager:
   - Death
   - AutoJump
   - AutoDash
+  - Fire
+  - Recover
   layers:
   - Default
   - TransparentFX

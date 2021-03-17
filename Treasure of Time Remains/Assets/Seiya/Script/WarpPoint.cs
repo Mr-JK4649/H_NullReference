@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WarpPoint : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class WarpPoint : MonoBehaviour
         if (other.gameObject.tag == "Death")
         {
 
-            time.RewindStart();
+            SceneManager.LoadScene("gameover(kari)");
         }
     }
 }
