@@ -36,7 +36,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		float _Normalspeed = 1f;
 
 		//入力されたか
-		bool _input_get;
+		public bool _input_get;
 		//スピードアップ計測時間
 		float _speedup_time_count;
 
@@ -66,11 +66,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void Update()
         {
-			//入力判定
-			if (Input.GetKeyDown("x") || Input.GetButtonDown("Action2"))
-			{
-				_input_get = true;
-			}
 
 			//入力されたら計測開始
 			if (_input_get == true) {
