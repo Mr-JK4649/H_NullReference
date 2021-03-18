@@ -15,6 +15,7 @@ public class TimeGauge : MonoBehaviour
         //me.SetActive(false);
         isActive = false;
         time = limit;
+        timeTex.text = (timeGauge.value * limit).ToString("0.0");
     }
 
     public void GuageUpdate(float timeNum)

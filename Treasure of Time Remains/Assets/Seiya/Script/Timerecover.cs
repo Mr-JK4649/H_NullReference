@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Timerecover : MonoBehaviour
 {
-    public TimeGauge TimeS; //時間停止用
-    public TimeGauge TimeR; //時間逆行用
+    [SerializeField] private TimeGauge timeGauge;
 
     private const float Recovery = 0.2f;
 
@@ -19,7 +18,7 @@ public class Timerecover : MonoBehaviour
     {
         if (other.gameObject.tag == "Recover")
         {
-            TimeS.Recover(Recovery);
+            timeGauge.Recover(Recovery);
             Destroy(other.gameObject);
         }
     }
