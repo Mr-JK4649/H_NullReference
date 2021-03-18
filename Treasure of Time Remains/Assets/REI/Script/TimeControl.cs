@@ -14,6 +14,8 @@ public class TimeControl : MonoBehaviour
 
     [SerializeField] private TimeGauge _StopGauge;
     [SerializeField] private TimeGauge _RewindGauge;
+    [SerializeField] private Animator ethan;
+    private float originSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -21,24 +23,32 @@ public class TimeControl : MonoBehaviour
         ie = ie_obj.GetComponents<ImageEffect>();
         ie[0].enabled = false;
         ie[1].enabled = false;
+        originSpeed = ethan.GetFloat("Speed");
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         //巻き戻し用
         if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))
             _Rewinder.localTimeScale = -1;
-        else _Rewinder.localTimeScale = 1; 
+        //else _Rewinder.localTimeScale = 1; 
+        if (Input.GetKeyUp(KeyCode.R) || Input.GetButtonUp("ContL1"))
+            _Rewinder.localTimeScale = 1;
             
-        Process(ie[0], _Rewinder, _RewindGauge);
+
+            Process(ie[0], _Rewinder, _RewindGauge);
+        if(_Rewinder.localTimeScale != -1)
+            ethan.SetFloat("Speed", _Rewinder.localTimeScale);
 
 
         //停止用
-        if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))
-             _Stopper.localTimeScale = 0;
-        else _Stopper.localTimeScale = 1;
+        if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("ContR1"))
+            _Stopper.localTimeScale = 0;
+        if (Input.GetKeyUp(KeyCode.T) || Input.GetButtonUp("ContR1"))
+            _Stopper.localTimeScale = 1;
+            //else _Stopper.localTimeScale = 1;
 
-        Process(ie[1], _Stopper, _StopGauge);
+            Process(ie[1], _Stopper, _StopGauge);
         
     }
 
@@ -53,6 +63,7 @@ public class TimeControl : MonoBehaviour
         //時間の速度が通常じゃなければ
         if (cl.localTimeScale != 1)
         {
+
             ie.enabled = true;
 
             ga.GuageUpdate();
@@ -62,6 +73,6 @@ public class TimeControl : MonoBehaviour
                 ie.enabled = false;
             }
         }
-        else { ga.TimeEnd(); ie.enabled = false; }
+        else { ga.TimeEnd(); ie.enabled = false;}
     }
 }
