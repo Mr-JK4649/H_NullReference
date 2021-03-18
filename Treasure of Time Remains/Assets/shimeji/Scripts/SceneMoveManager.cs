@@ -6,7 +6,9 @@ public class SceneMoveManager : MonoBehaviour
     private enum SCENE { 
         TITLE,
         MAIN,
-        RESULT
+        RESULT,
+        CLEAR,
+        GAMEOVER
     }
 
     [SerializeField] private SCENE currentScene;
@@ -20,14 +22,19 @@ public class SceneMoveManager : MonoBehaviour
         switch (currentScene) {
             case SCENE.TITLE:
             case SCENE.RESULT:
+            case SCENE.GAMEOVER:
                 if (Input.GetButtonDown("Submit"))
                     SceneManager.LoadScene(sceneName);
                 break;
-
-            case SCENE.MAIN:
-                SceneManager.LoadScene(sceneName);
-                break;
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
