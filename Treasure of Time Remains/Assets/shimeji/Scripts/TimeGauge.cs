@@ -21,6 +21,7 @@ public class TimeGauge : MonoBehaviour
     private void FixedUpdate()
     {
         //ゲージの数値化
+        timeGauge.value = time / limit;
         timeTex.text = (timeGauge.value * limit).ToString("0.0");
 
         
@@ -40,12 +41,13 @@ public class TimeGauge : MonoBehaviour
             time -= Time.deltaTime;
             if (time <= 0) { TimeEnd(); time = 0; }
 
-            timeGauge.value = time / limit;
+            
         }
 
         //発動中の能力を表示
         if (timeNum == 0) abilityTex.text = "Time Stop";
         if (timeNum == -1) abilityTex.text = "Time Rewind";
+        if (timeNum == 1) abilityTex.text = "Non Activate";
         if (timeGauge.value == 0) abilityTex.text = "Non Activate";
     }
 
