@@ -22,7 +22,9 @@ public class move : MonoBehaviour
         Transform myTransform = this.transform;
 
         Vector3 pos = myTransform.position;
-        pos.z += 0.25f;    
+        pos.z += 0.25f * script[0].localTimeScale;
+        
+        
 
         myTransform.position = pos;  
     }

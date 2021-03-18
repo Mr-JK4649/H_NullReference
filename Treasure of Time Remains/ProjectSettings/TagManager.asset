@@ -15,6 +15,7 @@ TagManager:
   - AutoDash
   - Fire
   - Recover
+  - Slow
   layers:
   - Default
   - TransparentFX
