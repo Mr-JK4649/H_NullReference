@@ -12,8 +12,9 @@ public class TimeControl : MonoBehaviour
 
     [SerializeField] GlobalClock _Stopper;//オブジェクトの時間停止用
 
-    [SerializeField] private TimeGauge _StopGauge;
-    [SerializeField] private TimeGauge _RewindGauge;
+    //[SerializeField] private TimeGauge _StopGauge;
+    //[SerializeField] private TimeGauge _RewindGauge;
+    [SerializeField] private TimeGauge timeGauge;
     [SerializeField] private Animator ethan;
     private float originSpeed;
 
@@ -28,27 +29,24 @@ public class TimeControl : MonoBehaviour
 
     private void Update()
     {
-        //巻き戻し用
-        if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))
+        
+        if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行用
             _Rewinder.localTimeScale = -1;
-        //else _Rewinder.localTimeScale = 1; 
-        if (Input.GetKeyUp(KeyCode.R) || Input.GetButtonUp("ContL1"))
-            _Rewinder.localTimeScale = 1;
-            
+        else if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))  //停止用
+            _Stopper.localTimeScale = 0;
 
-            Process(ie[0], _Rewinder, _RewindGauge);
-        if(_Rewinder.localTimeScale != -1)
+        if (Input.GetKeyUp(KeyCode.R) || Input.GetButtonUp("ContL1"))   //逆行のリセット
+            _Rewinder.localTimeScale = 1;
+        if (Input.GetKeyUp(KeyCode.T) || Input.GetButtonUp("ContR1") ||
+            _Rewinder.localTimeScale == -1)                             //停止のリセット
+            _Stopper.localTimeScale = 1;
+
+        //アニメーション速度を変える
+        if (_Rewinder.localTimeScale != -1)
             ethan.SetFloat("Speed", _Rewinder.localTimeScale);
 
-
-        //停止用
-        if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("ContR1"))
-            _Stopper.localTimeScale = 0;
-        if (Input.GetKeyUp(KeyCode.T) || Input.GetButtonUp("ContR1"))
-            _Stopper.localTimeScale = 1;
-            //else _Stopper.localTimeScale = 1;
-
-            Process(ie[1], _Stopper, _StopGauge);
+        //操作用の関数
+        Process(timeGauge);
         
     }
 
@@ -58,21 +56,41 @@ public class TimeControl : MonoBehaviour
     }
 
     //時間操作の関数
-    private void Process(ImageEffect ie,GlobalClock cl,TimeGauge ga) {
+    private void Process(TimeGauge ga) {
+
+        float r = _Rewinder.localTimeScale;
+        float s = _Stopper.localTimeScale;
 
         //時間の速度が通常じゃなければ
-        if (cl.localTimeScale != 1)
+        if (_Rewinder.localTimeScale != 1 || _Stopper.localTimeScale != 1)
         {
 
-            ie.enabled = true;
+            ga.GuageUpdate(r * s);
 
-            ga.GuageUpdate();
+
             if (!ga.isActive)
-            {
-                cl.localTimeScale = 1;
-                ie.enabled = false;
-            }
+                AbilitySwitching(1, 1);
+            
         }
-        else { ga.TimeEnd(); ie.enabled = false;}
+        else ga.TimeEnd();
+
+        ImageEffectSwitching(_Rewinder.localTimeScale, _Stopper.localTimeScale);
+    }
+
+    private void AbilitySwitching(float r, float s) {
+
+        _Rewinder.localTimeScale = r;
+        _Stopper.localTimeScale = s;
+
+    }
+
+    private void ImageEffectSwitching(float r, float s) {
+
+        if (r != 1) ie[0].enabled = true;
+        else ie[0].enabled = false;
+
+        if (s != 1) ie[1].enabled = true;
+        else ie[1].enabled = false;
+
     }
 }

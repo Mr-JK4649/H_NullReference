@@ -3,25 +3,25 @@ using UnityEngine.UI;
 
 public class TimeGauge : MonoBehaviour
 {
-    [SerializeField] private GameObject me;     //ゲームオブジェクト
-    [SerializeField] private Image guageCircle; //ゲージ画像
-    [SerializeField] private Text tex;          //残り時間表示
+    [SerializeField] private Slider timeGauge;  //時間操作ゲージ
+    [SerializeField] private Text abilityTex;   //能力テキスト
+    [SerializeField] private Text timeTex;      //残り時間表示
     [SerializeField] private float limit;       //タイムリミット
     public float time;                          //タイム
     public bool isActive;
 
     private void Awake()
     {
-        me.SetActive(false);
+        //me.SetActive(false);
         isActive = false;
         time = limit;
     }
 
-    public void GuageUpdate()
+    public void GuageUpdate(float timeNum)
     {
         if (!isActive)
         {
-            me.SetActive(true);
+            //me.SetActive(true);
             isActive = true;
             //time = limit;
         }
@@ -30,14 +30,22 @@ public class TimeGauge : MonoBehaviour
         {
             time -= Time.deltaTime;
             if (time <= 0) { TimeEnd(); time = 0; }
-            guageCircle.fillAmount = time / limit;
-            tex.text = (guageCircle.fillAmount * limit).ToString("0.0");
+
+            timeGauge.value = time / limit;
+            
+            //ゲージの数値化
+            timeTex.text = (timeGauge.value * limit).ToString("0.0");
+            
+            //発動中の能力を表示
+            if (timeNum == 0) abilityTex.text = "Time Stop";
+            if (timeNum == -1) abilityTex.text = "Time Rewind";
+            if (timeGauge.value == 0) abilityTex.text = "Non Activate";
         }
     }
 
     public void TimeEnd()
     {
-        me.SetActive(false);
+        //me.SetActive(false);
         isActive = false;
         //time = 0;
     }
