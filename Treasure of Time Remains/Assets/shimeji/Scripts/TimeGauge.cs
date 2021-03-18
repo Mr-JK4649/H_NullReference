@@ -18,6 +18,14 @@ public class TimeGauge : MonoBehaviour
         timeTex.text = (timeGauge.value * limit).ToString("0.0");
     }
 
+    private void FixedUpdate()
+    {
+        //ゲージの数値化
+        timeTex.text = (timeGauge.value * limit).ToString("0.0");
+
+        
+    }
+
     public void GuageUpdate(float timeNum)
     {
         if (!isActive)
@@ -33,12 +41,7 @@ public class TimeGauge : MonoBehaviour
             if (time <= 0) { TimeEnd(); time = 0; }
 
             timeGauge.value = time / limit;
-            
-            
         }
-
-        //ゲージの数値化
-        timeTex.text = (timeGauge.value * limit).ToString("0.0");
 
         //発動中の能力を表示
         if (timeNum == 0) abilityTex.text = "Time Stop";
