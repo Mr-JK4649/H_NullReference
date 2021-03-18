@@ -28,12 +28,12 @@ public class FallCube : MonoBehaviour
         if (IsFall)
         {
             move += gravity * Time.deltaTime * script[1].timeScale;
-            if (move <= 0) move = 0;
+            if (move <= 0) { move = 0; IsFall = false; }
 
             rb.AddForce(new Vector3(0,-move,0) * Time.deltaTime, ForceMode.Impulse);
         }
     }
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
