@@ -6,33 +6,38 @@ using Chronos;
 [RequireComponent(typeof(Rigidbody))]
 public class FallCube : MonoBehaviour
 {
-    GameObject TimeKeeper;
-    GlobalClock[] script = new GlobalClock[2];
-    bool IsFall = false;
+    GameObject TimeKeeper;                      //時間制御のｽｸﾘﾌﾟﾄが入ってるオブジェクト
+    GlobalClock[] script = new GlobalClock[2];  //クロックを入れる用の配列
+    bool IsFall = false;                        //ブロックが落ちたかどうかの判定
+    private Rigidbody rb;                       //ブロックのRigidBody
+    [SerializeField] private float move;
+    private const float gravity = 9.81f;
+
+     
+
     void Start()
     {
         TimeKeeper = GameObject.Find("Timekeeper");
         script = TimeKeeper.GetComponents<GlobalClock>();
+
+        rb = this.transform.parent.gameObject.GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        if (script[0].localTimeScale == 1 && script[1].localTimeScale == 1 && IsFall)//能力使ってないとき
+        if (IsFall)
         {
-           //this.transform.parent.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        }
-        else if(IsFall == true)
-        {
-            this.transform.parent.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            move += gravity * Time.deltaTime * script[1].timeScale;
+            if (move <= 0) move = 0;
+
+            rb.AddForce(new Vector3(0,-move,0) * Time.deltaTime, ForceMode.Impulse);
         }
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Hit");
             IsFall = true;
-            this.transform.parent.gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }
