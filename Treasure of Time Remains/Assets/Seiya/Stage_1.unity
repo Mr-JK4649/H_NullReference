@@ -89035,7 +89035,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513874890679440224}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5500871bacb37884eb9f6d61a075ca15, type: 3}
   m_Name: 
@@ -89236,7 +89236,7 @@ MonoBehaviour:
   timeGauge: {fileID: 1513874891243726510}
   abilityTex: {fileID: 1513874889954355250}
   timeTex: {fileID: 1513874891715900370}
-  s_FullTime: 0
+  s_FullTime: 1
   limit: 99
   time: 0
   isActive: 0
