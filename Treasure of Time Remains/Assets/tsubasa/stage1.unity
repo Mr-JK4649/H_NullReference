@@ -39345,7 +39345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7276687741974443312}
   m_Layer: 0
-  m_Name: Floars
+  m_Name: Floars(oikabe)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49854,7 +49854,7 @@ GameObject:
   - component: {fileID: 7276687742339147278}
   m_Layer: 0
   m_Name: DeathFloor
-  m_TagString: Death
+  m_TagString: Death2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96804,7 +96804,7 @@ GameObject:
   - component: {fileID: 7276687743455711684}
   - component: {fileID: 7276687743455711696}
   m_Layer: 0
-  m_Name: Ground (12)
+  m_Name: oikabe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96845,7 +96845,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7276687743455711694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2373967bd975e4d42b0548a33a7b72c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e58d67f846300c4baacc419b16e66a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
@@ -108594,8 +108594,8 @@ MonoBehaviour:
   timeGauge: {fileID: 8212773257878427686}
   abilityTex: {fileID: 8212773256730515130}
   timeTex: {fileID: 8212773258492579162}
-  s_FullTime: 0
-  limit: 99
+  s_FullTime: 1
+  limit: 15
   time: 0
   isActive: 0
 --- !u!224 &8212773257355244781

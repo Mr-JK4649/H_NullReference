@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Seiya/Stage_1.unity
     guid: 848906d5c43213f4c89572290656ffa8
+  - enabled: 1
+    path: Assets/tsubasa/stage1.unity
+    guid: 43e54ac478688ae4782f4b1a3fe90205
+  - enabled: 1
+    path: Assets/tsubasa/stage1_gameover.unity
+    guid: 950f8a5a38a78b54884d82082d40b8a9
   m_configObjects: {}
