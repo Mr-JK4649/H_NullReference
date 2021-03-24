@@ -33,16 +33,18 @@ public class TimeControl : MonoBehaviour
         if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行用
             _Rewinder.localTimeScale = -1;
         else if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))  //停止用
-            _Stopper.localTimeScale = 0;
+            ethan.SetFloat("Speed", 2); //④
+
 
         if (Input.GetKeyUp(KeyCode.R) || Input.GetButtonUp("ContL1"))   //逆行のリセット
             _Rewinder.localTimeScale = 1;
         if (Input.GetKeyUp(KeyCode.T) || Input.GetButtonUp("ContR1") ||
             _Rewinder.localTimeScale == -1)                             //停止のリセット
-            _Stopper.localTimeScale = 1;
+            ethan.SetFloat("Speed", originSpeed); //⑤
+
 
         //アニメーション速度を変える
-        if (_Rewinder.localTimeScale != -1)
+        if (_Rewinder.localTimeScale != -1 && Input.GetButton("ContR1") == false)
             ethan.SetFloat("Speed", _Rewinder.localTimeScale);
 
         //操作用の関数
@@ -62,14 +64,19 @@ public class TimeControl : MonoBehaviour
         float s = _Stopper.localTimeScale;
 
         //時間の速度が通常じゃなければ
-        if (_Rewinder.localTimeScale != 1 || _Stopper.localTimeScale != 1)
+        if (r != 1 || s != 1 || ethan.GetFloat("Speed") > originSpeed)
         {
+            if(r == 1)  //①
+                ga.GuageUpdate(r * s);
 
-            ga.GuageUpdate(r * s);
-
+            if (r != 1) //②
+                ga.Recover(Time.deltaTime);
 
             if (!ga.isActive)
-                AbilitySwitching(1, 1);
+            {
+                AbilitySwitching(r, 1); //③
+                ethan.SetFloat("Speed", originSpeed);
+            }
             
         }
         else ga.TimeEnd();
