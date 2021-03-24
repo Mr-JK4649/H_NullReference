@@ -29,27 +29,25 @@ public class TimeControl : MonoBehaviour
 
     private void Update()
     {
-        
+
         if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行用
             _Rewinder.localTimeScale = -1;
         else if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))  //停止用
-            ethan.SetFloat("Speed", 2); //④
-
+            _Stopper.localTimeScale = 0;
 
         if (Input.GetKeyUp(KeyCode.R) || Input.GetButtonUp("ContL1"))   //逆行のリセット
             _Rewinder.localTimeScale = 1;
         if (Input.GetKeyUp(KeyCode.T) || Input.GetButtonUp("ContR1") ||
             _Rewinder.localTimeScale == -1)                             //停止のリセット
-            ethan.SetFloat("Speed", originSpeed); //⑤
-
+            _Stopper.localTimeScale = 1;
 
         //アニメーション速度を変える
-        if (_Rewinder.localTimeScale != -1 && Input.GetButton("ContR1") == false)
+        if (_Rewinder.localTimeScale != -1)
             ethan.SetFloat("Speed", _Rewinder.localTimeScale);
 
         //操作用の関数
         Process(timeGauge);
-        
+
     }
 
     public void RewindStart()//死亡時に巻き戻す
@@ -58,40 +56,38 @@ public class TimeControl : MonoBehaviour
     }
 
     //時間操作の関数
-    private void Process(TimeGauge ga) {
+    private void Process(TimeGauge ga)
+    {
 
         float r = _Rewinder.localTimeScale;
         float s = _Stopper.localTimeScale;
 
         //時間の速度が通常じゃなければ
-        if (r != 1 || s != 1 || ethan.GetFloat("Speed") > originSpeed)
+        if (r != 1 || s != 1)
         {
-            if(r == 1)  //①
-                ga.GuageUpdate(r * s);
 
-            if (r != 1) //②
-                ga.Recover(Time.deltaTime);
+            ga.GuageUpdate(r * s);
+
 
             if (!ga.isActive)
-            {
-                AbilitySwitching(r, 1); //③
-                ethan.SetFloat("Speed", originSpeed);
-            }
-            
+                AbilitySwitching(1, 1);
+
         }
         else ga.TimeEnd();
 
         ImageEffectSwitching(_Rewinder.localTimeScale, _Stopper.localTimeScale);
     }
 
-    private void AbilitySwitching(float r, float s) {
+    private void AbilitySwitching(float r, float s)
+    {
 
         _Rewinder.localTimeScale = r;
         _Stopper.localTimeScale = s;
 
     }
 
-    private void ImageEffectSwitching(float r, float s) {
+    private void ImageEffectSwitching(float r, float s)
+    {
 
         if (r != 1) ie[0].enabled = true;
         else ie[0].enabled = false;
