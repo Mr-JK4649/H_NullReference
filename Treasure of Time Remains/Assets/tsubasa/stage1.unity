@@ -24110,7 +24110,7 @@ GameObject:
   - component: {fileID: 7276687741522954455}
   m_Layer: 0
   m_Name: DeathFloor
-  m_TagString: Death
+  m_TagString: Death2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108594,7 +108594,7 @@ MonoBehaviour:
   timeGauge: {fileID: 8212773257878427686}
   abilityTex: {fileID: 8212773256730515130}
   timeTex: {fileID: 8212773258492579162}
-  s_FullTime: 1
+  s_FullTime: 0
   limit: 15
   time: 0
   isActive: 0
