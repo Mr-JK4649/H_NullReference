@@ -15,12 +15,18 @@ public class Obj_Warp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Obj")
+        //if (other.gameObject.tag == "Obj")
+        //{
+
+        //    other.gameObject.transform.position = new Vector3(pos_o.x, pos_o.y, pos_o.z);
+        //    other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+        //    other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        //}
+
+        if (other.gameObject.tag == "Player")
         {
 
             other.gameObject.transform.position = new Vector3(pos_o.x, pos_o.y, pos_o.z);
-            other.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 }

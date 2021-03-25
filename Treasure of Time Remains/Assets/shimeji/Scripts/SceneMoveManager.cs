@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneMoveManager : MonoBehaviour
 {
-    private enum SCENE { 
+    private enum SCENE
+    {
         TITLE,
         MAIN,
         RESULT,
@@ -17,9 +18,10 @@ public class SceneMoveManager : MonoBehaviour
 
     private void Update()
     {
-        
 
-        switch (currentScene) {
+
+        switch (currentScene)
+        {
             case SCENE.TITLE:
             case SCENE.RESULT:
             case SCENE.GAMEOVER:
@@ -32,7 +34,7 @@ public class SceneMoveManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(sceneName);
         }

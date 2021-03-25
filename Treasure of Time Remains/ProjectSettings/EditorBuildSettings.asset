@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/sei/Title.unity
     guid: 1f2830c2b4b5a34458e63ca22439cc4d
   - enabled: 1
+    path: Assets/REI/StageSelect.unity
+    guid: 33e9fc1a1648cb544947dc10466953bb
+  - enabled: 1
+    path: Assets/Seiya/tutorial.unity
+    guid: 72d0975d7f01241469fe5690deced8f9
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 7e5af3abbd9845743a3b178de7f65b8a
   - enabled: 1
@@ -23,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Seiya/Stage_1.unity
     guid: 848906d5c43213f4c89572290656ffa8
+  - enabled: 1
+    path: Assets/tsubasa/stage1.unity
+    guid: 43e54ac478688ae4782f4b1a3fe90205
+  - enabled: 1
+    path: Assets/tsubasa/stage1_gameover.unity
+    guid: 950f8a5a38a78b54884d82082d40b8a9
   m_configObjects: {}
