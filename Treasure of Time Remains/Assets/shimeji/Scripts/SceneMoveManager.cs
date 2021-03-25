@@ -1,21 +1,42 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI; // UIコンポーネントの使用
+using UnityEngine.SceneManagement;
 
-public class StageSelect: MonoBehaviour
+public class SceneMoveManager : MonoBehaviour
 {
-	Button cube;
-	Button sphere;
-	Button cylinder;
+    private enum SCENE
+    {
+        TITLE,
+        MAIN,
+        RESULT,
+        CLEAR,
+        GAMEOVER
+    }
 
-	void Start()
-	{
-		// ボタンコンポーネントの取得
-		cube = GameObject.Find("/Canvas/Button1").GetComponent<Button>();
-		sphere = GameObject.Find("/Canvas/Button2").GetComponent<Button>();
-		cylinder = GameObject.Find("/Canvas/Button3").GetComponent<Button>();
+    [SerializeField] private SCENE currentScene;
 
-		// 最初に選択状態にしたいボタンの設定
-		cube.Select();
-	}
+    [SerializeField] private string sceneName;
+
+    private void Update()
+    {
+
+
+        switch (currentScene)
+        {
+            case SCENE.TITLE:
+            case SCENE.RESULT:
+            case SCENE.GAMEOVER:
+                if (Input.GetButtonDown("Submit"))
+                    SceneManager.LoadScene(sceneName);
+                break;
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+    }
 }
