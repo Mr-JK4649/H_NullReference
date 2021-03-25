@@ -31,7 +31,7 @@ public class TimeControl : MonoBehaviour
     {
 
         if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行用
-            _Rewinder.localTimeScale = -1;
+            _Rewinder.localTimeScale = -2;
         else if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))  //停止用
             _Stopper.localTimeScale = 0;
 
@@ -43,7 +43,7 @@ public class TimeControl : MonoBehaviour
 
         //アニメーション速度を変える
         if (_Rewinder.localTimeScale != -1)
-            ethan.SetFloat("Speed", _Rewinder.localTimeScale);
+            //ethan.SetFloat("Speed", _Rewinder.localTimeScale);
 
         //操作用の関数
         Process(timeGauge);
