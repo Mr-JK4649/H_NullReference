@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-	Button cube;
-	Button sphere;
-	Button cylinder;
+    
+	Button tutorial_button;
+	Button stage1_button;
+	Button stage2_button;
 
 	void Start()
 	{
-		// ボタンコンポーネントの取得
-		cube = GameObject.Find("/Canvas/Button1").GetComponent<Button>();
-		sphere = GameObject.Find("/Canvas/Button2").GetComponent<Button>();
-		cylinder = GameObject.Find("/Canvas/Button3").GetComponent<Button>();
+        // ボタンコンポーネントの取得
+        tutorial_button = GameObject.Find("/Canvas/TutorialButton").GetComponent<Button>();
+        stage1_button = GameObject.Find("/Canvas/Stage1Botton").GetComponent<Button>();
+        stage2_button = GameObject.Find("/Canvas/Stage2Button").GetComponent<Button>();
 
-		// 最初に選択状態にしたいボタンの設定
-		cube.Select();
-	}
+        // 最初に選択状態にしたいボタンの設定
+        tutorial_button.Select();
+    }
 }
