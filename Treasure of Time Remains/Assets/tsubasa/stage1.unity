@@ -108594,7 +108594,7 @@ MonoBehaviour:
   timeGauge: {fileID: 8212773257878427686}
   abilityTex: {fileID: 8212773256730515130}
   timeTex: {fileID: 8212773258492579162}
-  s_FullTime: 0
+  s_FullTime: 1
   limit: 15
   time: 0
   isActive: 0
