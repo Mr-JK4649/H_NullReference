@@ -243,11 +243,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         void PerfomDoubleJump()
         {
 			// jump!
-			m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
-			m_IsGrounded = false;
-			m_Animator.applyRootMotion = false;
-			m_GroundCheckDistance = 0.1f;
-			m_DoubleJumpPossible = false;
+			//m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
+			//m_IsGrounded = false;
+			//m_Animator.applyRootMotion = false;
+			//m_GroundCheckDistance = 0.1f;
+			//m_DoubleJumpPossible = false;
 		}
 
 		void ApplyExtraTurnRotation()
