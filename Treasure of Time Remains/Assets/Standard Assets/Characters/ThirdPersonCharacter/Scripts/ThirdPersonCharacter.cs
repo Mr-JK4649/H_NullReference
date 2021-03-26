@@ -30,26 +30,28 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 		bool m_DoubleJumpPossible;
 
+		public bool _input_get;
 		//座波龍一編集///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+		//3_26日編集 加速のスクリプトを取り除くためコメントアウト
+
 		//通常速度
-		float _Normalspeed = 1f;
+		//float _Normalspeed = 1f;
 
-		//入力されたか
-		public bool _input_get;
-		//スピードアップ計測時間
-		float _speedup_time_count;
+		////入力されたか
+		////スピードアップ計測時間
+		//float _speedup_time_count;
 
-		//AnimetionCurveで加速パラメータ作成
-		[SerializeField]
-		AnimationCurve Speed_parameters;
+		////AnimetionCurveで加速パラメータ作成
+		//[SerializeField]
+		//AnimationCurve Speed_parameters;
 
-		//スキルの時間
-		[SerializeField]
-		float _Skill_Time = 2;
+		////スキルの時間
+		//[SerializeField]
+		//float _Skill_Time = 2;
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
+
 		void Start()
 		{
 			m_Animator = GetComponent<Animator>();
@@ -63,39 +65,40 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 		//座波龍一編集
+		//3月26日_編集済み  加速を取り除くためにコメントアウト
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        private void Update()
-        {
+   //     private void Update()
+   //     {
 
-			//入力されたら計測開始
-			if (_input_get == true) {
-				//時間計測
-				_speedup_time_count += Time.deltaTime;
+			////入力されたら計測開始
+			//if (_input_get == true) {
+			//	//時間計測
+			//	_speedup_time_count += Time.deltaTime;
 
-                //時間で作った値をスピードに代入
-                m_AnimSpeedMultiplier = Speed_parameters.Evaluate(_speedup_time_count);
-                m_MoveSpeedMultiplier = Speed_parameters.Evaluate(_speedup_time_count);
-			}
+   //             //時間で作った値をスピードに代入
+   //             m_AnimSpeedMultiplier = Speed_parameters.Evaluate(_speedup_time_count);
+   //             m_MoveSpeedMultiplier = Speed_parameters.Evaluate(_speedup_time_count);
+			//}
 
-			//加速状態が制限時間になったらたったらリセット
-			if (_speedup_time_count >= _Skill_Time)
-			{
-				_speedup_time_count = 0;//リセット
-				_input_get = false;//入力状態をオフにする
-				m_AnimSpeedMultiplier = _Normalspeed;//通常速度に戻す
-			}
+			////加速状態が制限時間になったらたったらリセット
+			//if (_speedup_time_count >= _Skill_Time)
+			//{
+			//	_speedup_time_count = 0;//リセット
+			//	_input_get = false;//入力状態をオフにする
+			//	m_AnimSpeedMultiplier = _Normalspeed;//通常速度に戻す
+			//}
 
-			//m_AnimSpeedMultiplierがマイナスになったら停止するため(通常速度)1以下になったら通常速度を維持
-			if (m_AnimSpeedMultiplier <= _Normalspeed)
-            {
-				m_AnimSpeedMultiplier = _Normalspeed;
-            }
+			////m_AnimSpeedMultiplierがマイナスになったら停止するため(通常速度)1以下になったら通常速度を維持
+			//if (m_AnimSpeedMultiplier <= _Normalspeed)
+   //         {
+			//	m_AnimSpeedMultiplier = _Normalspeed;
+   //         }
 
 			//デバック確認用
 			//Debug.Log(_speedup_time_count);
 
 
-		}
+		//}
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
 		public void Move(Vector3 move, bool crouch, bool jump)
