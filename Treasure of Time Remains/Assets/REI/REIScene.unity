@@ -5182,40 +5182,6 @@ MonoBehaviour:
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
   _input_get: 0
-  Speed_parameters:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -0.03642273
-      value: 1.5
-      inSlope: 0.48242864
-      outSlope: 0.48242864
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 2
-      inSlope: -0.054644343
-      outSlope: -0.054644343
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.6264396
-    - serializedVersion: 3
-      time: 2
-      value: 1.5
-      inSlope: -0.5
-      outSlope: -0.5
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _Skill_Time: 2
 --- !u!1 &6270455940238833785
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,6 +5327,7 @@ MonoBehaviour:
   timeGauge: {fileID: 6270455941855940023}
   abilityTex: {fileID: 6270455940729029419}
   timeTex: {fileID: 6270455941416835275}
+  s_FullTime: 0
   limit: 10
   time: 0
   isActive: 0
@@ -6654,7 +6621,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6270455940917634378}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 54fd2765407b7b747812df9e66d838d9, type: 3}
