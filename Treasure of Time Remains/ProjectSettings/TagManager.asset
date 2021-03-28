@@ -17,6 +17,7 @@ TagManager:
   - Recover
   - Slow
   - Death2
+  - Death3
   layers:
   - Default
   - TransparentFX

@@ -20,6 +20,9 @@ public class WarpPoint : MonoBehaviour
             case "Death2":
                 SceneManager.LoadScene("stage1_gameover");
                 break;
+            case "Death3":
+                SceneManager.LoadScene("gameover_stage");
+                break;
         }
     }
 
