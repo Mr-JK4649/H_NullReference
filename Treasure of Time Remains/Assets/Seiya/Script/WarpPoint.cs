@@ -28,19 +28,19 @@ public class WarpPoint : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Slow" && gl.localTimeScale != -1) {
-            if(gl.localTimeScale > 0.3f)
-                gl.localTimeScale = 0.3f;
+        //if (other.gameObject.tag == "Slow" && gl.localTimeScale != -1) {
+        //    if(gl.localTimeScale > 0.3f)
+        //        gl.localTimeScale = 0.3f;
 
-            gl.localTimeScale -= 0.001f;
-            if (gl.localTimeScale <= 0.01f) gl.localTimeScale = 0.01f;
-        }
+        //    gl.localTimeScale -= 0.001f;
+        //    if (gl.localTimeScale <= 0.01f) gl.localTimeScale = 0.01f;
+        //}
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Slow") {
-            gl.localTimeScale = 1;
-        }
+        //if (other.gameObject.tag == "Slow") {
+        //    gl.localTimeScale = 1;
+        //}
     }
 }
