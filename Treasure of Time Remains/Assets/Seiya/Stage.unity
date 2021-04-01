@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12918884, g: 0.21862781, b: 0.3169683, a: 1}
+  m_IndirectSpecularColor: {r: 0.1291802, g: 0.2186203, b: 0.31696928, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1650,6 +1650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &286967856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2101,6 +2102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &390209536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3193,6 +3195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &727871571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7899,6 +7902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &1370069657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7957,6 +7961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &1379565550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10910,6 +10915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &1882417045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15467,6 +15473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &3736068000300278579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31777,6 +31784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &3836187217892213627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52854,6 +52862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &3836187218369650435
 BoxCollider:
   m_ObjectHideFlags: 0
