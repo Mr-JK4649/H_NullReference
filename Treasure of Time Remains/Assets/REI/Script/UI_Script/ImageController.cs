@@ -8,8 +8,9 @@ public class ImageController : MonoBehaviour
     [SerializeField] EventSystem eventSystem;
 
     Image stage_select_image;
+    public GameObject selectedObj;
 
-    [SerializeField] private Button[] buttons;
+    [SerializeField] private GameObject[] buttons;
     [SerializeField] Sprite[] image;
     [Range(0, 2)]
     public int imgnumber;//画像番号 [0] チュートリアル画像 [1] ステージ1画像 [2] ステージ2画像
@@ -22,27 +23,27 @@ public class ImageController : MonoBehaviour
 
     private void Update()
     {
-        GameObject selectedObj = eventSystem.currentSelectedGameObject.gameObject;
+        selectedObj = eventSystem.currentSelectedGameObject.gameObject;
 
         /*追加したやつ*/
         for (int i = 0; i < 2; i++) {
-            if (selectedObj == buttons[0])
+            if (selectedObj == buttons[i])
                 stage_select_image.sprite = image[i];
         }
         
 
-        switch (imgnumber)
-        {
-            case 0:
-                stage_select_image.sprite = image[imgnumber];
-                break;
-            case 1:
-                stage_select_image.sprite = image[imgnumber];
-                break;
-            case 2:
-                stage_select_image.sprite = image[imgnumber];
-                break;
-        }
+        //switch (imgnumber)
+        //{
+        //    case 0:
+        //        stage_select_image.sprite = image[imgnumber];
+        //        break;
+        //    case 1:
+        //        stage_select_image.sprite = image[imgnumber];
+        //        break;
+        //    case 2:
+        //        stage_select_image.sprite = image[imgnumber];
+        //        break;
+        //}
 
     }
 

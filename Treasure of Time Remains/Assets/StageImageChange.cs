@@ -9,5 +9,7 @@ public class StageImageChange : MonoBehaviour
 
     public void ChangeImage(Sprite s) {
         image.sprite = s;
+
+        
     }
 }
