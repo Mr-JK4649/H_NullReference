@@ -13,7 +13,6 @@ public class FallCube : MonoBehaviour
     [SerializeField] private float move;
     private const float gravity = 9.81f;
 
-     
 
     void Start()
     {
@@ -30,7 +29,7 @@ public class FallCube : MonoBehaviour
             move += gravity * Time.deltaTime * script[1].timeScale;
             if (move <= 0) { move = 0; IsFall = false; }
 
-            rb.AddForce(new Vector3(0,-move,0) * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, -move, 0) * Time.deltaTime, ForceMode.Impulse);
         }
     }
     void OnTriggerStay(Collider other)
@@ -38,6 +37,7 @@ public class FallCube : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             IsFall = true;
+
         }
     }
 }
