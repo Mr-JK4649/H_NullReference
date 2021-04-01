@@ -9,5 +9,6 @@ public class ButtonFunction : MonoBehaviour
 	public void StringArgFunction(string s)
 	{
 		SceneManager.LoadScene(s);
+		Time.timeScale = 1;
 	}
 }
