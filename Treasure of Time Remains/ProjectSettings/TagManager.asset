@@ -18,6 +18,7 @@ TagManager:
   - Slow
   - Death2
   - Death3
+  - Floor
   layers:
   - Default
   - TransparentFX
