@@ -19,7 +19,7 @@ public class RotationCube : MonoBehaviour
         script = TimeKeeper.GetComponents<GlobalClock>();
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (script[0].timeScale == 1 && script[1].localTimeScale == 1)
         {
@@ -32,4 +32,5 @@ public class RotationCube : MonoBehaviour
         //}else
         //    this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
+
 }

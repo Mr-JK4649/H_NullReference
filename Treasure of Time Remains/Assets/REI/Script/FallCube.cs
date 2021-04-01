@@ -23,7 +23,7 @@ public class FallCube : MonoBehaviour
         rb = this.transform.parent.gameObject.GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (IsFall)
         {
