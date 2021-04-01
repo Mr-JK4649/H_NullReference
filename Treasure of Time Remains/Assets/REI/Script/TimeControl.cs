@@ -27,7 +27,7 @@ public class TimeControl : MonoBehaviour
         originSpeed = ethan.GetFloat("Speed");
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
 
         if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行用
