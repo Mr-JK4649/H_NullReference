@@ -126,37 +126,37 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				HandleAirborneMovement(jump);
 			}
 
-			ScaleCapsuleForCrouching(crouch);
+			// 4月5日 コメント済み ScaleCapsuleForCrouching(crouch);
 			PreventStandingInLowHeadroom();
 
 			// send input and other state parameters to the animator
 			UpdateAnimator(move);
 		}
 
-
-		void ScaleCapsuleForCrouching(bool crouch)
-		{
-			if (m_IsGrounded && crouch)
-			{
-				if (m_Crouching) return;
-				m_Capsule.height = m_Capsule.height / 2f;
-				m_Capsule.center = m_Capsule.center / 2f;
-				m_Crouching = true;
-			}
-			else
-			{
-				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
-				{
-					m_Crouching = true;
-					return;
-				}
-				m_Capsule.height = m_CapsuleHeight;
-				m_Capsule.center = m_CapsuleCenter;
-				m_Crouching = false;
-			}
-		}
+		//4月5日　コメント済み
+		//void ScaleCapsuleForCrouching(bool crouch)
+		//{
+		//	if (m_IsGrounded && crouch)
+		//	{
+		//		if (m_Crouching) return;
+		//		m_Capsule.height = m_Capsule.height / 2f;
+		//		m_Capsule.center = m_Capsule.center / 2f;
+		//		m_Crouching = true;
+		//	}
+		//	else
+		//	{
+		//		Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
+		//		float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
+		//		if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+		//		{
+		//			m_Crouching = true;
+		//			return;
+		//		}
+		//		m_Capsule.height = m_CapsuleHeight;
+		//		m_Capsule.center = m_CapsuleCenter;
+		//		m_Crouching = false;
+		//	}
+		//}
 
 		void PreventStandingInLowHeadroom()
 		{
@@ -172,7 +172,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
-
+		//アニメーション更新情報
 		void UpdateAnimator(Vector3 move)
 		{
 			// update the animator parameters
@@ -180,11 +180,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
+
+			//地面に居ない時ジャンプアニメーション呼ぶ
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
 			}
-
 			// calculate which leg is behind, so as to leave that leg trailing in the jump animation
 			// (This code is reliant on the specific run cycle offset in our animations,
 			// and assumes one leg passes the other at the normalized clip times of 0.0 and 0.5)
@@ -192,6 +193,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				Mathf.Repeat(
 					m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime + m_RunCycleLegOffset, 1);
 			float jumpLeg = (runCycle < k_Half ? 1 : -1) * m_ForwardAmount;
+			
+			
 			if (m_IsGrounded)
 			{
 				m_Animator.SetFloat("JumpLeg", jumpLeg);
@@ -275,7 +278,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
-
+		//地面判定
 		void CheckGroundStatus()
 		{
 			RaycastHit hitInfo;
@@ -290,7 +293,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_GroundNormal = hitInfo.normal;
 				m_IsGrounded = true;
 				m_Animator.applyRootMotion = true;
-				Debug.Log("スタイリッシュ着地");
+				//Debug.Log("スタイリッシュ着地");
 			}
 			else
 			{
