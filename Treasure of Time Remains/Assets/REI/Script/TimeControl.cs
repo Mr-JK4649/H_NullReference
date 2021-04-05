@@ -42,14 +42,14 @@ public class TimeControl : MonoBehaviour
         //    _Stopper.localTimeScale = 1;
 
         if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行用
-            _Rewinder.localTimeScale = -1;
+            _Rewinder.localTimeScale = -2; 
         else if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))  //停止用
             _Stopper.localTimeScale = 0;
 
         if (Input.GetKeyUp(KeyCode.R) || !Input.GetButton("ContL1"))   //逆行のリセット
             _Rewinder.localTimeScale = 1;
         if (Input.GetKeyUp(KeyCode.T) || !Input.GetButton("ContR1") ||
-            _Rewinder.localTimeScale == -1)                             //停止のリセット
+            _Rewinder.localTimeScale == -2)                             //停止のリセット
             _Stopper.localTimeScale = 1;
 
         //アニメーション速度を変える
