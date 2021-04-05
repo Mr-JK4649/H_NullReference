@@ -12,7 +12,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
-        private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
+        private bool m_Jump;      // the world-relative desired move direction, calculated from the camForward and user input.
+        private bool _animetion_jump_flg;
         [SerializeField] private Animator ethan;
         
         private void Start()
@@ -41,6 +42,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
+            //íSìñé“ ZAHA ï“èWÅ´
+            _animetion_jump_flg = CrossPlatformInputManager.GetButtonDown("Jump");
+            if (_animetion_jump_flg)
+            {
+                m_Character.m_Animator.SetBool("Jumpflg", true);
+            }
+            else
+            {
+                m_Character.m_Animator.SetBool("Jumpflg", false);
+            }
+            /////////////////////////////////////////////////////////////////////////////////
             if (Input.GetKeyDown("x") || Input.GetButtonDown("Action2"))
             {
                 m_Character._input_get = true;

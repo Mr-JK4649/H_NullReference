@@ -17,7 +17,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 
 		Rigidbody m_Rigidbody;
-		Animator m_Animator;
+		//担当者ZAHA 4月5日　Animatorをprivateからbublic に変更
+		public Animator m_Animator;
 		bool m_IsGrounded;
 		float m_OrigGroundCheckDistance;
 		const float k_Half = 0.5f;
@@ -31,6 +32,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_DoubleJumpPossible;
 
 		public bool _input_get;
+
+		bool jumpflg;
 		//座波龍一編集///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		//3_26日編集 加速のスクリプトを取り除くためコメントアウト
@@ -126,14 +129,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				HandleAirborneMovement(jump);
 			}
 
-			// 4月5日 コメント済み ScaleCapsuleForCrouching(crouch);
+			// 担当者ZAHA 4月5日 コメント済み -> ScaleCapsuleForCrouching(crouch);
+
 			PreventStandingInLowHeadroom();
 
 			// send input and other state parameters to the animator
 			UpdateAnimator(move);
 		}
 
-		//4月5日　コメント済み
+		//担当者 ZAHA 4月5日　コメント済み↓
+		//しゃがみ機能関数
 		//void ScaleCapsuleForCrouching(bool crouch)
 		//{
 		//	if (m_IsGrounded && crouch)
@@ -185,7 +190,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
-			}
+            }
 			// calculate which leg is behind, so as to leave that leg trailing in the jump animation
 			// (This code is reliant on the specific run cycle offset in our animations,
 			// and assumes one leg passes the other at the normalized clip times of 0.0 and 0.5)
