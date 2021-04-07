@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AriaJumpmotion : MonoBehaviour
+public class YposArea: MonoBehaviour
 {
     public bool aria_check = false;
     // Start is called before the first frame update
@@ -11,7 +11,6 @@ public class AriaJumpmotion : MonoBehaviour
     {
         if (other.CompareTag("Player")){
             aria_check = true;
-            Debug.Log("侵入開始");
         }
         
     }
@@ -20,7 +19,6 @@ public class AriaJumpmotion : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             aria_check = false;
-            Debug.Log("エリアを抜けました。");
         }
     }
 }
