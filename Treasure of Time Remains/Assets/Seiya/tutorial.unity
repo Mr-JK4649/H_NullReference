@@ -6625,8 +6625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4330098aadd564088767b2af6a20b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 3
-  sceneName: Stage
+  currentScene: 1
+  sceneName: StageSelect
 --- !u!65 &205863936
 BoxCollider:
   m_ObjectHideFlags: 0

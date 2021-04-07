@@ -19,6 +19,7 @@ TagManager:
   - Death2
   - Death3
   - Floor
+  - Lift
   layers:
   - Default
   - TransparentFX
