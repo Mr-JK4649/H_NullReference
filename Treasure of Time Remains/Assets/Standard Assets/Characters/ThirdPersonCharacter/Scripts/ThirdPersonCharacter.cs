@@ -32,6 +32,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 		bool m_DoubleJumpPossible;
 
+		bool LandingFlag;   //れいが追加//着地時に着地音を鳴らすためのフラグ
+		public AudioClip Landing_SE;
+		AudioSource audioSource;
+
 		//ZAHA 4月7日　z_rb 追加変数
 		public bool _input_get;
 		public Rigidbody z_rb;
@@ -65,6 +69,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Capsule = GetComponent<CapsuleCollider>();
 			m_CapsuleHeight = m_Capsule.height;
 			m_CapsuleCenter = m_Capsule.center;
+
+			audioSource = GetComponent<AudioSource>();//れいが追加
 
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
@@ -193,7 +199,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
-            }
+				LandingFlag = true;//れいが追加//着地音を鳴らすフラグをtureにする
+			}
 			// calculate which leg is behind, so as to leave that leg trailing in the jump animation
 			// (This code is reliant on the specific run cycle offset in our animations,
 			// and assumes one leg passes the other at the normalized clip times of 0.0 and 0.5)
@@ -206,6 +213,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (m_IsGrounded)
 			{
 				m_Animator.SetFloat("JumpLeg", jumpLeg);
+			}
+			//れいが追加//着地音フラグがtrueの時＆＆着地時
+			if (LandingFlag == true && m_IsGrounded)
+			{
+				audioSource.PlayOneShot(Landing_SE);//着地音を鳴らす
+				LandingFlag = false;//着地音を鳴らすフラグをfalseにする
 			}
 
 			// the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector,
