@@ -33571,7 +33571,8 @@ MonoBehaviour:
   m_RunCycleLegOffset: 2
   m_MoveSpeedMultiplier: 1.5
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.3
+  m_GroundCheckDistance: 0.1
+  m_Animator: {fileID: 0}
   _input_get: 0
 --- !u!114 &8123493985099885299
 MonoBehaviour:
