@@ -17,9 +17,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 
 		Rigidbody m_Rigidbody;
-		//担当者ZAHA 4月5日　Animatorをprivateからbublic に変更
+		//担当者ZAHA 4月5日　Animatorをprivateからpublic に変更
 		public Animator m_Animator;
-		bool m_IsGrounded;
+		//担当者ZAHA 4月7日 m_isGroundedをpublicに変更 
+		public bool m_IsGrounded;
 		float m_OrigGroundCheckDistance;
 		const float k_Half = 0.5f;
 		float m_TurnAmount;
@@ -31,8 +32,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 		bool m_DoubleJumpPossible;
 
+		//ZAHA 4月7日　z_rb 追加変数
 		public bool _input_get;
-
+		public Rigidbody z_rb;
 		bool jumpflg;
 		//座波龍一編集///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -57,6 +59,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void Start()
 		{
+			z_rb = GetComponent<Rigidbody>();
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
