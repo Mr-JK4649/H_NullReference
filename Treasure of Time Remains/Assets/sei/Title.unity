@@ -3655,7 +3655,10 @@ MonoBehaviour:
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 1
   m_Animator: {fileID: 0}
+  m_IsGrounded: 0
+  Landing_SE: {fileID: 0}
   _input_get: 0
+  z_rb: {fileID: 0}
 --- !u!114 &3944562675076073865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3763,6 +3766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ethan: {fileID: 3944562675076073861}
+  aria: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd, type: 3}
   ethan_speed: 0
 --- !u!1 &3944562675098839764
 GameObject:
