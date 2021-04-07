@@ -15,7 +15,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private bool m_Jump;      // the world-relative desired move direction, calculated from the camForward and user input.
         private bool _animetion_jump_flg;
         [SerializeField] private Animator ethan;
-        
+
         private void Start()
         {
             // get the transform of the main camera
@@ -51,6 +51,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             else
             {
                 m_Character.m_Animator.SetBool("Jumpflg", false);
+            }
+
+            //ÉLÅ[Ç™âüÇ≥ÇÍÇƒÇ»Ç¢ä‘Ç©Ç¬ínñ Ç…Ç¢ÇÈéû
+            if ((!_animetion_jump_flg)&&(m_Character.m_IsGrounded)){
+                m_Character.z_rb.velocity = Vector3.zero;
             }
             /////////////////////////////////////////////////////////////////////////////////
             if (Input.GetKeyDown("x") || Input.GetButtonDown("Action2"))
