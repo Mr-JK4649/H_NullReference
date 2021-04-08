@@ -847,7 +847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 98}
+  m_AnchoredPosition: {x: -2, y: 74}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759017033
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 35
-    m_FontStyle: 0
+    m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
@@ -882,7 +882,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u6642\u306E\u907A\u8DE1\u306E\u79D8\u5B9D"
+  m_Text: "\u30C1\u30AF\u30BF\u30AF\u30FBRUN"
 --- !u!222 &1759017034
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3655,7 +3655,10 @@ MonoBehaviour:
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 1
   m_Animator: {fileID: 0}
+  m_IsGrounded: 0
+  Landing_SE: {fileID: 0}
   _input_get: 0
+  z_rb: {fileID: 0}
 --- !u!114 &3944562675076073865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3763,6 +3766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ethan: {fileID: 3944562675076073861}
+  aria: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd, type: 3}
   ethan_speed: 0
 --- !u!1 &3944562675098839764
 GameObject:
