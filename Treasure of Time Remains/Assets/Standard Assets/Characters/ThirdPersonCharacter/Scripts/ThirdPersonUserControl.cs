@@ -16,6 +16,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private bool _animetion_jump_flg;
         [SerializeField] private Animator ethan;
 
+        //ZAHA編集 4月7日 ariajump追加
+        YposArea ypos_area;
+        //ZAHA編集 4月7日 aria追加
+        [SerializeField]
+        GameObject aria;
+
         private void Start()
         {
             // get the transform of the main camera
@@ -32,6 +38,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
+            
+            //ZAHA編集 4月7日  ypos_aria追加
+            ypos_area = aria.GetComponent<YposArea>();
         }
 
 
@@ -44,19 +53,23 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             //担当者 ZAHA 編集↓
             _animetion_jump_flg = CrossPlatformInputManager.GetButtonDown("Jump");
-            if (_animetion_jump_flg)
-            {
-                m_Character.m_Animator.SetBool("Jumpflg", true);
-            }
-            else
-            {
-                m_Character.m_Animator.SetBool("Jumpflg", false);
-            }
+            //if (_animetion_jump_flg)
+            //{
+            //    m_Character.m_Animator.SetBool("Jumpflg", true);
+            //}
+            //else
+            //{
+            //    m_Character.m_Animator.SetBool("Jumpflg", false);
+            //}
 
-            //キーが押されてない間かつ地面にいる時
-            if ((!_animetion_jump_flg)&&(m_Character.m_IsGrounded)){
+            //キーが押されてない間かつ地面にいる時エリアに入ったら
+            if (!_animetion_jump_flg && m_Character.m_IsGrounded && ypos_area.aria_check){ 
+
+                Debug.Log("Vector3ゼロ中");
                 m_Character.z_rb.velocity = Vector3.zero;
             }
+
+            Debug.Log(ypos_area.aria_check);
             /////////////////////////////////////////////////////////////////////////////////
             if (Input.GetKeyDown("x") || Input.GetButtonDown("Action2"))
             {

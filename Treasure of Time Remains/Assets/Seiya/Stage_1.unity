@@ -1232,6 +1232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &126462301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22283,6 +22284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &587511077
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76618,7 +76620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1969303318
 Transform:
   m_ObjectHideFlags: 0
@@ -76827,7 +76829,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013392577}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -86962,6 +86964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  sound1: {fileID: 0}
 --- !u!65 &497069407181378925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87054,7 +87057,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb0ffa6090e62ed4389c478d15c06900, type: 2}
+  - {fileID: 2100000, guid: 3abf473d50106f44c9611c2c76fd9a91, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89050,41 +89053,8 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1.5
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+  m_Animator: {fileID: 0}
   _input_get: 0
-  Speed_parameters:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -0.03642273
-      value: 1.5
-      inSlope: 0.48242864
-      outSlope: 0.48242864
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 2
-      inSlope: -0.054644343
-      outSlope: -0.054644343
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.6264396
-    - serializedVersion: 3
-      time: 2
-      value: 1.5
-      inSlope: -0.5
-      outSlope: -0.5
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _Skill_Time: 2
 --- !u!114 &7806119450785697835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91491,7 +91461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7806119452134551847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -15.6, z: -121.1}
+  m_LocalPosition: {x: -0, y: -15.6, z: 9.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7806119450785697838}

@@ -33621,6 +33621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ethan: {fileID: 8123493985099885311}
+  aria: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd, type: 3}
   ethan_speed: 0
 --- !u!4 &8123493985099885302
 Transform:
