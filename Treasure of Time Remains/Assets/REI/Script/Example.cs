@@ -3,19 +3,32 @@
 public class Example : MonoBehaviour
 {
     public CameraShake shake;
+    public AudioClip Fall_SE;
+    AudioSource audioSource;
+    private bool Stay = false;
 
-    private void Update()
+    void Start()
     {
-        //if (Input.GetKeyDown(KeyCode.Z))
-        //{
-        //    shake.Shake(0.25f, 0.25f);
-        //}
+        audioSource = GetComponent<AudioSource>();//れいが追加
     }
+
     void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Fall" && Stay == false)
+        {
+            shake.Shake(0.35f, 0.35f);
+            audioSource.PlayOneShot(Fall_SE);//落下音を鳴らす
+            Stay = true;
+        }
+
+    }
+
+    void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Fall")
         {
-            shake.Shake(0.25f, 0.25f);
+            Debug.Log("ぬけました");
+            Stay = false;
         }
 
     }

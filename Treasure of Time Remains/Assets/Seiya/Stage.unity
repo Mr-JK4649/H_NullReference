@@ -130568,6 +130568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shake: {fileID: 8594398176898578796}
+  Fall_SE: {fileID: 8300000, guid: 7e5a81e0cb892ff408fd05135dd83f1b, type: 3}
 --- !u!114 &8594398177359275105
 MonoBehaviour:
   m_ObjectHideFlags: 0
