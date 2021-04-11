@@ -42,4 +42,21 @@ public class Lift : MonoBehaviour
             transform.SetParent(parent.transform);
         }
     }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Lift")
+        {
+            transform.SetParent(col.transform.parent);
+        }
+    }
+
+    private void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "Lift")
+        {
+            transform.SetParent(null);
+            transform.SetParent(parent.transform);
+        }
+    }
 }
