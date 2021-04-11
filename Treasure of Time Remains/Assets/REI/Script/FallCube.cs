@@ -14,16 +14,10 @@ public class FallCube : MonoBehaviour
     private const float gravity = 9.81f;
 
 
-    public AudioClip sound1;
-    AudioSource audioSource;
-
-
     void Start()
     {
         TimeKeeper = GameObject.Find("Timekeeper");
         script = TimeKeeper.GetComponents<GlobalClock>();
-
-        audioSource = GetComponent<AudioSource>();
 
         rb = this.transform.parent.gameObject.GetComponent<Rigidbody>();
     }
@@ -51,8 +45,7 @@ public class FallCube : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //音(sound1)を鳴らす
-            audioSource.PlayOneShot(sound1);
+
 
         }
 
