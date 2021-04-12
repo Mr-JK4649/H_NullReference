@@ -100,8 +100,8 @@ public class TimeControl : MonoBehaviour
     private void ImageEffectSwitching(float r, float s)
     {
 
-        if (r != 1) ie[0].enabled = true;
-        else ie[0].enabled = false;
+        //if (r != 1) ie[0].enabled = true;
+        //else ie[0].enabled = false;
 
         if (s != 1) ie[1].enabled = true;
         else ie[1].enabled = false;
