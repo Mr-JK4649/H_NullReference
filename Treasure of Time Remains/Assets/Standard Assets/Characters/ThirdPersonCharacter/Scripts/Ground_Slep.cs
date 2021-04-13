@@ -25,6 +25,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (!third_person_control._animetion_jump_flg && third_person_character.m_IsGrounded)
             {
                 rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.y);
+                
             }
         }
     }
