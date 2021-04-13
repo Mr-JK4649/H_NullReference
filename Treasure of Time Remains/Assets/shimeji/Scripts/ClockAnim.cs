@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ClockAnim : MonoBehaviour
 {
-    [SerializeField] private GlobalClock g_clock;
+    private GlobalClock[] g_clock;
     [SerializeField] private float speed;
     [SerializeField] private float speedMultiplier;
     [SerializeField] private Image image;
@@ -16,11 +16,12 @@ public class ClockAnim : MonoBehaviour
     {
         origin_Color = image.color;
         origin_Speed = speed;
+        g_clock = GameObject.Find("Timekeeper").GetComponents<GlobalClock>();
     }
 
     private void FixedUpdate()
     {
-        if (g_clock.timeScale == 1)
+        if (g_clock[1].timeScale == 1)
         {
             alpha -= Time.deltaTime / 2;
             if (alpha < 0.15) alpha = 0.15f;
@@ -34,6 +35,6 @@ public class ClockAnim : MonoBehaviour
     }
 
     private void RotateClock() {
-        this.gameObject.transform.Rotate(0, speed * g_clock.timeScale, 0);
+        this.gameObject.transform.Rotate(0, speed * g_clock[1].timeScale, 0);
     }
 }
