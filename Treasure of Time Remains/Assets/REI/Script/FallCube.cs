@@ -21,7 +21,7 @@ public class FallCube : MonoBehaviour
     {
         TimeKeeper = GameObject.Find("Timekeeper");
         script = TimeKeeper.GetComponents<GlobalClock>();
-        rp = transform.root.gameObject;
+        rp = transform.parent.gameObject;
 
         rb = this.transform.parent.gameObject.GetComponent<Rigidbody>();
     }
