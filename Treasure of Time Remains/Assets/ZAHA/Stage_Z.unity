@@ -856,12 +856,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &64068981 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1080952668074546413}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &95576643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2036,12 @@ PrefabInstance:
     - target: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_Name
-      value: Aria (2)
+      value: Aria2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
@@ -2057,12 +2056,12 @@ PrefabInstance:
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 34.4
+      value: 6.2
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 297.76
+      value: 60.1
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
@@ -2566,7 +2565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 8300000, guid: 7e5a81e0cb892ff408fd05135dd83f1b, type: 3}
 --- !u!65 &286967856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3556,7 +3554,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 8300000, guid: 7e5a81e0cb892ff408fd05135dd83f1b, type: 3}
 --- !u!65 &390209536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6497,7 +6494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 8300000, guid: 7e5a81e0cb892ff408fd05135dd83f1b, type: 3}
 --- !u!65 &727871571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8603,7 +8599,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 8300000, guid: 7e5a81e0cb892ff408fd05135dd83f1b, type: 3}
 --- !u!65 &912267458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10599,7 +10594,12 @@ PrefabInstance:
     - target: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_Name
-      value: Aria (1)
+      value: Aria1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
@@ -10619,7 +10619,7 @@ PrefabInstance:
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -186.01
+      value: -208.3
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
@@ -13438,7 +13438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 0}
 --- !u!65 &1370069657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13498,7 +13497,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 8300000, guid: 7e5a81e0cb892ff408fd05135dd83f1b, type: 3}
 --- !u!65 &1379565550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18347,7 +18345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 8300000, guid: 7e5a81e0cb892ff408fd05135dd83f1b, type: 3}
 --- !u!65 &1882417045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22960,7 +22957,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 8300000, guid: 7e5a81e0cb892ff408fd05135dd83f1b, type: 3}
 --- !u!65 &1058128233744577161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23113,7 +23109,12 @@ PrefabInstance:
     - target: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_Name
-      value: Aria
+      value: Aria0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
@@ -23128,22 +23129,22 @@ PrefabInstance:
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.4
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 181.8
+      value: -180.2
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9914449
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.13052624
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
@@ -23158,7 +23159,7 @@ PrefabInstance:
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1080952668019067290, guid: d5fc25e66b8fc644080d53c5568540fd,
         type: 3}
@@ -24795,7 +24796,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 0}
 --- !u!65 &3736068000300278579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41106,7 +41106,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 0}
 --- !u!65 &3836187217892213627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62184,7 +62183,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
-  sound1: {fileID: 0}
 --- !u!65 &3836187218369650435
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119137,7 +119135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5942368905953112251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 33, z: 632.4}
+  m_LocalPosition: {x: 0, y: 6.5, z: 32.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5942368905491590530}
@@ -119162,7 +119160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ethan: {fileID: 5942368905953112248}
-  aria: {fileID: 64068981}
   ethan_speed: 0
 --- !u!136 &5942368905953112243
 CapsuleCollider:
@@ -119209,7 +119206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 360
-  m_JumpPower: 15
+  m_JumpPower: 13
   m_GravityMultiplier: 4
   m_RunCycleLegOffset: 2
   m_MoveSpeedMultiplier: 1.5

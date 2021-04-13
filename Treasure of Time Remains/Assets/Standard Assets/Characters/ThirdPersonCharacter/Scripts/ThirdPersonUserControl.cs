@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
-
+    
     [RequireComponent(typeof (ThirdPersonCharacter))]
     public class ThirdPersonUserControl : MonoBehaviour
     {
@@ -16,14 +18,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private bool _animetion_jump_flg;
         [SerializeField] private Animator ethan;
 
-        //ZAHA編集 4月7日 ariajump追加
-        YposArea ypos_area;
-        //ZAHA編集 4月7日 aria追加
-        [SerializeField]
-        GameObject aria;
+        ////ZAHA編集 4月7日 class_aria追加
+        //[SerializeField]
+        //YposArea[] class_area;
+        ////ZAHA編集 4月7日 obj_aria追加
+        //[SerializeField]
+        //GameObject[] obj_aria;
 
+        
         private void Start()
         {
+            //担当者 ZAHA 4月12日　aria配列 初期化追加
+            //aria[0] = GameObject.Find("Aria0");
+            //aria[1] = GameObject.Find("Aria1");
+            //aria[2] = GameObject.Find("Aria2");
+
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -38,9 +47,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
-            
-            //ZAHA編集 4月7日  ypos_aria追加
-            ypos_area = aria.GetComponent<YposArea>();
+
+            ////ZAHA編集 4月7日  ypos_aria追加
+            //class_area[0] = obj_aria[0].GetComponent<YposArea>();
+            //class_area[1] = obj_aria[1].GetComponent<YposArea>();
+            //class_area[2] = obj_aria[2].GetComponent<YposArea>();
         }
 
 
@@ -53,23 +64,25 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             //担当者 ZAHA 編集↓
             _animetion_jump_flg = CrossPlatformInputManager.GetButtonDown("Jump");
-            //if (_animetion_jump_flg)
-            //{
-            //    m_Character.m_Animator.SetBool("Jumpflg", true);
-            //}
-            //else
-            //{
-            //    m_Character.m_Animator.SetBool("Jumpflg", false);
-            //}
-
-            //キーが押されてない間かつ地面にいる時エリアに入ったら
-            if (!_animetion_jump_flg && m_Character.m_IsGrounded && ypos_area.aria_check){ 
-
-                Debug.Log("Vector3ゼロ中");
-                m_Character.z_rb.velocity = Vector3.zero;
+            if (_animetion_jump_flg)
+            {
+                m_Character.m_Animator.SetBool("Jumpflg", true);
+            }
+            else
+            {
+                m_Character.m_Animator.SetBool("Jumpflg", false);
             }
 
-            Debug.Log(ypos_area.aria_check);
+            //キーが押されてない間かつ地面にいる時エリアに入ったら
+            //Debug.Log(class_area[0].aria_check);
+
+            //if (!_animetion_jump_flg && m_Character.m_IsGrounded && class_area[0].aria_check || class_area[1].aria_check || class_area[2].aria_check)
+            //{
+
+            //    Debug.Log("Vector3ゼロ中");
+            //    m_Character.z_rb.velocity = Vector3.zero;
+            //}
+
             /////////////////////////////////////////////////////////////////////////////////
             if (Input.GetKeyDown("x") || Input.GetButtonDown("Action2"))
             {
