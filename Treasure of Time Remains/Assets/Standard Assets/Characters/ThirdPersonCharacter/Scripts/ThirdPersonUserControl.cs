@@ -10,29 +10,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     [RequireComponent(typeof (ThirdPersonCharacter))]
     public class ThirdPersonUserControl : MonoBehaviour
     {
+        
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;      // the world-relative desired move direction, calculated from the camForward and user input.
-        private bool _animetion_jump_flg;
+        
+        //4月13日 担当者ZAHA _animation_jump_flg追加  
+        public bool _animetion_jump_flg;
         [SerializeField] private Animator ethan;
-
-        ////ZAHA編集 4月7日 class_aria追加
-        //[SerializeField]
-        //YposArea[] class_area;
-        ////ZAHA編集 4月7日 obj_aria追加
-        //[SerializeField]
-        //GameObject[] obj_aria;
 
         
         private void Start()
         {
-            //担当者 ZAHA 4月12日　aria配列 初期化追加
-            //aria[0] = GameObject.Find("Aria0");
-            //aria[1] = GameObject.Find("Aria1");
-            //aria[2] = GameObject.Find("Aria2");
-
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -48,10 +39,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
 
-            ////ZAHA編集 4月7日  ypos_aria追加
-            //class_area[0] = obj_aria[0].GetComponent<YposArea>();
-            //class_area[1] = obj_aria[1].GetComponent<YposArea>();
-            //class_area[2] = obj_aria[2].GetComponent<YposArea>();
         }
 
 
@@ -62,7 +49,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
-            //担当者 ZAHA 編集↓
+            //担当者 ZAHA 編集↓4月13日 追加
             _animetion_jump_flg = CrossPlatformInputManager.GetButtonDown("Jump");
             if (_animetion_jump_flg)
             {
@@ -72,16 +59,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 m_Character.m_Animator.SetBool("Jumpflg", false);
             }
-
-            //キーが押されてない間かつ地面にいる時エリアに入ったら
-            //Debug.Log(class_area[0].aria_check);
-
-            //if (!_animetion_jump_flg && m_Character.m_IsGrounded && class_area[0].aria_check || class_area[1].aria_check || class_area[2].aria_check)
-            //{
-
-            //    Debug.Log("Vector3ゼロ中");
-            //    m_Character.z_rb.velocity = Vector3.zero;
-            //}
 
             /////////////////////////////////////////////////////////////////////////////////
             if (Input.GetKeyDown("x") || Input.GetButtonDown("Action2"))
