@@ -7,7 +7,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 	[RequireComponent(typeof(Animator))]
 	public class ThirdPersonCharacter : MonoBehaviour
 	{
-		
 		[SerializeField] float m_MovingTurnSpeed = 360;
 		[SerializeField] float m_StationaryTurnSpeed = 180;
 		[SerializeField] float m_JumpPower = 12f;
@@ -39,7 +38,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		//ZAHA 4Œ7“ú@z_rb ’Ç‰Á•Ï”
 		public bool _input_get;
-		public Rigidbody z_rb;
+		//public Rigidbody z_rb;
 
 		bool jumpflg;
 		//À”g—´ˆê•ÒW///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +64,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void Start()
 		{
-			z_rb = GetComponent<Rigidbody>();
+			//z_rb = GetComponent<Rigidbody>();4Œ13“ú
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
