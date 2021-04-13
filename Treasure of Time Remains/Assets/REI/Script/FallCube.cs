@@ -13,11 +13,15 @@ public class FallCube : MonoBehaviour
     [SerializeField] private float move;
     private const float gravity = 9.81f;
 
+    public GameObject particleObject;//パーティクル格納
+    private GameObject rp;//親オブジェクトの座標
+
 
     void Start()
     {
         TimeKeeper = GameObject.Find("Timekeeper");
         script = TimeKeeper.GetComponents<GlobalClock>();
+        rp = transform.root.gameObject;
 
         rb = this.transform.parent.gameObject.GetComponent<Rigidbody>();
     }
@@ -45,8 +49,9 @@ public class FallCube : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-
-
+            //Instantiate(particleObject, this.transform.position, Quaternion.identity);
+            //Quaternion.Euler(0f, 0f, 1.0f)
+            Instantiate(particleObject, rp.transform.position, Quaternion.Euler(90.0f, 0.0f, 90.0f));
         }
 
     }
