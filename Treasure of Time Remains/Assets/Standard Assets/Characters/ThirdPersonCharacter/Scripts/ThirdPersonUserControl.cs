@@ -53,11 +53,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             _animetion_jump_flg = CrossPlatformInputManager.GetButtonDown("Jump");
             if (_animetion_jump_flg)
             {
-                m_Character.m_Animator.SetBool("Jumpflg", true);
+                //m_Character.m_Animator.SetBool("Jumpflg", true);
             }
             else
             {
-                m_Character.m_Animator.SetBool("Jumpflg", false);
+                //m_Character.m_Animator.SetBool("Jumpflg", false);
             }
 
             /////////////////////////////////////////////////////////////////////////////////
