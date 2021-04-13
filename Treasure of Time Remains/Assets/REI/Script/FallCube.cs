@@ -51,7 +51,8 @@ public class FallCube : MonoBehaviour
         {
             //Instantiate(particleObject, this.transform.position, Quaternion.identity);
             //Quaternion.Euler(0f, 0f, 1.0f)
-            Instantiate(particleObject, rp.transform.position, Quaternion.Euler(90.0f, 0.0f, 90.0f));
+            GameObject oho = Instantiate(particleObject, rp.transform.position, Quaternion.Euler(90.0f, 0.0f, 90.0f));
+            Destroy(oho, 2f);
         }
 
     }
