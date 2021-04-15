@@ -16,7 +16,9 @@ public class TimeControl : MonoBehaviour
     //[SerializeField] private TimeGauge _RewindGauge;
     [SerializeField] private TimeGauge timeGauge;
     [SerializeField] private Animator ethan;
-    private float originSpeed;
+    [SerializeField] private AudioClip stopSound;
+    [SerializeField] private AudioClip rewindSound;
+    [SerializeField] private AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -24,37 +26,35 @@ public class TimeControl : MonoBehaviour
         ie = ie_obj.GetComponents<ImageEffect>();
         ie[0].enabled = false;
         ie[1].enabled = false;
-        originSpeed = ethan.GetFloat("Speed");
     }
 
     private void FixedUpdate()
     {
 
-        //if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行用
-        //    _Rewinder.localTimeScale = -2;
-        //else if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))  //停止用
-        //    _Stopper.localTimeScale = 0;
-
-        //if (Input.GetKeyUp(KeyCode.R) || !Input.GetButton("ContL1"))   //逆行のリセット
-        //    _Rewinder.localTimeScale = 1;
-        //if (Input.GetKeyUp(KeyCode.T) || !Input.GetButton("ContR1") ||
-        //    _Rewinder.localTimeScale == -1)                             //停止のリセット
-        //    _Stopper.localTimeScale = 1;
-
         if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行用
-            _Rewinder.localTimeScale = -2; 
+        {
+            if(!_audioSource.isPlaying)RingSound(rewindSound);
+            _Rewinder.localTimeScale = -2;
+        }
         else if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))  //停止用
+        {
+            if(_Stopper.localTimeScale == 1)RingSound(stopSound);
             _Stopper.localTimeScale = 0;
+        }
 
         if (Input.GetKeyUp(KeyCode.R) || !Input.GetButton("ContL1"))   //逆行のリセット
+        {
             _Rewinder.localTimeScale = 1;
+        }
         if (Input.GetKeyUp(KeyCode.T) || !Input.GetButton("ContR1") ||
             _Rewinder.localTimeScale == -2)                             //停止のリセット
+        {
             _Stopper.localTimeScale = 1;
+        }
 
-        //アニメーション速度を変える
-        if (_Rewinder.localTimeScale != -1)
-            //ethan.SetFloat("Speed", _Rewinder.localTimeScale);
+
+        if (!Input.GetButton("ContR1") && !Input.GetButton("ContL1"))
+            _audioSource.Stop();
 
         //操作用の関数
         Process(timeGauge);
@@ -106,5 +106,10 @@ public class TimeControl : MonoBehaviour
         if (s != 1) ie[1].enabled = true;
         else ie[1].enabled = false;
 
+    }
+
+    //音を鳴らすやつ
+    private void RingSound(AudioClip name) {
+        _audioSource.PlayOneShot(name);
     }
 }
