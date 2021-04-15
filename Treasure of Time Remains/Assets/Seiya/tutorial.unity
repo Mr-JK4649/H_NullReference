@@ -39537,6 +39537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeGauge: {fileID: 8123493985127904248}
+  score: 0
 --- !u!95 &8123493985099885311
 Animator:
   serializedVersion: 3
@@ -39652,7 +39653,7 @@ MonoBehaviour:
   timeTex: {fileID: 8123493983988582990}
   s_FullTime: 1
   limit: 120
-  time: 0
+  time: 120
   isActive: 0
 --- !u!224 &8123493985127904249
 RectTransform:
