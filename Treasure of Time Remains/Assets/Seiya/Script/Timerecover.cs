@@ -5,6 +5,7 @@ using UnityEngine;
 public class Timerecover : MonoBehaviour
 {
     [SerializeField] private TimeGauge timeGauge;
+    [SerializeField] private int score;
 
     private const float Recovery = 0.2f;
 
@@ -19,7 +20,9 @@ public class Timerecover : MonoBehaviour
         if (other.gameObject.tag == "Recover")
         {
             timeGauge.Recover(Recovery);
+            ScoreManager.Instance.score += score;
             Destroy(other.gameObject);
         }
     }
+
 }
