@@ -20,6 +20,7 @@ TagManager:
   - Death3
   - Floor
   - Lift
+  - Goal
   layers:
   - Default
   - TransparentFX
