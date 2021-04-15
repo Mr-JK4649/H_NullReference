@@ -24882,6 +24882,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Goal
       objectReference: {fileID: 0}
+    - target: {fileID: 6202633091561483162, guid: 6109821d8f192654da06c590d52aea57,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 240.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6202633091598592406, guid: 6109821d8f192654da06c590d52aea57,
         type: 3}
       propertyPath: m_IsActive
@@ -25017,6 +25022,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6202633092084202312, guid: 6109821d8f192654da06c590d52aea57,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -80.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202633092236773971, guid: 6109821d8f192654da06c590d52aea57,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 6202633092343217354, guid: 6109821d8f192654da06c590d52aea57,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -25037,10 +25052,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6202633092793665753, guid: 6109821d8f192654da06c590d52aea57,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -80.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202633092907896981, guid: 6109821d8f192654da06c590d52aea57,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -80.00002
+      objectReference: {fileID: 0}
     - target: {fileID: 6202633093121551531, guid: 6109821d8f192654da06c590d52aea57,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202633093203478334, guid: 6109821d8f192654da06c590d52aea57,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -80.00002
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6202633091755202593, guid: 6109821d8f192654da06c590d52aea57, type: 3}
