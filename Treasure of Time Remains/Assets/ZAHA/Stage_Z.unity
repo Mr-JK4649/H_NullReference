@@ -2489,6 +2489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 4052179864290443704, guid: 5475aafc61c380a40a09e6840538d150,
+    type: 3}
 --- !u!65 &286967856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3478,6 +3480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 4052179864290443704, guid: 5475aafc61c380a40a09e6840538d150,
+    type: 3}
 --- !u!65 &390209536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6418,6 +6422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 0}
 --- !u!65 &727871571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8523,6 +8528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 0}
 --- !u!65 &912267458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13321,6 +13327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 0}
 --- !u!65 &1370069657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13380,6 +13387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 4052179864290443704, guid: 5475aafc61c380a40a09e6840538d150,
+    type: 3}
 --- !u!65 &1379565550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18267,6 +18276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 4052179864290443704, guid: 5475aafc61c380a40a09e6840538d150,
+    type: 3}
 --- !u!65 &1882417045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22892,6 +22903,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 4052179864290443704, guid: 5475aafc61c380a40a09e6840538d150,
+    type: 3}
 --- !u!65 &1058128233744577161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24657,6 +24670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 0}
 --- !u!65 &3736068000300278579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40967,6 +40981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 0}
 --- !u!65 &3836187217892213627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62044,6 +62059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  particleObject: {fileID: 0}
 --- !u!65 &3836187218369650435
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -118996,7 +119012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5942368905953112251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.5, z: 457.4}
+  m_LocalPosition: {x: 0, y: 6.5, z: 53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5942368905491590530}
