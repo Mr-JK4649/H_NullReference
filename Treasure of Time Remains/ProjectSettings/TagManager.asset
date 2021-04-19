@@ -21,6 +21,7 @@ TagManager:
   - Floor
   - Lift
   - Goal
+  - Death4
   layers:
   - Default
   - TransparentFX
