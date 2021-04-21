@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/REI/StageSelect.unity
     guid: 33e9fc1a1648cb544947dc10466953bb
   - enabled: 1
-    path: Assets/Seiya/tutorial.unity
-    guid: 72d0975d7f01241469fe5690deced8f9
+    path: Assets/sei/tutorial 1.unity
+    guid: 4d3c968120db94e418465bd13e12751d
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 7e5af3abbd9845743a3b178de7f65b8a
@@ -27,15 +27,18 @@ EditorBuildSettings:
     path: Assets/tsubasa/stage1_gameover.unity
     guid: 950f8a5a38a78b54884d82082d40b8a9
   - enabled: 1
-    path: Assets/Seiya/Stage.unity
+    path: Assets/Seiya/Scene/Stage.unity
     guid: 397585f29a7050c4c890c62153a5035e
   - enabled: 1
-    path: Assets/Seiya/gameover_stage.unity
+    path: Assets/Seiya/Scene/gameover_stage.unity
     guid: 2219172b1f5c0e8479bbb8f1305dc049
-  - enabled: 0
-    path: Assets/Seiya/gameover(kari).unity
-    guid: 000b86b648065724cbb932ad92ad3127
-  - enabled: 0
-    path: Assets/Seiya/Stage_1.unity
-    guid: 848906d5c43213f4c89572290656ffa8
+  - enabled: 1
+    path: Assets/tsubasa/stage2.unity
+    guid: 0998f51ed5fa0ac4bb6ae0de6a1f958f
+  - enabled: 1
+    path: Assets/tsubasa/stage2_gameover.unity
+    guid: 9a1f4999f3c5de74295ac29c636f0f9a
+  - enabled: 1
+    path: Assets/Seiya/Scene/S_Stage2.unity
+    guid: ac26353c31b620d419b74a51a566c8d2
   m_configObjects: {}
