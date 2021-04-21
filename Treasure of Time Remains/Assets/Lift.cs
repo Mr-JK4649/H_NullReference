@@ -57,10 +57,6 @@ public class Lift : MonoBehaviour
         {
             transform.SetParent(null);
             transform.SetParent(parent.transform);
-
-            
         }
     }
-    
-    
 }
