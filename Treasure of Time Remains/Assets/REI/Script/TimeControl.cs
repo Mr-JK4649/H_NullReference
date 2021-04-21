@@ -16,6 +16,8 @@ public class TimeControl : MonoBehaviour
     //[SerializeField] private TimeGauge _RewindGauge;
     [SerializeField] private TimeGauge timeGauge;
     [SerializeField] private Animator ethan;
+
+    //音
     [SerializeField] private AudioClip stopSound;
     [SerializeField] private AudioClip rewindSound;
     [SerializeField] private AudioSource _audioSource;
