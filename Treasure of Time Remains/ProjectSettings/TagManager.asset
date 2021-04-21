@@ -23,6 +23,7 @@ TagManager:
   - Goal
   - Death4
   - Hari
+  - S_Hari
   layers:
   - Default
   - TransparentFX
