@@ -7,13 +7,13 @@ public class Test : MonoBehaviour
 {
     private GameObject ParentPanel;
     private GameObject ChildPanel;
-    private int count;
-    private int MaxCount;
-    private int MinCount;
+    private int count;//text表示の秒数
+    private int MaxCount;//text表示の最大秒数
+    private int MinCount;//text表示の最低秒数
     private Text timerText;
 
     private float totalTime;
-    private int seconds;
+    private int seconds;//秒数表示のための変数
 
     private GameObject Child;
 
@@ -54,6 +54,9 @@ public class Test : MonoBehaviour
         MinCount = 0;
         count = MaxCount;
         //ChildPanel.gameObject.transform.parent = obj.gameObject.transform;
+
+        Vector3 tmp = GameObject.Find("Ground").transform.position;//groundの座標取得してvectorに代入
+        this.gameObject.transform.position = new Vector3(tmp.x, tmp.y+8, tmp.z);//groundの座標取得してコライダーに代入
     }
 
     // Update is called once per frame
