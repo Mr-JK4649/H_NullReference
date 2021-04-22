@@ -26,6 +26,9 @@ public class WarpPoint : MonoBehaviour
             case "Death4":  //satge2のゲームオーバーシーンに遷移
                 SceneManager.LoadScene("stage2_gameover");
                 break;
+            case "Death5":  //せいやのsatge2のゲームオーバーシーンに遷移
+                SceneManager.LoadScene("gameover_stage2");
+                break;
         }
     }
 
