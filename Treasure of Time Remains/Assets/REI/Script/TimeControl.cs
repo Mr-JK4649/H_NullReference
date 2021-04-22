@@ -12,6 +12,8 @@ public class TimeControl : MonoBehaviour
 
     [SerializeField] GlobalClock _Stopper;//オブジェクトの時間停止用
 
+    [SerializeField] private GameObject particle;
+
     //[SerializeField] private TimeGauge _StopGauge;
     //[SerializeField] private TimeGauge _RewindGauge;
     [SerializeField] private TimeGauge timeGauge;
@@ -83,8 +85,10 @@ public class TimeControl : MonoBehaviour
             if (!ga.isActive)
                 AbilitySwitching(1, 1);
 
+            particle.SetActive(true);
+
         }
-        else ga.TimeEnd();
+        else { ga.TimeEnd(); particle.SetActive(false); }
 
         ImageEffectSwitching(_Rewinder.localTimeScale, _Stopper.localTimeScale);
     }
