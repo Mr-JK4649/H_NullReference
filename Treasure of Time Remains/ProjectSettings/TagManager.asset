@@ -22,6 +22,9 @@ TagManager:
   - Lift
   - Goal
   - Death4
+  - Hari
+  - S_Hari
+  - Death5
   layers:
   - Default
   - TransparentFX

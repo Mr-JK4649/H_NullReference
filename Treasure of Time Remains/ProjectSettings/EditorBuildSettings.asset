@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Seiya/Scene/S_Stage2.unity
     guid: ac26353c31b620d419b74a51a566c8d2
+  - enabled: 1
+    path: Assets/Seiya/Scene/gameover_stage2.unity
+    guid: be30b1af0eea3c84a9d830a73bf12971
   m_configObjects: {}
