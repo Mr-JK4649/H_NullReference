@@ -41,7 +41,7 @@ public class FloatObject_Y : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")//プレイヤーにあたったらIsAeraをonにするから移動する
         {
             IsArea = true;
 

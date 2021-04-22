@@ -25,7 +25,7 @@ public class Example_3 : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Hari")
+        if (other.gameObject.tag == "S_Hari")
         {
             Debug.Log("ぬけました");
             Stay = false;
