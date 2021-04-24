@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 0
-  sceneName: StageSelect
+  sceneName: Opening
 --- !u!4 &191474982
 Transform:
   m_ObjectHideFlags: 0
@@ -3589,6 +3589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeGauge: {fileID: 3944562675045372034}
+  score: 0
 --- !u!95 &3944562675076073861
 Animator:
   serializedVersion: 3
@@ -3658,7 +3659,6 @@ MonoBehaviour:
   m_IsGrounded: 0
   Landing_SE: {fileID: 0}
   _input_get: 0
-  z_rb: {fileID: 0}
 --- !u!114 &3944562675076073865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3765,8 +3765,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animetion_jump_flg: 0
   ethan: {fileID: 3944562675076073861}
-  aria: {fileID: 1080952668019067288, guid: d5fc25e66b8fc644080d53c5568540fd, type: 3}
   ethan_speed: 0
 --- !u!1 &3944562675098839764
 GameObject:
@@ -4340,8 +4340,12 @@ MonoBehaviour:
   ie_obj: {fileID: 3944562675738137781}
   _Rewinder: {fileID: 3944562675419662124}
   _Stopper: {fileID: 3944562675419662126}
+  particle: {fileID: 0}
   timeGauge: {fileID: 3944562675045372034}
   ethan: {fileID: 3944562675076073861}
+  stopSound: {fileID: 0}
+  rewindSound: {fileID: 0}
+  _audioSource: {fileID: 0}
 --- !u!114 &3944562675419662126
 MonoBehaviour:
   m_ObjectHideFlags: 0
