@@ -9,7 +9,9 @@ public class SceneMoveManager : MonoBehaviour
         MAIN,
         RESULT,
         CLEAR,
-        GAMEOVER
+        GAMEOVER,
+        OPENING,    //れい追加4/24
+        ENDING      //れい追加4/24
     }
 
     [SerializeField] private SCENE currentScene;
