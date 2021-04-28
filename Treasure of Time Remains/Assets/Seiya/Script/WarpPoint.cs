@@ -17,6 +17,9 @@ public class WarpPoint : MonoBehaviour
             case "Death":
                 SceneManager.LoadScene("gameover(kari)");
                 break;
+            case "Death0":  //stage0のゲームオーバーシーンに遷移
+                SceneManager.LoadScene("stage0_gameover");
+                break;
             case "Death2":
                 SceneManager.LoadScene("stage1_gameover");
                 break;

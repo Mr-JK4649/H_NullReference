@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/shimeji/Result.unity
     guid: 4156c1e6b4b456d4aba9bf2dad4f4430
   - enabled: 1
+    path: Assets/tsubasa/Scene/stage0.unity
+    guid: 78c5e7e730354bb4d85e84ff88b845fe
+  - enabled: 1
+    path: Assets/tsubasa/Scene/stage0_gameover.unity
+    guid: 04180b52b4054f9418bbcc6d28942eb5
+  - enabled: 1
     path: Assets/tsubasa/Scene/stage1.unity
     guid: 43e54ac478688ae4782f4b1a3fe90205
   - enabled: 1
