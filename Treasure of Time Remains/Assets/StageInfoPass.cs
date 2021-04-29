@@ -9,5 +9,6 @@ public class StageInfoPass : MonoBehaviour
     private void Start()
     {
         ScoreManager.Instance.StageNum = stageNum;
+        ScoreManager.Instance.score = 0;
     }
 }
