@@ -19,8 +19,7 @@ public class PlayerCorrection : MonoBehaviour
         oriXpos = me.transform.position.x;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         me_r.velocity += accelNum;
 
