@@ -27,7 +27,7 @@ public class TimeControl : MonoBehaviour
     {
         ie = ie_obj.GetComponents<ImageEffect>();
         ie[0].enabled = false;
-        ie[1].enabled = false;
+        //ie[1].enabled = false;
     }
 
     private void FixedUpdate()
@@ -35,12 +35,12 @@ public class TimeControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行用
         {
-            if(!_audioSource.isPlaying)RingSound(rewindSound);
+            if (!_audioSource.isPlaying) RingSound(rewindSound);
             _Rewinder.localTimeScale = -2;
         }
         else if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))  //停止用
         {
-            if(_Stopper.localTimeScale == 1)RingSound(stopSound);
+            if (_Stopper.localTimeScale == 1) RingSound(stopSound);
             _Stopper.localTimeScale = 0;
         }
 
@@ -107,13 +107,14 @@ public class TimeControl : MonoBehaviour
         //if (r != 1) ie[0].enabled = true;
         //else ie[0].enabled = false;
 
-        if (s != 1) ie[1].enabled = true;
-        else ie[1].enabled = false;
+        if (s != 1) ie[0].enabled = true;
+        else ie[0].enabled = false;
 
     }
 
     //音を鳴らすやつ
-    private void RingSound(AudioClip name) {
+    private void RingSound(AudioClip name)
+    {
         _audioSource.PlayOneShot(name);
     }
 }

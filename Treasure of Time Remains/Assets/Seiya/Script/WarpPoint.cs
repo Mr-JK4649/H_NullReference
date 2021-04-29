@@ -32,6 +32,14 @@ public class WarpPoint : MonoBehaviour
             case "Death5":  //せいやのsatge2のゲームオーバーシーンに遷移
                 SceneManager.LoadScene("gameover_stage2");
                 break;
+            case "Dust":
+                Vector3 xyz = other.gameObject.transform.position;
+                xyz.z += 130f;
+
+                GameObject pss = Instantiate(other.gameObject,xyz,Quaternion.Euler(90,0,0));
+                pss.name = "StageDust";
+                Destroy(other.gameObject,5f);
+                break;
         }
     }
 

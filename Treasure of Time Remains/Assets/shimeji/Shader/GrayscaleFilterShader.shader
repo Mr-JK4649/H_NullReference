@@ -10,6 +10,7 @@
 	SubShader
 	{
 		Tags { "Queue" = "Transparent"}
+		//Cull off
 		GrabPass{}
 		Pass
 		{
@@ -69,6 +70,8 @@
 				//Grayscale
 				fixed range = max(0.0001,_RedFilter + _GreenFilter + _BlueFilter);
 				grab.rgb = (grab.r * _RedFilter + grab.g * _GreenFilter + grab.b * _BlueFilter) / range;
+
+				clip(1);
 
 				return grab;
 			}

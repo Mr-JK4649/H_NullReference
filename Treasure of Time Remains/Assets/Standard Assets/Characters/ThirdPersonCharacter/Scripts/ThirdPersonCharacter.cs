@@ -250,7 +250,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
 				m_Rigidbody.AddForce(extraGravityForce);
 
-				m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
+				//4月29日 コメントアウト 担当者ZAHA jump中にレイキャストの距離が0.01と短くなるため判定バグを起こすことによりコメントアウト
+				//m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
 			}
 		}
 
@@ -264,7 +265,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
 				m_IsGrounded = false;
 				m_Animator.applyRootMotion = false;
-				m_GroundCheckDistance = 0.1f;
+				m_GroundCheckDistance = 0.3f;
 				m_DoubleJumpPossible = true;
 			}
 		}
@@ -307,7 +308,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			RaycastHit hitInfo;
 #if UNITY_EDITOR
             // helper to visualise the ground check ray in the scene view
-            Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance));
+
+			//4月29日 担当者 ZAHA Rayキャストを可視化できるように色と表示時間を60秒に変更
+            Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance),Color.red,60);
 #endif
             // 0.1f is a small offset to start the ray from inside the character
             // it is also good to note that the transform position in the sample assets is at the base of the character
