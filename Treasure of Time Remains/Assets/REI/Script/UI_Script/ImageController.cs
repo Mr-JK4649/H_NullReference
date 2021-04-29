@@ -12,7 +12,7 @@ public class ImageController : MonoBehaviour
 
     [SerializeField] private GameObject[] buttons;
     [SerializeField] Sprite[] image;
-    [Range(0, 2)]
+    [Range(0, 4)]
     public int imgnumber;//画像番号 [0] チュートリアル画像 [1] ステージ1画像 [2] ステージ2画像
 
     private void Start()
@@ -26,7 +26,7 @@ public class ImageController : MonoBehaviour
         selectedObj = eventSystem.currentSelectedGameObject.gameObject;
 
         /*追加したやつ*/
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < buttons.Length; i++) {
             if (selectedObj == buttons[i])
                 stage_select_image.sprite = image[i];
         }
