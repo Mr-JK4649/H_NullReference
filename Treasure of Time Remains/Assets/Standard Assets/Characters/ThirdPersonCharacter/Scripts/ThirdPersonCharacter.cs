@@ -43,6 +43,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool jumpflg;
 		//座波龍一編集///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+		//4月29日 追加
+		float distance = 15f;
+
+
 		//3_26日編集 加速のスクリプトを取り除くためコメントアウト
 
 		//通常速度
@@ -327,6 +331,28 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_GroundNormal = Vector3.up;
 				m_Animator.applyRootMotion = false;
 			}
+
+			//4月29日ZAHA　Raycast追加
+			//jumpした時ある程度の高さにきたら落ちるモーションに切り替え
+			RaycastHit hit;
+
+			Debug.DrawLine(transform.position, transform.position + Vector3.down * distance, Color.red, 60);
+
+			if (!m_IsGrounded)
+			{
+				if (!Physics.Linecast(transform.position, transform.position + Vector3.down * distance, out hit))
+				{
+					m_Animator.SetBool("LongFall", true);
+				}
+				else
+				{
+					m_Animator.SetBool("LongFall", false);
+				}
+
+
+			}
+
+			Debug.Log(distance);
 		}
 	}
 }
