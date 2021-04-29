@@ -33,6 +33,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-6164033410834984099
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ring_SE
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 6bd41f46d04b79148b59cff533c9f0b9
+  m_Children: []
+  m_Volume: 5fea429e335400d468cfe6cfdf541bb6
+  m_Pitch: 20d4102dbc51598458402010e78ef535
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 1268454967792143531}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -56,6 +75,7 @@ AudioMixerController:
     - e8ec8d776d581154996c46dd78683681
     - b0268d69c8e3f814aa59762e3e2807ba
     - d36d327dfdbe2b44d89f2556ecfbe8ac
+    - 6bd41f46d04b79148b59cff533c9f0b9
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -69,6 +89,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: e8ec8d776d581154996c46dd78683681
   m_Children:
+  - {fileID: -6164033410834984099}
   - {fileID: 4558444246793833425}
   - {fileID: -6618486772622184429}
   m_Volume: e9098abc4ef86af40bbcff7703c7f799
@@ -107,7 +128,22 @@ AudioMixerSnapshotController:
     e9098abc4ef86af40bbcff7703c7f799: 0.27000841
     8252361ef00170e4084ca3a1fd5869c0: -1.5838235e-11
     2913f07ea484a424091bf68ae9f0b32f: 10.437403
+    5fea429e335400d468cfe6cfdf541bb6: 9.757735
   m_TransitionOverrides: {}
+--- !u!244 &1268454967792143531
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 9417e63b4deec1847a97dea65dbf39e8
+  m_EffectName: Attenuation
+  m_MixLevel: 080eda18c575c424a9b89ed96c9807e6
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &4558444246793833425
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
