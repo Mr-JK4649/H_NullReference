@@ -11,7 +11,7 @@ public class OPSceneMovie : MonoBehaviour
     void Start()
     {
 
-        Invoke("ChangeScene", 2f);//２秒後にシーン切りかえ
+        Invoke("ChangeScene", 100f);//２秒後にシーン切りかえ
     }
 
     void ChangeScene()
