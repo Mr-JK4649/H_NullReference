@@ -20,7 +20,7 @@ public class OP_PlayerMove : MonoBehaviour
         count += Time.deltaTime;
         if (count <= 7)
         {
-            transform.Translate(0f, 0f, 0.0015f);
+            transform.Translate(0f, 0f, 0.005f);
 
         }
         else if (count > 11.5)

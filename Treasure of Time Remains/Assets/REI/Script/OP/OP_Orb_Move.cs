@@ -16,12 +16,12 @@ public class OP_Orb_Move : MonoBehaviour
     void Update()
     {
         count += Time.deltaTime;
-        if (count >= 8.3 && count <= 11)
+        if (count >= 8.3 && count <= 10)
         {
-            transform.Translate(0f, 0f, 0.0008f);
+            transform.Translate(0f, 0f, 0.004f);
 
         }
-        else if (count > 10.5)
+        else if (count > 10)
         {
             gameObject.SetActive(false);
         }

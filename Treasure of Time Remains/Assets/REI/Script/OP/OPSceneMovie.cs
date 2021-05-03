@@ -10,8 +10,8 @@ public class OPSceneMovie : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        Invoke("ChangeScene", 100f);//２秒後にシーン切りかえ
+        //Application.targetFrameRate = 60;
+        Invoke("ChangeScene", 20f);//２0秒後にシーン切りかえ
     }
 
     void ChangeScene()
