@@ -5,11 +5,15 @@ using UnityEngine;
 public class OP_Orb_Move : MonoBehaviour
 {
     float count;
+    public AudioClip sound1;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
 
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(sound1);
     }
 
     // Update is called once per frame
