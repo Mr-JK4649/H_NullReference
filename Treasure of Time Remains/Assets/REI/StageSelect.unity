@@ -1461,7 +1461,7 @@ GameObject:
   - component: {fileID: 1443195422}
   - component: {fileID: 1443195421}
   m_Layer: 5
-  m_Name: stage1button
+  m_Name: Stage1Botton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

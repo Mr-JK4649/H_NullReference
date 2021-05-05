@@ -7,11 +7,14 @@ public class OP_PlayerMove : MonoBehaviour
     float count;
     public GameObject Mojiban;
     public GameObject cam;
+    public AudioClip sound1;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         //GameObject Mojiban = this.transform.Find("ClockCanvas").gameObject;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,7 @@ public class OP_PlayerMove : MonoBehaviour
         else if (count > 11.5)
         {
             Mojiban.SetActive(true);
+            audioSource.PlayOneShot(sound1);
             cam.SetActive(true);
         }
         else
