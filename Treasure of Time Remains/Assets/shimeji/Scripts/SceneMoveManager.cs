@@ -18,6 +18,8 @@ public class SceneMoveManager : MonoBehaviour
 
     [SerializeField] private string sceneName;
 
+    [SerializeField] private string[] nextSceneName;
+
     private void Update()
     {
 
@@ -25,10 +27,19 @@ public class SceneMoveManager : MonoBehaviour
         switch (currentScene)
         {
             case SCENE.TITLE:
-            case SCENE.RESULT:
             case SCENE.GAMEOVER:
                 if (Input.GetButtonDown("Submit"))
                     SceneManager.LoadScene(sceneName);
+                break;
+            case SCENE.RESULT:
+                if (Input.GetButtonDown("Submit"))
+                {
+                    //if (ScoreManager.Instance.StageNum == 3)
+                    //    SceneManager.LoadScene("Title");
+                    //else
+                    //    SceneManager.LoadScene(sceneName);
+                    SceneManager.LoadScene(nextSceneName[ScoreManager.Instance.StageNum]);
+                }
                 break;
         }
 

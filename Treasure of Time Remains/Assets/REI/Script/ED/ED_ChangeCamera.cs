@@ -37,7 +37,7 @@ public class ED_ChangeCamera : MonoBehaviour
         }
         if (count >= 29)
         {
-            SceneManager.LoadScene("StageSelect");
+            SceneManager.LoadScene("Result2");
         }
     }
 

@@ -352,7 +352,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			}
 
-			Debug.Log(distance);
+			//Debug.Log(distance);
 		}
 	}
 }
