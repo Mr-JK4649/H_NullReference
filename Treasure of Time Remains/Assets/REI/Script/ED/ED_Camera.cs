@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ED_Camera : MonoBehaviour
 {
-    public CameraShake shake;
+    public CameraShake Cam1;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class ED_Camera : MonoBehaviour
     void Update()
     {
         //カメラの振動
-        shake.Shake(0.0001f, 0.0001f);
+        Cam1.Shake(0.0001f, 0.0001f);
     }
 
     void PlayerOn()

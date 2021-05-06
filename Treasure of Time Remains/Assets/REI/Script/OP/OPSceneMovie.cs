@@ -12,6 +12,8 @@ public class OPSceneMovie : MonoBehaviour
     {
         //Application.targetFrameRate = 60;
         Invoke("ChangeScene", 20f);//２0秒後にシーン切りかえ
+
+        Application.targetFrameRate = 60;
     }
 
     void ChangeScene()
