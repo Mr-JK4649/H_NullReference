@@ -25,5 +25,8 @@ public class SetGetscore : MonoBehaviour
         hscore.text = hs.ToString();
         result.text = "Stage" + num.ToString() + "RESULT";
     }
-
+    private void Update()
+    {
+        Debug.Log(score);
+    }
 }

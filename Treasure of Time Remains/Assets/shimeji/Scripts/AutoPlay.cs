@@ -21,7 +21,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (floorLoop && other.gameObject.tag != "AutoJump" && other.gameObject.tag != "AutoDash") {
                 GameObject inst = other.gameObject;
                 float len = inst.transform.GetChild(0).localScale.z;
-                float z = inst.transform.position.z + len * 2;
+                float z = inst.transform.position.z + len * 1.8f;
+                //float z = inst.transform.position.z + len;
                 Destroy(other.gameObject);
 
                 
