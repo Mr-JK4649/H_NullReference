@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ED_ChangeCamera : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class ED_ChangeCamera : MonoBehaviour
         {
             FadeCon.enabled = true;
             panel.SetActive(false);
+        }
+        if (count >= 29)
+        {
+            SceneManager.LoadScene("StageSelect");
         }
     }
 
