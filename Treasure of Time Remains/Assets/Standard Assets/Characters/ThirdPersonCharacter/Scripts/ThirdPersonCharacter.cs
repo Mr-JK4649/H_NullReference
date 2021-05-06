@@ -46,6 +46,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		//4月29日 追加
 		float distance = 15f;
 
+		//セイ　キャラの移動速度を０にするための変数
+		public float Speed = 13f;
 
 		//3_26日編集 加速のスクリプトを取り除くためコメントアウト
 
@@ -194,7 +196,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		//アニメーション更新情報
 		void UpdateAnimator(Vector3 move)
 		{
-			m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_Rigidbody.velocity.y, 13f);
+			m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_Rigidbody.velocity.y, Speed);
 			// update the animator parameters
 			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
