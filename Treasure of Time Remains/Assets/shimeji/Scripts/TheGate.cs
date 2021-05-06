@@ -11,10 +11,7 @@ public class TheGate : MonoBehaviour
         gc = GameObject.Find("Timekeeper").GetComponents<GlobalClock>();
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
