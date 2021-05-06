@@ -133,8 +133,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     ShineImage.color = new Color(ImageColor.r, ImageColor.g, ImageColor.b, Alpha);
 
                     //時計の針を回転
-                    MinuteHand.transform.Rotate(0, 0, MinuteSpeed * g_clock[1].timeScale);
-                    SecondHand.transform.Rotate(0, 0, SecondSpeed * g_clock[1].timeScale);
+                    MinuteHand.transform.Rotate(0, 0, MinuteSpeed * g_clock[2].timeScale);
+                    SecondHand.transform.Rotate(0, 0, SecondSpeed * g_clock[2].timeScale);
 
                     //ピッチを上げる
                     audioSource.pitch += 0.01f;
