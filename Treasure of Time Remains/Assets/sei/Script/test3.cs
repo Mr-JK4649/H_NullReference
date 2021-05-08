@@ -12,6 +12,7 @@ public class test3 : MonoBehaviour
     private int seconds;//秒数表示のための変数
     private Text timerText;//秒数を表示するためのtext
 
+    private bool TimeFlg;
     // Use this for initialization
     void Start()
     {
@@ -23,32 +24,36 @@ public class test3 : MonoBehaviour
         count = MaxCount;
         //textオブジェクトを非表示
         TextPanel.SetActive(false);
+        //
+        TimeFlg = false;
 
-        //TimeTextプレハブをGameObject型で取得
-        GameObject obj = (GameObject)Resources.Load("TimeText");
-        // TimeTextプレハブを元に、インスタンスを生成
-        GameObject TimeText = Instantiate(obj, TextPanel.transform);
-        //TimeTextのオブジェクトに名づけ
-        TimeText.name = "TimeText";
-        //時間を表示するためのオブジェクトを読み込む
-        timerText = TextPanel.transform.Find("TimeText").GetComponent<Text>();
+        ////TimeTextプレハブをGameObject型で取得
+        //GameObject obj = (GameObject)Resources.Load("TimeText");
+        //// TimeTextプレハブを元に、インスタンスを生成
+        //GameObject TimeText = Instantiate(obj, TextPanel.transform);
+        ////TimeTextのオブジェクトに名づけ
+        //TimeText.name = "TimeText";
+        ////時間を表示するためのオブジェクトを読み込む
+        //timerText = TextPanel.transform.Find("TimeText").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 0 && count > MinCount)
+        if (/*Time.timeScale == 0 &&*/ count > MinCount && TimeFlg)
         {
             count--;
-            seconds = (int)count / 60;
+            //seconds = (int)count / 60;
         }
-        if (Time.timeScale == 0 && count <= MinCount)
+        if (/*Time.timeScale == 0 &&*/ count <= MinCount && TimeFlg)
         {
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
             count = MaxCount;
+            TextPanel.SetActive(false);
+            TimeFlg = false;
         }
 
-        timerText.text = seconds.ToString();
+        //timerText.text = seconds.ToString();
     }
 
     private void OnTriggerStay(Collider collider)
@@ -56,7 +61,8 @@ public class test3 : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             TextPanel.SetActive(true);
-            Time.timeScale = 0;
+            TimeFlg = true;
+            //Time.timeScale = 0;
         }
     }
 
@@ -64,7 +70,7 @@ public class test3 : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            TextPanel.SetActive(false);
+            //TextPanel.SetActive(false);
         }
     }
 }
