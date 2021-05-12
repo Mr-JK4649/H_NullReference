@@ -46,7 +46,7 @@ public class TimeGauge : MonoBehaviour
         }
 
         //発動中の能力を表示
-        if (timeNum == 0) abilityTex.text = "Time Stop";            //停止中
+        if (timeNum == 0) abilityTex.text = "タイムストップ";            //停止中
         if (timeNum == -1) abilityTex.text = "Time Rewind";         //逆行中
         if (timeNum == 1) abilityTex.text = "Accel";                //加速中
     }
@@ -57,7 +57,7 @@ public class TimeGauge : MonoBehaviour
         isActive = false;
         //time = 0;
 
-        abilityTex.text = "Non Activate";         //通常
+        abilityTex.text = "ノンアクティブ";         //通常
     }
 
     public void Recover(float rtime)
