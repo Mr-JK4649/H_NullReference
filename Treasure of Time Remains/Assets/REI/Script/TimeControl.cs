@@ -65,7 +65,7 @@ public class TimeControl : MonoBehaviour
 
     public void RewindStart()//死亡時に巻き戻す
     {
-        _Rewinder.localTimeScale = -1;
+        _Rewinder.localTimeScale = -2;
     }
 
     //時間操作の関数
