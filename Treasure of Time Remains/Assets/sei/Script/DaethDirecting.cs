@@ -48,7 +48,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         [SerializeField] private GameObject MinuteHand;
         //private GlobalClock[] g_clock;
         public GlobalClock[] g_clock = new GlobalClock[3];
-        public GameManager gg;
+        //public GameManager gg;
         [SerializeField] private GameObject canvas;
         private bool TimeFlg;
 

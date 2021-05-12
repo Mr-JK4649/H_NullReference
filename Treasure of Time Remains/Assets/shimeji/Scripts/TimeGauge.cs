@@ -25,7 +25,14 @@ public class TimeGauge : MonoBehaviour
         timeGauge.value = time / limit;
         timeTex.text = (timeGauge.value * limit).ToString("0.0");
 
-        
+        if (Input.GetKey(KeyCode.R) || Input.GetButton("ContL1"))       //逆行時
+        {
+            abilityTex.text = "タイムリワインド";         //逆行中
+        }
+        else if (Input.GetKey(KeyCode.T) || Input.GetButton("ContR1"))  //停止時
+        {
+            abilityTex.text = "タイムストップ";            //停止中
+        }
     }
 
     public void GuageUpdate(float timeNum)
@@ -46,7 +53,7 @@ public class TimeGauge : MonoBehaviour
         }
 
         //発動中の能力を表示
-        if (timeNum == 0) abilityTex.text = "タイムストップ";            //停止中
+        //if (timeNum == 0) abilityTex.text = "タイムストップ";            //停止中
         if (timeNum == -1) abilityTex.text = "Time Rewind";         //逆行中
         if (timeNum == 1) abilityTex.text = "Accel";                //加速中
     }
