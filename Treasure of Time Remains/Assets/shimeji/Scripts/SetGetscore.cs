@@ -64,6 +64,8 @@ public class SetGetscore : MonoBehaviour
         if (sc > hsc) ScoreManager.Instance.stage_Highscore[num] = sc;
         sc = hsc;
         hscore.text = sc.ToString();
+
+        
     }
     private void FixedUpdate()
     {

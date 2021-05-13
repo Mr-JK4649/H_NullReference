@@ -10,6 +10,7 @@ public class StageInfoPass : MonoBehaviour
     {
         ScoreManager.Instance.StageNum = stageNum;
         ScoreManager.Instance.orb = 0;
+        
     }
 
     public void AddRestartNum() {
