@@ -30,6 +30,8 @@ public class ClockGauge : MonoBehaviour
         }
 
         Debug.Log(timeNum);
+
+        Debug.Log("Updateclock");
     }
 
     public void TimeEnd()

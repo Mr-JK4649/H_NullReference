@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Chronos;
 
+//変更点一覧
+//5月13日 
+// private ClockGauge型を追加    22行目
+//Process(clockGauge);処理を追加 68行目
+
 public class TimeControl : MonoBehaviour
 {
     public GameObject ie_obj;//時間停止時の色調反転のシェーダーが入ってるオブジェクト
@@ -17,6 +22,7 @@ public class TimeControl : MonoBehaviour
     //[SerializeField] private TimeGauge _StopGauge;
     //[SerializeField] private TimeGauge _RewindGauge;
     [SerializeField] private TimeGauge timeGauge;
+    [SerializeField] private ClockGauge clockGauge;
     [SerializeField] private Animator ethan;
     [SerializeField] private AudioClip stopSound;
     [SerializeField] private AudioClip rewindSound;
@@ -59,7 +65,8 @@ public class TimeControl : MonoBehaviour
             _audioSource.Stop();
 
         //操作用の関数
-        Process(timeGauge);
+        //Process(timeGauge); // clockGaugeに変更するためにコメントアウト
+        Process(clockGauge);
 
     }
 
@@ -68,8 +75,7 @@ public class TimeControl : MonoBehaviour
         _Rewinder.localTimeScale = -2;
     }
 
-    //時間操作の関数
-    private void Process(TimeGauge ga)
+    private void Process(ClockGauge cg)
     {
 
         float r = _Rewinder.localTimeScale;
@@ -79,16 +85,16 @@ public class TimeControl : MonoBehaviour
         if (r != 1 || s != 1)
         {
 
-            ga.GuageUpdate(r * s);
+            cg.UpdateClockGauge(r * s);
 
 
-            if (!ga.isActive)
+            if (!cg.isActive)
                 AbilitySwitching(1, 1);
 
             particle.SetActive(true);
 
         }
-        else { ga.TimeEnd(); particle.SetActive(false); }
+        else { cg.TimeEnd(); particle.SetActive(false); }
 
         ImageEffectSwitching(_Rewinder.localTimeScale, _Stopper.localTimeScale);
     }
@@ -118,3 +124,29 @@ public class TimeControl : MonoBehaviour
         _audioSource.PlayOneShot(name);
     }
 }
+
+
+//時間操作の関数
+//private void Process(TimeGauge ga)
+//{
+
+//    float r = _Rewinder.localTimeScale;
+//    float s = _Stopper.localTimeScale;
+
+//    //時間の速度が通常じゃなければ
+//    if (r != 1 || s != 1)
+//    {
+
+//        ga.GuageUpdate(r * s);
+
+
+//        if (!ga.isActive)
+//            AbilitySwitching(1, 1);
+
+//        particle.SetActive(true);
+
+//    }
+//    else { ga.TimeEnd(); particle.SetActive(false); }
+
+//    ImageEffectSwitching(_Rewinder.localTimeScale, _Stopper.localTimeScale);
+//}
