@@ -41,6 +41,7 @@ public class ClockMove : MonoBehaviour
 
         Remaininggauge = 60 - clockGauge.time;//残りゲージ処理
 
+        ScoreManager.Instance.keptAbility = (int)Remaininggauge;
         //エモート表示処理
         second_clockimage.fillAmount = 1 - (second_timeangle / 360);
 
