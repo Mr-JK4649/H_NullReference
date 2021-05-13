@@ -11,9 +11,13 @@ public class SetGetscore : MonoBehaviour
     [SerializeField] private Image button;
     [SerializeField] private Text next;
     [SerializeField] private Text orb;
+    [SerializeField] private Text orbScore;
     [SerializeField] private Text ability;
+    [SerializeField] private Text abilityScore;
     [SerializeField] private Text retry;
+    [SerializeField] private Text retryScore;
     [SerializeField] private Text level;
+    [SerializeField] private Text bonus;
     [SerializeField] private GameObject mozaik;
 
     [SerializeField] private int po_Orb;
@@ -44,12 +48,16 @@ public class SetGetscore : MonoBehaviour
 
         //テキストとして反映
         orb.text = orbNum.ToString();
+        orbScore.text = (orbNum * po_Orb).ToString();
         ability.text = abi.ToString();
+        abilityScore.text = (abi * po_Abi).ToString();
         retry.text = ret.ToString();
+        retryScore.text = (ret * po_Ret).ToString();
         level.text = difficult[num];
+        bonus.text = "x " + (num+1).ToString();
 
         //スコアの計算と反映
-        int sc = (orbNum * po_Orb + abi * po_Abi + ret * po_Ret) * num;
+        int sc = (orbNum * po_Orb + abi * po_Abi + ret * po_Ret) * (num + 1);
         score.text = sc.ToString();
 
         //ハイスコアの更新と反映
