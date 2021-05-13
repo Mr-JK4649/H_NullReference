@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class SetGetscore : MonoBehaviour
 {
-    private string[] difficult = new string[5] { "☆☆☆☆", "★☆☆☆", "★★☆☆", "★★★☆", "★★★★" };
+    private string[] difficult = new string[4] { "★☆☆☆", "★★☆☆", "★★★☆", "★★★★" };
 
     [SerializeField] private Text score;
     [SerializeField] private Text hscore;
@@ -54,10 +54,10 @@ public class SetGetscore : MonoBehaviour
         retry.text = ret.ToString();
         retryScore.text = (ret * po_Ret).ToString();
         level.text = difficult[num];
-        bonus.text = "x " + num.ToString();
+        bonus.text = "x " + (num+1).ToString();
 
         //スコアの計算と反映
-        int sc = (orbNum * po_Orb + abi * po_Abi + ret * po_Ret) * num;
+        int sc = (orbNum * po_Orb + abi * po_Abi + ret * po_Ret) * (num + 1);
         score.text = sc.ToString();
 
         //ハイスコアの更新と反映
