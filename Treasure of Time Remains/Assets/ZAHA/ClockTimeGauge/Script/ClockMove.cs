@@ -40,6 +40,7 @@ public class ClockMove : MonoBehaviour
         second_timeangle = (float)clockGauge.time / 60 * angle360;
 
         Remaininggauge = 60 - clockGauge.time;//残りゲージ処理
+        Debug.Log(Remaininggauge);
 
         ScoreManager.Instance.keptAbility = (int)Remaininggauge;
         //エモート表示処理
