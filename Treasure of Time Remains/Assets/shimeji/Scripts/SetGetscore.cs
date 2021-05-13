@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class SetGetscore : MonoBehaviour
 {
-    private string[] difficult = new string[4] { "★☆☆☆", "★★☆☆", "★★★☆", "★★★★" };
+    private string[] difficult = new string[5] { "☆☆☆☆", "★☆☆☆", "★★☆☆", "★★★☆", "★★★★" };
 
     [SerializeField] private Text score;
     [SerializeField] private Text hscore;
@@ -11,9 +11,13 @@ public class SetGetscore : MonoBehaviour
     [SerializeField] private Image button;
     [SerializeField] private Text next;
     [SerializeField] private Text orb;
+    [SerializeField] private Text orbScore;
     [SerializeField] private Text ability;
+    [SerializeField] private Text abilityScore;
     [SerializeField] private Text retry;
+    [SerializeField] private Text retryScore;
     [SerializeField] private Text level;
+    [SerializeField] private Text bonus;
     [SerializeField] private GameObject mozaik;
 
     [SerializeField] private int po_Orb;
@@ -44,9 +48,13 @@ public class SetGetscore : MonoBehaviour
 
         //テキストとして反映
         orb.text = orbNum.ToString();
+        orbScore.text = (orbNum * po_Orb).ToString();
         ability.text = abi.ToString();
+        abilityScore.text = (abi * po_Abi).ToString();
         retry.text = ret.ToString();
+        retryScore.text = (ret * po_Ret).ToString();
         level.text = difficult[num];
+        bonus.text = "x " + num.ToString();
 
         //スコアの計算と反映
         int sc = (orbNum * po_Orb + abi * po_Abi + ret * po_Ret) * num;
