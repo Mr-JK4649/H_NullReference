@@ -15,6 +15,8 @@ public class ClockMove : MonoBehaviour
 
     float second_timeangle;
 
+    public float Remaininggauge;//残りゲージ処理追加
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,9 @@ public class ClockMove : MonoBehaviour
         //秒針角度生成
         second_timeangle = (float)clockGauge.time / 60 * angle360;
 
+        Remaininggauge = 60 - clockGauge.time;//残りゲージ処理
 
+        ScoreManager.Instance.keptAbility = (int)Remaininggauge;
         //エモート表示処理
         second_clockimage.fillAmount = 1 - (second_timeangle / 360);
 
