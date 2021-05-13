@@ -62,8 +62,7 @@ public class SetGetscore : MonoBehaviour
 
         //ハイスコアの更新と反映
         if (sc > hsc) ScoreManager.Instance.stage_Highscore[num] = sc;
-        sc = hsc;
-        hscore.text = sc.ToString();
+        hscore.text = ScoreManager.Instance.stage_Highscore[num].ToString();
 
         
     }
