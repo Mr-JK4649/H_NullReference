@@ -29,7 +29,10 @@ public class SceneMoveManager : MonoBehaviour
             case SCENE.TITLE:
             case SCENE.GAMEOVER:
                 if (Input.GetButtonDown("Submit"))
+                {
+                    ScoreManager.Instance.retries += 1;
                     SceneManager.LoadScene(sceneName);
+                }
                 break;
             case SCENE.RESULT:
                 if (Input.GetButtonDown("Submit"))
@@ -38,6 +41,7 @@ public class SceneMoveManager : MonoBehaviour
                     //    SceneManager.LoadScene("Title");
                     //else
                     //    SceneManager.LoadScene(sceneName);
+                    ScoreManager.Instance.retries = 0;
                     SceneManager.LoadScene(nextSceneName[ScoreManager.Instance.StageNum]);
                 }
                 break;

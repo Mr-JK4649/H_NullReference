@@ -2761,7 +2761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.94509804, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -17791,7 +17791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9419038, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -17992,14 +17992,18 @@ MonoBehaviour:
   hscore: {fileID: 423014778}
   button: {fileID: 1598448063}
   next: {fileID: 722775929}
-  orb: {fileID: 0}
-  ability: {fileID: 0}
-  retry: {fileID: 0}
-  level: {fileID: 0}
+  orb: {fileID: 1351449933}
+  orbScore: {fileID: 1953152631}
+  ability: {fileID: 1215109848}
+  abilityScore: {fileID: 1256285940}
+  retry: {fileID: 1256109938}
+  retryScore: {fileID: 1787015818}
+  level: {fileID: 1003914642}
+  bonus: {fileID: 253613749}
   mozaik: {fileID: 1772671166}
-  po_Orb: 0
-  po_Abi: 0
-  po_Ret: 0
+  po_Orb: 20000
+  po_Abi: 50000
+  po_Ret: -5000
 --- !u!114 &1977393619
 MonoBehaviour:
   m_ObjectHideFlags: 0
