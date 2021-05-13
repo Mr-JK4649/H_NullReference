@@ -21,6 +21,6 @@ public class Menu : MonoBehaviour
 
         // 最初に選択状態にしたいボタンの設定
         //tutorial_button.Select();
-        stage1_button.Select();
+        tutorial_button.Select();
     }
 }
