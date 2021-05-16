@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/REI/StageSelect.unity
     guid: 33e9fc1a1648cb544947dc10466953bb
   - enabled: 1
-    path: Assets/sei/Scene/tutorial 1.unity
-    guid: 4d3c968120db94e418465bd13e12751d
-  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 7e5af3abbd9845743a3b178de7f65b8a
   - enabled: 1
@@ -53,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/REI/Ending.unity
     guid: 3635638b2b54aaa40b97ebec28c2f2d2
+  - enabled: 1
+    path: Assets/sei/tutorial.unity
+    guid: ae88932ddd27ddd43946fe106d67b92d
   - enabled: 1
     path: Assets/shimeji/Result2.unity
     guid: a1ab69c00c596554c86e15d982d86bbf
