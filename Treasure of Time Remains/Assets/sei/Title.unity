@@ -198,6 +198,7 @@ MonoBehaviour:
   rogoflg: 0
   fade: {fileID: 1421333491}
   sound1: {fileID: 8300000, guid: 78c4d629fa5611b40a3ca02bbb601fc5, type: 3}
+  Abutton: {fileID: 854596879}
 --- !u!82 &191474985
 AudioSource:
   m_ObjectHideFlags: 0
@@ -493,7 +494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &854596880
 RectTransform:
   m_ObjectHideFlags: 0

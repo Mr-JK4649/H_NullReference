@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class TitleScript : MonoBehaviour
 {
     float count;
-    float flg = 1;
+    float flg = -1;
     public bool rogoflg = false;
     public GameObject fade;
 
     public AudioClip sound1;
     AudioSource audioSource;
+
+    public GameObject Abutton;
 
     ImageMove IM;
     GameObject titleimage;
@@ -28,21 +30,17 @@ public class TitleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (rogoflg == false)
-        //{
-        //    IM.rogoMove();
 
-        //}
-        if (Input.GetButtonDown("Jump"))
+        if(IM.rogoMove() == 1 && !Input.GetButton("Jump") && flg == -1)
         {
-            rogoflg = true;
             flg = 0;
+            Abutton.SetActive(true);
         }
-        IM.rogoMove();
+
 
 
         //タイトルロゴが最終位置に来ている時
-        if (rogoflg == true && flg == 0 && Input.GetButtonDown("Jump"))
+        if (flg == 0 && Input.GetButtonDown("Jump"))
         {
             flg = 1;
             fade.SetActive(true);
@@ -56,10 +54,6 @@ public class TitleScript : MonoBehaviour
 
         if (count >= 2) SceneMove();
 
-        if (Input.GetButtonUp("Jump") && rogoflg == true)
-        {
-            flg = 0;
-        }
     }
     void SceneMove()
     {
