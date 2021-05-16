@@ -10,6 +10,7 @@ public class MoveFoor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Vector3 tmp = transform.root.gameObject.transform.position;
+        z = transform.root.gameObject.transform.localScale.z;
         Invoke("Move",2f);
         Debug.Log("えんたー");
     }
@@ -17,6 +18,6 @@ public class MoveFoor : MonoBehaviour
     {
         Debug.Log("むーぶ");
         //tmp.z += tmp.z * 2f;
-        transform.root.position = new Vector3(0f, 0f, tmp.z * 2f);
+        transform.root.position += new Vector3(0f, 0f, tmp.z + z*1.2f);
     }
 }
