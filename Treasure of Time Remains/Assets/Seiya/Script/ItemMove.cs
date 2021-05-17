@@ -36,12 +36,4 @@ public class ItemMove : MonoBehaviour
             movespeed_y *= -1;
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Floor")
-        {
-            movespeed_y *= -1;
-        }
-    }
 }
