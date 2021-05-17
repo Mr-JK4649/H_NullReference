@@ -5,21 +5,31 @@ using UnityEngine.UI; //パネルのイメージを操作するのに必要
 
 public class ImageMove : MonoBehaviour
 {
-    public RectTransform a;
+    public RectTransform rogo;
     float x;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (x < 1150)
+    }
+
+    public int rogoMove()
+    {
+        if (x++ < 115)
         {
-            x += 10;
-            a.position += new Vector3(10, 0, 0);
+            rogo.position += new Vector3(10, 0, 0);
+            if (Input.GetButtonDown("Jump")) x = 116;
+            return 0;
         }
+        else
+        {
+            rogo.position = new Vector3(720, 529, 0);
+            return 1;
+        }
+
     }
 }

@@ -21,7 +21,7 @@ public class Respawn : MonoBehaviour
         RespawnPoint1 = Respawn1.transform.position;
         //RespawnPoint2 = Respawn2.transform.position;
         //RespawnPoint3 = Respawn3.transform.position;
-        Block = GameObject.Find("FallCube14");
+        Block = GameObject.Find("FallCube13");
         BlockPoint = Block.transform.position;
         BlockCS = Block.transform.GetChild(0).GetComponent<FallCube>();
     }

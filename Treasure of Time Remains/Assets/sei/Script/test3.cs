@@ -7,7 +7,7 @@ public class test3 : MonoBehaviour
 {
     [SerializeField] GameObject TextPanel;
     private int count;//text表示の秒数
-    private int MaxCount;//text表示の最大秒数
+    public int MaxCount;//text表示の最大秒数
     private int MinCount;//text表示の最低秒数
     private int seconds;//秒数表示のための変数
     private Text timerText;//秒数を表示するためのtext
@@ -17,7 +17,7 @@ public class test3 : MonoBehaviour
     void Start()
     {
         //テキストを表示する最大秒数を代入
-        MaxCount = 300;
+        //MaxCount = 300;
         //テキストを表示する最低秒数を代入
         MinCount = 0;
         //テキストを表示する秒数をカウント

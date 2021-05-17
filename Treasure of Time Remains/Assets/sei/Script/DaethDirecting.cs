@@ -34,10 +34,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         //private GameObject prefab;
         //private GameObject HeroCameraSub;
-        
+
         //public GameObject particleObject;
         // メインカメラを取得
-        //Camera camera = Camera.main;
+        //Camera MainCam = Camera.main;
 
         //public Vector3 pos;
 
@@ -51,6 +51,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         //public GameManager gg;
         [SerializeField] private GameObject canvas;
         private bool TimeFlg;
+        private bool Retry;
 
         [SerializeField] private Image ShineImage;
         private Color ImageColor;
@@ -58,20 +59,37 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private float Imagespeed;
 
         public AudioClip TimeSound;
+        public AudioClip DeathSound;
         AudioSource audioSource;
 
         private float Count;
         private float Death;
 
+        //public Material myMaterial;
+        public GameObject MainCam;
+        public GameObject Prefab;
+
+        private Vector3 HeroPos;
+
+        private bool MakeupPrefab;
+
+        public Animator DeathAnim;
+
+        //private GameObject DeathObj;
+
+        public GameObject ThisObj;
+        public TimeControl TimeLineeee;
+
         private void Start()
         {
             TPC = GetComponent<ThirdPersonCharacter>();
             //プレハブをGameObject型で取得
-            //prefab = (GameObject)Resources.Load("HeroCameraSub");
+            //Prefab = (GameObject)Resources.Load("HeroCameraSub");
             //HeroCameraSubプレハブを元に、インスタンスを生成
-            //HeroCameraSub = Instantiate(prefab,new Vector3(0f, 0f, 0f), Quaternion.identity);
+            //HeroCameraSub = Instantiate(Prefab, new Vector3(0f, 0f, 0f), Quaternion.identity);
             //HeroCameraSubのオブジェクトに名づけ
             //HeroCameraSub.name = "HeroCameraSub";
+            //Instantiate(Prefab, new Vector3(0f, 0f, 0f), Quaternion.identity);
 
             //透明度を０にする
             Alpha = 0;
@@ -82,7 +100,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             //ShineのColor取得
             ImageColor = ShineImage.color;
             //ShineのColor更新
-            ShineImage.color= new Color(ImageColor.r,ImageColor.g,ImageColor.b,Alpha);
+            ShineImage.color = new Color(ImageColor.r, ImageColor.g, ImageColor.b, Alpha);
             //透明度の値の加算値
             Imagespeed = 0.01f;
             //Componentを取得
@@ -92,7 +110,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             //死亡したときのフラグをfalseに
             TimeFlg = false;
             //
+            Retry = false;
+            //
             Count = 0;
+            //
+            MakeupPrefab = false;
+            //
+            //ThisObj=GetComponentInChildren("")
+            ////
+            //DeathObj = GameObject.Find("DeathOrbs");
+            ////
+            //DeathAnim = DeathObj.GetComponent<Animator>();
+            //DeathAnim = GameObject.Find("DeathOrbs").GetComponent<Animator>();
         }
 
         //private void OnCollisionEnter(Collision collision)
@@ -104,28 +133,75 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         //    }
         //}
 
-        private void FixedUpdate()
+        private void Update()
         {
+            //DeathAnim.SetBool("Death", true);
             //CamVectr = Cam.gameObject.transform.position;
             //Debug.Log(CamVectr);
             //Debug.Log(Cam.transform.position);
             //Debug.Log(Cam.transform.localPosition);
-            
+
             if (TimeFlg)
             {
+                //Timekeeper.instance.Clock("Root").localTimeScale = 0;
+                //Timekeeper.instance.Clock("Player").localTimeScale = 0;
+                if (MakeupPrefab)
+                {
+                    //for (int x = 0; x < 4; x++)
+                    //{
+                    //    HeroPos[x] = this.gameObject.transform.position;
+                    //}
+                    HeroPos = this.gameObject.transform.position;
+                    //for (int x = 0; x < 4; x++)
+                    //{
+                    //    Instantiate(Prefab, new Vector3(HeroPos[x].x, HeroPos[x].y, HeroPos[x].z), Quaternion.identity);
+                    //}
+                    Instantiate(Prefab, new Vector3(HeroPos.x, HeroPos.y + 0.5f, HeroPos.z), Quaternion.identity);
+                    //GameObject aa = Instantiate(Prefab, new Vector3(HeroPos.x, HeroPos.y+0.5f, HeroPos.z), Quaternion.identity);
+                    //Prefab.name = "DeathOrbs";
+                    //
+                    //DeathObj = GameObject.Find("DeathOrbs(Clone)");
+                    //
+                    //DeathAnim = aa.GetComponent<Animator>();
+                    //DeathAnim = Prefab.GetComponent<Animator>();
+                    //DeathAnim.SetTrigger("Die");
+                    
+                    
+                    ThisObj.gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
+                    //DeathAnim.Play("DeathAnim");
+                    //Debug.Log("tinpo!");
+                    MakeupPrefab = false;
+                }
+
+
                 if (Count <= 120)
                 {
-                    //localTimeScaleをマイナスの値にして巻き戻す
+                    //this.gameObject.transform.GetComponent<Renderer>().material.color = myMaterial.color;
+                    //MainCam.transform.GetComponent<Renderer>().material.color = myMaterial.color;
+                    //MainCam.transform.GetComponent<ImageEffect>().enabled = true;
                     Timekeeper.instance.Clock("Root").localTimeScale = 0;
                     Timekeeper.instance.Clock("Player").localTimeScale = 0;
+
+
+
+                    //Instantiate(Prefab, new Vector3(HeroPos.x, HeroPos.y, HeroPos.z), Quaternion.identity);
+
                     Count++;
                 }
                 else
+                //if (Retry)
                 {
+                    TimeLineeee.enabled = false;
+                    ThisObj.gameObject.GetComponent<SkinnedMeshRenderer>().enabled = true;
+                    //DeathAnim.SetFloat(Animator.StringToHash("speed"), -1);
+                    //DeathAnim.Play("DeathAnim",0,1f);
+                    //MainCam.transform.GetComponent<ImageEffect>().enabled = false;
                     //localTimeScaleをマイナスの値にして巻き戻す
-                    Timekeeper.instance.Clock("Root").localTimeScale = -1;
+                    Timekeeper.instance.Clock("Root").localTimeScale = -3;
+                    //Timekeeper.instance.Clock("Object").localTimeScale = -3;
                     Timekeeper.instance.Clock("Player").localTimeScale = -3;
-
+                    Timekeeper.instance.Clock("Particle").localTimeScale = -3;
+                    
                     //g_clock[2].localTimeScale = -1;
                     //透明度を上げていく
                     Alpha += Imagespeed;
@@ -138,31 +214,33 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
                     //ピッチを上げる
                     audioSource.pitch += 0.01f;
-
-                    
                 }
             }
             if (Alpha >= 1)
             {
+                // 現在のScene名を取得する
+                Scene loadScene = SceneManager.GetActiveScene();
+                // Sceneの読み直し
+                SceneManager.LoadScene(loadScene.name);
                 switch (Death)
                 {
                     case 0:
-                        SceneManager.LoadScene("stage0_gameover");
+                        //SceneManager.LoadScene("stage0_gameover");
                         break;
                     case 1:
-                        SceneManager.LoadScene("gameover(kari)");
+                        //SceneManager.LoadScene("gameover(kari)");
                         break;
                     case 2:
-                        SceneManager.LoadScene("stage1_gameover");
+                        //SceneManager.LoadScene("stage1_gameover");
                         break;
                     case 3:
-                        SceneManager.LoadScene("gameover_stage");
+                        //SceneManager.LoadScene("gameover_stage");
                         break;
                     case 4:
-                        SceneManager.LoadScene("stage2_gameover");
+                        //SceneManager.LoadScene("stage2_gameover");
                         break;
                     case 5:
-                        SceneManager.LoadScene("gameover_stage2");
+                        //SceneManager.LoadScene("gameover_stage2");
                         break;
                 }
             }
@@ -172,6 +250,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (other.gameObject.tag == "Death")
             {
+                if (!TimeFlg)
+                {
+                    MakeupPrefab = true;
+                }
                 Death = 1;
                 //g_clock[0].localTimeScale = -1;
                 //プレイヤーが死ぬオブジェクトに当たった時死亡演出のフラグをtrueにする
@@ -179,20 +261,30 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
                 //死亡時の時計の音を再生
                 audioSource.PlayOneShot(TimeSound);
-
             }
             if (other.gameObject.tag == "Death0")
             {
+
+                if (!TimeFlg)
+                {
+                    MakeupPrefab = true;
+                }
+
                 Death = 0;
                 //g_clock[0].localTimeScale = -1;
                 //プレイヤーが死ぬオブジェクトに当たった時死亡演出のフラグをtrueにする
                 TimeFlg = true;
+
 
                 //死亡時の時計の音を再生
                 audioSource.PlayOneShot(TimeSound);
             }
             if (other.gameObject.tag == "Death2")
             {
+                if (!TimeFlg)
+                {
+                    MakeupPrefab = true;
+                }
                 Death = 2;
                 //g_clock[0].localTimeScale = -1;
                 //プレイヤーが死ぬオブジェクトに当たった時死亡演出のフラグをtrueにする
@@ -203,6 +295,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (other.gameObject.tag == "Death3")
             {
+                if (!TimeFlg)
+                {
+                    MakeupPrefab = true;
+                }
                 Death = 3;
                 //g_clock[0].localTimeScale = -1;
                 //プレイヤーが死ぬオブジェクトに当たった時死亡演出のフラグをtrueにする
@@ -213,6 +309,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (other.gameObject.tag == "Death4")
             {
+                if (!TimeFlg)
+                {
+                    MakeupPrefab = true;
+                }
                 Death = 4;
                 //g_clock[0].localTimeScale = -1;
                 //プレイヤーが死ぬオブジェクトに当たった時死亡演出のフラグをtrueにする
@@ -223,6 +323,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (other.gameObject.tag == "Death5")
             {
+                if (!TimeFlg)
+                {
+                    MakeupPrefab = true;
+                }
                 Death = 5;
                 //g_clock[0].localTimeScale = -1;
                 //プレイヤーが死ぬオブジェクトに当たった時死亡演出のフラグをtrueにする
