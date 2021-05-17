@@ -669,7 +669,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.95, y: 73.5}
+  m_AnchoredPosition: {x: -37.65, y: 73.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427309852
@@ -704,11 +704,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1.7
-  m_Text: '20000
+  m_Text: '500
 
-    50000
+    200
 
-    -5000'
+    -50'
 --- !u!222 &427309853
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18001,9 +18001,9 @@ MonoBehaviour:
   level: {fileID: 1003914642}
   bonus: {fileID: 253613749}
   mozaik: {fileID: 1772671166}
-  po_Orb: 20000
-  po_Abi: 50000
-  po_Ret: -5000
+  po_Orb: 500
+  po_Abi: 200
+  po_Ret: -50
 --- !u!114 &1977393619
 MonoBehaviour:
   m_ObjectHideFlags: 0

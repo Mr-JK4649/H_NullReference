@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class SetGetscore : MonoBehaviour
 {
     private string[] difficult = new string[4] { "★☆☆☆", "★★☆☆", "★★★☆", "★★★★" };
-
+ 
     [SerializeField] private Text score;
     [SerializeField] private Text hscore;
     //[SerializeField] private Text result;
@@ -42,27 +42,27 @@ public class SetGetscore : MonoBehaviour
         //最終ステージのみNextStageの文字を変える
         if (num == 3)
         {
-            mozaik.SetActive(false);
+            //mozaik.SetActive(false);
             next.text = "Title";
         }
 
         //テキストとして反映
         orb.text = orbNum.ToString();
-        orbScore.text = (orbNum * po_Orb).ToString();
+        orbScore.text = (orbNum * po_Orb).ToString("N0");
         ability.text = abi.ToString();
-        abilityScore.text = (abi * po_Abi).ToString();
+        abilityScore.text = (abi * po_Abi).ToString("N0");
         retry.text = ret.ToString();
-        retryScore.text = (ret * po_Ret).ToString();
+        retryScore.text = (ret * po_Ret).ToString("N0");
         level.text = difficult[num];
         bonus.text = "x " + (num+1).ToString();
 
         //スコアの計算と反映
         int sc = (orbNum * po_Orb + abi * po_Abi + ret * po_Ret) * (num + 1);
-        score.text = sc.ToString();
+        score.text = sc.ToString("N0");
 
         //ハイスコアの更新と反映
         if (sc > hsc) ScoreManager.Instance.stage_Highscore[num] = sc;
-        hscore.text = ScoreManager.Instance.stage_Highscore[num].ToString();
+        hscore.text = ScoreManager.Instance.stage_Highscore[num].ToString("N0");
 
         
     }
