@@ -42,7 +42,7 @@ public class SetGetscore : MonoBehaviour
         //最終ステージのみNextStageの文字を変える
         if (num == 3)
         {
-            mozaik.SetActive(false);
+            //mozaik.SetActive(false);
             next.text = "Title";
         }
 
