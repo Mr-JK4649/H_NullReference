@@ -80,6 +80,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public GameObject ThisObj;
         public TimeControl TimeLineeee;
 
+        private static int RetryCount = 0;
+        public GameObject RetryText;
+        public GameObject RetryObj;
+        public GameObject RetryMinutes;
+
         private void Start()
         {
             TPC = GetComponent<ThirdPersonCharacter>();
@@ -115,7 +120,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             Count = 0;
             //
             MakeupPrefab = false;
-            //
+            //リトライ数表示のテキストを非表示
+            //RetryText.SetActive(false);
+            //リトライ数の情報を持つオブジェクトを非表示
+            RetryObj.SetActive(false);
             //ThisObj=GetComponentInChildren("")
             ////
             //DeathObj = GameObject.Find("DeathOrbs");
@@ -135,11 +143,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
+            //Debug.Log(RetryCount);
             //DeathAnim.SetBool("Death", true);
             //CamVectr = Cam.gameObject.transform.position;
             //Debug.Log(CamVectr);
             //Debug.Log(Cam.transform.position);
             //Debug.Log(Cam.transform.localPosition);
+
+            //Debug.Log(g_clock[2].timeScale);
 
             if (TimeFlg)
             {
@@ -182,14 +193,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     Timekeeper.instance.Clock("Root").localTimeScale = 0;
                     Timekeeper.instance.Clock("Player").localTimeScale = 0;
 
-
-
                     //Instantiate(Prefab, new Vector3(HeroPos.x, HeroPos.y, HeroPos.z), Quaternion.identity);
 
                     Count++;
                 }
-                else
-                //if (Retry)
+                else if (Alpha <= 1)
                 {
                     TimeLineeee.enabled = false;
                     ThisObj.gameObject.GetComponent<SkinnedMeshRenderer>().enabled = true;
@@ -201,7 +209,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     //Timekeeper.instance.Clock("Object").localTimeScale = -3;
                     Timekeeper.instance.Clock("Player").localTimeScale = -3;
                     Timekeeper.instance.Clock("Particle").localTimeScale = -3;
-                    
+
                     //g_clock[2].localTimeScale = -1;
                     //透明度を上げていく
                     Alpha += Imagespeed;
@@ -218,31 +226,52 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (Alpha >= 1)
             {
-                // 現在のScene名を取得する
-                Scene loadScene = SceneManager.GetActiveScene();
-                // Sceneの読み直し
-                SceneManager.LoadScene(loadScene.name);
-                switch (Death)
+                //リトライtextにリトライ数を代入
+                RetryText.GetComponent<Text>().text = "リトライ ×" + RetryCount.ToString();
+                //リトライtextを表示
+                //RetryText.SetActive(true);
+                //リトライ数を表示
+                RetryObj.SetActive(true);
+                if (/*!Retry &&/*/ Count <= 180)
                 {
-                    case 0:
-                        //SceneManager.LoadScene("stage0_gameover");
-                        break;
-                    case 1:
-                        //SceneManager.LoadScene("gameover(kari)");
-                        break;
-                    case 2:
-                        //SceneManager.LoadScene("stage1_gameover");
-                        break;
-                    case 3:
-                        //SceneManager.LoadScene("gameover_stage");
-                        break;
-                    case 4:
-                        //SceneManager.LoadScene("stage2_gameover");
-                        break;
-                    case 5:
-                        //SceneManager.LoadScene("gameover_stage2");
-                        break;
+                    RetryMinutes.transform.Rotate(0, 0, MinuteSpeed * g_clock[2].timeScale);
+                    if (!Retry && Count >= 180)
+                    {
+                        //リトライ数をカウントする
+                        RetryCount++;
+                        Retry = true;
+                    }
                 }
+                Count++;
+                //Debug.Log(RetryCount);
+                if (Count >= 240)
+                {
+                    // 現在のScene名を取得する
+                    Scene loadScene = SceneManager.GetActiveScene();
+                    // Sceneの読み直し
+                    SceneManager.LoadScene(loadScene.name);
+                }
+                //switch (Death)
+                //{
+                //    case 0:
+                //        //SceneManager.LoadScene("stage0_gameover");
+                //        break;
+                //    case 1:
+                //        //SceneManager.LoadScene("gameover(kari)");
+                //        break;
+                //    case 2:
+                //        //SceneManager.LoadScene("stage1_gameover");
+                //        break;
+                //    case 3:
+                //        //SceneManager.LoadScene("gameover_stage");
+                //        break;
+                //    case 4:
+                //        //SceneManager.LoadScene("stage2_gameover");
+                //        break;
+                //    case 5:
+                //        //SceneManager.LoadScene("gameover_stage2");
+                //        break;
+                //}
             }
         }
 
