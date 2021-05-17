@@ -16,7 +16,7 @@ public class ED_Camera : MonoBehaviour
     void Update()
     {
         //カメラの振動
-        Cam1.Shake(0.0001f, 0.0001f);
+        Cam1.Shake(0.0003f, 0.0003f);
     }
 
     void PlayerOn()
