@@ -146,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 7858684935107517904, guid: 953c720a10522eb46a2029065a9d60a4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.53
+      value: 18.22
       objectReference: {fileID: 0}
     - target: {fileID: 7858684935107517904, guid: 953c720a10522eb46a2029065a9d60a4,
         type: 3}
@@ -192,6 +192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Magic Orb (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861577475595462810, guid: 953c720a10522eb46a2029065a9d60a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 953c720a10522eb46a2029065a9d60a4, type: 3}
@@ -1927,6 +1932,9 @@ MonoBehaviour:
   DeathAnim: {fileID: 0}
   ThisObj: {fileID: 1682869714}
   TimeLineeee: {fileID: 350610337}
+  RetryText: {fileID: 0}
+  RetryObj: {fileID: 0}
+  RetryMinutes: {fileID: 0}
 --- !u!114 &228411783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18140,7 +18148,7 @@ PrefabInstance:
     - target: {fileID: 7858684935107517904, guid: 953c720a10522eb46a2029065a9d60a4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.7
+      value: 19.17
       objectReference: {fileID: 0}
     - target: {fileID: 7858684935107517904, guid: 953c720a10522eb46a2029065a9d60a4,
         type: 3}
@@ -18186,6 +18194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Magic Orb (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861577475595462810, guid: 953c720a10522eb46a2029065a9d60a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 953c720a10522eb46a2029065a9d60a4, type: 3}
