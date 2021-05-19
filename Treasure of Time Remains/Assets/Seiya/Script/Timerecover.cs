@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
 public class Timerecover : MonoBehaviour
 {
@@ -13,6 +12,9 @@ public class Timerecover : MonoBehaviour
     [SerializeField, Tooltip("点数表示テキストのprefab")]
     private GameObject p_Text;
 
+    [NonSerialized] public bool isDebug = false;
+    [NonSerialized,Range(0,10)] public float range;
+
     private const float Recovery = 0.2f;
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +25,11 @@ public class Timerecover : MonoBehaviour
             timeGauge.Recover(Recovery);
             ScoreManager.Instance.orb += 1;
             Instantiate(p_Text, other.transform.position, Quaternion.identity, p_T_Parent);
+            if (isDebug)
+            {
+                Vector3 add = new Vector3(0, 1, range);
+                Instantiate(other.gameObject, transform.position + add, Quaternion.identity);
+            }
             Destroy(other.gameObject);
         }
     }
