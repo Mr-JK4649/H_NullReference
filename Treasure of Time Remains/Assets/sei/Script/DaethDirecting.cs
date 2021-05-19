@@ -85,6 +85,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public GameObject RetryObj;
         public GameObject RetryMinutes;
 
+        //private Scene loadScene;
+
+
         private void Start()
         {
             TPC = GetComponent<ThirdPersonCharacter>();
@@ -124,6 +127,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             //RetryText.SetActive(false);
             //リトライ数の情報を持つオブジェクトを非表示
             RetryObj.SetActive(false);
+            // 現在のScene名を取得する
+            //loadScene = SceneManager.GetActiveScene();
             //ThisObj=GetComponentInChildren("")
             ////
             //DeathObj = GameObject.Find("DeathOrbs");
@@ -277,6 +282,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void OnTriggerEnter(Collider other)
         {
+            if (other.gameObject.tag == "Goal")
+            {
+                //ゴールしたときリトライ回数を０にする
+                RetryCount = 0;
+            }
             if (other.gameObject.tag == "Death")
             {
                 if (!TimeFlg)
