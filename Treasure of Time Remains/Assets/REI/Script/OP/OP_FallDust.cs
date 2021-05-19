@@ -26,7 +26,7 @@ public class OP_FallDust : MonoBehaviour
         }
         if (count > 15)
         {
-            shake.Shake(0.0001f, 0.0001f);
+            shake.Shake(0.0002f, 0.0002f);
         }
     }
 
