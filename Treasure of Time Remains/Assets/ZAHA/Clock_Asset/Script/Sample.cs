@@ -197,18 +197,18 @@ public class Sample : MonoBehaviour
 				// 補間する
 
 		Debug.Log(t);
-		//if (t >= 1)
-		//{
-			
-		//	clockGauge.Recover(Recovery);
-		//	clock_animation.Clock_On();
-		//}
-  //      else
-  //      {
-		//	clock_animation.Clock_Off();
-  //      }
+        if (t >= 1)
+        {
 
-		Vector3 pos;
+            clockGauge.Recover(Recovery);
+            //clock_animation.Clock_On();
+        }
+        else
+        {
+            //clock_animation.Clock_Off();
+        }
+
+        Vector3 pos;
         if (_useBezier)
         {
             Vector3 controlPoint = (srcWorldPos + dstWorldPos) * 0.5f;

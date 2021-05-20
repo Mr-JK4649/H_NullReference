@@ -9,8 +9,8 @@ public class FallCube : MonoBehaviour
     GameObject TimeKeeper;                      //時間制御のｽｸﾘﾌﾟﾄが入ってるオブジェクト
     GlobalClock[] script = new GlobalClock[2];  //クロックを入れる用の配列
     public bool IsFall = false;                        //ブロックが落ちたかどうかの判定
-    private Rigidbody rb;                       //ブロックのRigidBody
-    [SerializeField] private float move;
+    public Rigidbody rb;                       //ブロックのRigidBody
+    [SerializeField] public float move;
     private const float gravity = 9.81f;
 
     public GameObject particleObject;//パーティクル格納
@@ -34,7 +34,9 @@ public class FallCube : MonoBehaviour
             if (move <= 0) { move = 0; IsFall = false; }
 
             rb.AddForce(new Vector3(0, -move, 0) * Time.deltaTime, ForceMode.Impulse);
+            Debug.Log(move);
         }
+        
     }
     void OnTriggerStay(Collider other)
     {

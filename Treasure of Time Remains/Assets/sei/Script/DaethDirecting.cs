@@ -50,7 +50,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public GlobalClock[] g_clock = new GlobalClock[3];
         //public GameManager gg;
         [SerializeField] private GameObject canvas;
-        private bool TimeFlg;
+        public bool TimeFlg;
         private bool Retry;
 
         [SerializeField] private Image ShineImage;
@@ -91,6 +91,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Start()
         {
             TPC = GetComponent<ThirdPersonCharacter>();
+
             //プレハブをGameObject型で取得
             //Prefab = (GameObject)Resources.Load("HeroCameraSub");
             //HeroCameraSubプレハブを元に、インスタンスを生成
@@ -232,7 +233,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (Alpha >= 1)
             {
                 //リトライtextにリトライ数を代入
-                RetryText.GetComponent<Text>().text = "リトライ ×" + RetryCount.ToString();
+                RetryText.GetComponent<Text>().text = "リトライ ×" + ScoreManager.Instance.retries.ToString();
                 //リトライtextを表示
                 //RetryText.SetActive(true);
                 //リトライ数を表示
@@ -243,7 +244,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     if (!Retry && Count >= 180)
                     {
                         //リトライ数をカウントする
-                        RetryCount++;
+                        //RetryCount++;
+                        ScoreManager.Instance.retries++;
                         Retry = true;
                     }
                 }
@@ -284,8 +286,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (other.gameObject.tag == "Goal")
             {
+                
                 //ゴールしたときリトライ回数を０にする
-                RetryCount = 0;
+                //RetryCount = 0;
             }
             if (other.gameObject.tag == "Death")
             {
@@ -483,6 +486,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         //    gl.localTimeScale = 1;
         //}
         //}
+
+        public void TimeFlgon()
+        {
+            canvas.SetActive(true);
+            TimeFlg = true;
+            MakeupPrefab = true;
+            Time.timeScale = 1;
+        }
     }
+
 
 }

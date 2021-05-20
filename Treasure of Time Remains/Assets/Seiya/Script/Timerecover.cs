@@ -30,8 +30,8 @@ public class Timerecover : MonoBehaviour
     {
         if (other.gameObject.tag == "Recover")
         {
-            clockgauge.Recover(Recovery);
-            timeGauge.Recover(Recovery);
+            //clockgauge.Recover(Recovery);
+            //timeGauge.Recover(Recovery);
             effect.effectStatus = true;
             ScoreManager.Instance.orb += 1;
             Instantiate(p_Text, other.transform.position, Quaternion.identity, p_T_Parent);
