@@ -20,7 +20,7 @@ public class OrbPointOnDisplay : MonoBehaviour
         count += Time.deltaTime;
         if (count > 0.5f) Destroy(this.gameObject);
 
-        transform.rotation = transform.parent.rotation;
+        //transform.rotation = transform.parent.rotation;
 
 
         float alpha = 1 - count * 2;

@@ -8,6 +8,9 @@ public class PauseSystem : MonoBehaviour
     //[SerializeField] private Button firstSelectButton;
     [SerializeField] private GameObject selectButton;
 
+    [SerializeField] private AudioSource _audio;
+    [SerializeField] private AudioClip _sound;
+
     void Update()
     {
 
@@ -18,8 +21,13 @@ public class PauseSystem : MonoBehaviour
             if (Time.timeScale == 0) {
                 pausePanel.SetActive(true);
                 EventSystem.current.SetSelectedGameObject(selectButton);
+                _audio.PlayOneShot(_sound);
             }
-            
+            if (Time.timeScale > 0)
+            {
+                _audio.PlayOneShot(_sound);
+            }
+
         }
 
         if (Time.timeScale > 0)
