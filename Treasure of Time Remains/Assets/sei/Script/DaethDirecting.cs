@@ -493,6 +493,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             TimeFlg = true;
             MakeupPrefab = true;
             Time.timeScale = 1;
+            Scene loadScene = SceneManager.GetActiveScene();
+            //string Name = loadScene.name;
+            if (loadScene.name == "tutorial")
+            {
+                RetryObj.transform.position = new Vector3(1000, 1000, 1000);
+            }
         }
     }
 
