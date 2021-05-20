@@ -493,6 +493,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             TimeFlg = true;
             MakeupPrefab = true;
             Time.timeScale = 1;
+            RetryObj.transform.position = new Vector3(1000, 1000, 1000);
         }
     }
 
