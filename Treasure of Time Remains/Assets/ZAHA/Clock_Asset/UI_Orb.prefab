@@ -162,7 +162,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &1624468533484764947 stripped
 RectTransform:
@@ -287,7 +288,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &1488879534293996186 stripped
 RectTransform:
@@ -412,7 +414,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &306419612770508029 stripped
 RectTransform:
@@ -537,7 +540,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &975364945071306958 stripped
 RectTransform:
@@ -662,7 +666,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &591470166995237753 stripped
 RectTransform:
@@ -787,7 +792,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &6314752850588470583 stripped
 RectTransform:
@@ -912,7 +918,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &6589366954224926339 stripped
 RectTransform:
@@ -1037,7 +1044,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &5457133534014237086 stripped
 RectTransform:
@@ -1162,7 +1170,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &8309637565726322577 stripped
 RectTransform:
@@ -1287,7 +1296,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Magic_Orb (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532956600402119150, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb90334960139c645aefd09f1e67f08d, type: 3}
 --- !u!224 &7853244692668613981 stripped
 RectTransform:
