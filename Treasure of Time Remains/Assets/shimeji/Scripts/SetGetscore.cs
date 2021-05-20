@@ -43,7 +43,7 @@ public class SetGetscore : MonoBehaviour
         if (num == 3)
         {
             //mozaik.SetActive(false);
-            next.text = "Title";
+            next.text = "タイトル";
         }
 
         //テキストとして反映
