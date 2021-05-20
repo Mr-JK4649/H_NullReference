@@ -31,18 +31,33 @@ public class Respawn : MonoBehaviour
     {
 
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
         //if(gameObject.tag== "Respawn") {
-        if (collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
-            collision.gameObject.transform.position = RespawnPoint1;
-            if(this.gameObject.name== "Resuscitation2")
+            collider.gameObject.transform.position = RespawnPoint1;
+            if (this.gameObject.name == "Resuscitation2")
             {
+                BlockCS.move = 0;
+                BlockCS.rb.velocity = Vector3.zero;
                 Block.transform.position = BlockPoint;
                 BlockCS.IsFall = false;
             }
         }
     }
+    
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    //if(gameObject.tag== "Respawn") {
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        collision.gameObject.transform.position = RespawnPoint1;
+    //        if(this.gameObject.name== "Resuscitation2")
+    //        {
+    //            Block.transform.position = BlockPoint;
+    //            BlockCS.IsFall = false;
+    //        }
+    //    }
+    //}
 }
