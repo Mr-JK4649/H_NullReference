@@ -24,6 +24,10 @@ public class SetGetscore : MonoBehaviour
     [SerializeField] private int po_Abi;
     [SerializeField] private int po_Ret;
 
+    [SerializeField] private AudioSource _audio;
+    [SerializeField] private AudioClip _bestSound;
+    [SerializeField] private AudioClip _sound;
+
     private float alpha = 1;
     private float flg = 1;
 
@@ -61,7 +65,12 @@ public class SetGetscore : MonoBehaviour
         score.text = sc.ToString("N0");
 
         //ハイスコアの更新と反映
-        if (sc > hsc) ScoreManager.Instance.stage_Highscore[num] = sc;
+        if (sc > hsc)
+        {
+            ScoreManager.Instance.stage_Highscore[num] = sc;
+            _audio.PlayOneShot(_bestSound);
+        }
+        else _audio.PlayOneShot(_sound);
         hscore.text = ScoreManager.Instance.stage_Highscore[num].ToString("N0");
 
         
