@@ -7,7 +7,7 @@ public class Rolling : MonoBehaviour
 
     [SerializeField]
     private GameObject effectPrefab;
-    public AudioClip itemGet;
+    //public AudioClip itemGet;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Rolling : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            AudioSource.PlayClipAtPoint(itemGet, transform.position);
+            //AudioSource.PlayClipAtPoint(itemGet, transform.position);
             Destroy(this.gameObject);
 
             GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);

@@ -20,18 +20,19 @@ public class Timerecover : MonoBehaviour
     [NonSerialized] public bool isDebug = false;
     [NonSerialized,Range(0,10)] public float range;
 
-    private const float Recovery = 0.2f;
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _orbSound;
 
     private void Start()
     {
         effect = objeffect.GetComponent<Sample>();
+        _audioSource = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Recover")
         {
-            //clockgauge.Recover(Recovery);
-            //timeGauge.Recover(Recovery);
+            _audioSource.PlayOneShot(_orbSound);
             effect.effectStatus = true;
             ScoreManager.Instance.orb += 1;
             Instantiate(p_Text, other.transform.position, Quaternion.identity, p_T_Parent);
