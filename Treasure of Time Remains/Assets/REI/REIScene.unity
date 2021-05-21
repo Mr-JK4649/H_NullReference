@@ -127,7 +127,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36748
+  m_Name: pb_Mesh-27942
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -320,7 +320,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36740
+  m_Name: pb_Mesh-27706
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -704,7 +704,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36756
+  m_Name: pb_Mesh-27776
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -867,7 +867,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36760
+  m_Name: pb_Mesh-27744
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1054,7 +1054,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36744
+  m_Name: pb_Mesh-27746
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1217,7 +1217,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36750
+  m_Name: pb_Mesh-27940
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1392,7 +1392,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36738
+  m_Name: pb_Mesh-28066
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1567,7 +1567,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36752
+  m_Name: pb_Mesh-27804
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1970,6 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFall: 0
+  rb: {fileID: 0}
   move: 0
   particleObject: {fileID: 4052179864290443704, guid: 5475aafc61c380a40a09e6840538d150,
     type: 3}
@@ -2157,7 +2158,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36746
+  m_Name: pb_Mesh-27806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2320,7 +2321,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36762
+  m_Name: pb_Mesh-28068
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2483,7 +2484,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36742
+  m_Name: pb_Mesh-27778
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2737,7 +2738,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36764
+  m_Name: pb_Mesh-27704
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8828,6 +8829,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   canvas: {fileID: 1643495308}
+  TimeFlg: 0
   ShineImage: {fileID: 1535863544}
   TimeSound: {fileID: 8300000, guid: e7d03239c89cd2e4b94d4a4c96988dd5, type: 3}
   DeathSound: {fileID: 0}
@@ -8896,10 +8898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5500871bacb37884eb9f6d61a075ca15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objeffect: {fileID: 0}
   timeGauge: {fileID: 3493409124586234935}
   clockgauge: {fileID: 0}
   p_T_Parent: {fileID: 0}
   p_Text: {fileID: 0}
+  _orbSound: {fileID: 0}
 --- !u!82 &3493409124558224690
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10218,7 +10222,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.89, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10240,7 +10244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3493409125957064644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10455,6 +10459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 7065193569835168695}
   selectButton: {fileID: 7065193569012114410}
+  _audio: {fileID: 0}
+  _sound: {fileID: 0}
 --- !u!224 &3493409126147566338
 RectTransform:
   m_ObjectHideFlags: 0
