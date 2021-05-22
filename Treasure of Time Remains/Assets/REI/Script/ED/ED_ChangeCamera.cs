@@ -16,7 +16,7 @@ public class ED_ChangeCamera : MonoBehaviour
     {
 
         Application.targetFrameRate = 60;
-        Invoke("ChangeCam", 19f);//２0秒後にシーン切りかえ
+        Invoke("ChangeCam", 21f);//
         Fade = GameObject.Find("FadeCanvas/Panel");
         FadeCon = Fade.GetComponent<FadeController>();
         panel = GameObject.Find("Canvas");
@@ -35,7 +35,7 @@ public class ED_ChangeCamera : MonoBehaviour
             FadeCon.enabled = true;
             panel.SetActive(false);
         }
-        if (count >= 29)
+        if (count >= 27)
         {
             SceneManager.LoadScene("Result2");
         }
