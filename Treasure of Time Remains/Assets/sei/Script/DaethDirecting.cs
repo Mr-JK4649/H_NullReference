@@ -174,6 +174,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     //    Instantiate(Prefab, new Vector3(HeroPos[x].x, HeroPos[x].y, HeroPos[x].z), Quaternion.identity);
                     //}
                     Instantiate(Prefab, new Vector3(HeroPos.x, HeroPos.y + 0.5f, HeroPos.z), Quaternion.identity);
+                    audioSource.PlayOneShot(DeathSound);
                     //GameObject aa = Instantiate(Prefab, new Vector3(HeroPos.x, HeroPos.y+0.5f, HeroPos.z), Quaternion.identity);
                     //Prefab.name = "DeathOrbs";
                     //
@@ -182,8 +183,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     //DeathAnim = aa.GetComponent<Animator>();
                     //DeathAnim = Prefab.GetComponent<Animator>();
                     //DeathAnim.SetTrigger("Die");
-                    
-                    
+
+
                     ThisObj.gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
                     //DeathAnim.Play("DeathAnim");
                     //Debug.Log("tinpo!");
