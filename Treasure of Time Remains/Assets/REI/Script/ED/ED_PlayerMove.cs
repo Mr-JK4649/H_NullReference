@@ -15,7 +15,7 @@ public class ED_PlayerMove : MonoBehaviour
     void Update()
     {
         count += Time.deltaTime;
-        if (count >= 24)
+        if (count >= 26)
         {
             transform.Translate(-0.002f, 0f, 0.007f);
         }
