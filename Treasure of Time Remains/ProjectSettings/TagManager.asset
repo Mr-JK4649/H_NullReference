@@ -26,6 +26,7 @@ TagManager:
   - S_Hari
   - Death5
   - Death0
+  - FallObj
   layers:
   - Default
   - TransparentFX
