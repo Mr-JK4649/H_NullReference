@@ -776,7 +776,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 1342663635}
-  Cam1: {fileID: 429949237}
   Fade: {fileID: 0}
   FadeCon: {fileID: 967297770}
 --- !u!82 &841475771

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ED_ChangeCamera : MonoBehaviour
 {
     public GameObject Cam;
-    public CameraShake Cam1;
+    //public CameraShake Cam1;
     float count;
     public GameObject Fade;
     public FadeController FadeCon;
@@ -28,7 +28,7 @@ public class ED_ChangeCamera : MonoBehaviour
         count += Time.deltaTime;
         if (count >= 19.2)
         {
-        Cam1.Shake(0.0001f, 0.0001f);
+        //Cam1.Shake(0.0001f, 0.0001f);
         }
         if (count >= 25)
         {
@@ -44,7 +44,7 @@ public class ED_ChangeCamera : MonoBehaviour
     void ChangeCam()
     {
         Cam.SetActive(true);
-        Cam1.Shake(0.0001f, 0.0001f);
+        //Cam1.Shake(0.0001f, 0.0001f);
 
         Debug.Log("ここまではくる");
     }
