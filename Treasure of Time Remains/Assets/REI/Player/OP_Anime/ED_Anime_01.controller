@@ -36,9 +36,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 2.0372133
+  m_TransitionDuration: 0.37494946
   m_TransitionOffset: 0
-  m_ExitTime: 0.94931906
+  m_ExitTime: 0.97015345
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -65,7 +65,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -485227655480882849, guid: 48530d1a8cff1d745bc5cb41945c8954,
+  m_Motion: {fileID: -485227655480882849, guid: daf0018855fa1b142a37f13d9f5f44c2,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -114,7 +114,7 @@ AnimatorStateMachine:
     m_Position: {x: 250, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4393192012517575684}
-    m_Position: {x: 270, y: 420, z: 0}
+    m_Position: {x: 250, y: 400, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -146,7 +146,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -2757967050229763494, guid: 7e73759efdee1bc40948d7688010f95e,
+  m_Motion: {fileID: 2478956985148610876, guid: daf0018855fa1b142a37f13d9f5f44c2,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -174,7 +174,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8152664493373122990, guid: 48530d1a8cff1d745bc5cb41945c8954,
+  m_Motion: {fileID: -8152664493373122990, guid: daf0018855fa1b142a37f13d9f5f44c2,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -201,7 +201,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -2757967050229763494, guid: 7e73759efdee1bc40948d7688010f95e,
+  m_Motion: {fileID: -2757967050229763494, guid: daf0018855fa1b142a37f13d9f5f44c2,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -222,9 +222,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
+  m_TransitionDuration: 0.032768726
   m_TransitionOffset: 0
-  m_ExitTime: 0.9372385
+  m_ExitTime: 0.99796754
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

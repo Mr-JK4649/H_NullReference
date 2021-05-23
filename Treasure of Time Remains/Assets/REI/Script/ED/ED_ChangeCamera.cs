@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ED_ChangeCamera : MonoBehaviour
 {
     public GameObject Cam;
-    public CameraShake Cam1;
+    //public CameraShake Cam1;
     float count;
     public GameObject Fade;
     public FadeController FadeCon;
@@ -16,7 +16,7 @@ public class ED_ChangeCamera : MonoBehaviour
     {
 
         Application.targetFrameRate = 60;
-        Invoke("ChangeCam", 19f);//２0秒後にシーン切りかえ
+        Invoke("ChangeCam", 21f);//
         Fade = GameObject.Find("FadeCanvas/Panel");
         FadeCon = Fade.GetComponent<FadeController>();
         panel = GameObject.Find("Canvas");
@@ -28,14 +28,14 @@ public class ED_ChangeCamera : MonoBehaviour
         count += Time.deltaTime;
         if (count >= 19.2)
         {
-        Cam1.Shake(0.0001f, 0.0001f);
+        //Cam1.Shake(0.0001f, 0.0001f);
         }
         if (count >= 25)
         {
             FadeCon.enabled = true;
             panel.SetActive(false);
         }
-        if (count >= 29)
+        if (count >= 27)
         {
             SceneManager.LoadScene("Result2");
         }
@@ -44,7 +44,7 @@ public class ED_ChangeCamera : MonoBehaviour
     void ChangeCam()
     {
         Cam.SetActive(true);
-        Cam1.Shake(0.0001f, 0.0001f);
+        //Cam1.Shake(0.0001f, 0.0001f);
 
         Debug.Log("ここまではくる");
     }
