@@ -83,7 +83,9 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: e9098abc4ef86af40bbcff7703c7f799
-    name: MyExposedParam
+    name: MasterOto
+  - guid: b121d1efb20cdea4597ef1bbe6c1180e
+    name: ResultOto
   m_AudioMixerGroupViews:
   - guids:
     - e8ec8d776d581154996c46dd78683681
@@ -141,10 +143,30 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 5ff6f059486167940a098288a056fccb
   m_FloatValues:
+    68843df2dc2088d498695e37e10906c1: 1
+    b0e72663f26e36f4bae89b05bccf04bb: 100
+    e73ce8e4cf524d04b8ce224943683bd3: 1
+    75b4b415b1fdd6b4c91aed80b9c7bf4e: 19.6
+    6d7ecd15042ab83479dcc470d8fcf547: 1
+    ad86811620cb8a34bba8ba88e15981d5: 0.162
+    326b436657f10af4c8ee3160aa344ab4: -8
+    765c7097f256b7e4d91aabd7e75505ed: 10
+    e39010c84409f1f43b6436eaed43c9db: 0.1
+    1186301a52431f14089d9b8cab8bbea7: 86
+    07b0fe5abf78b9140a2792b92562566d: 1
+    7486b25b8be185845b8c89bfc737ba74: 1
+    f8872bcbd56281e468d77c2f163b59bd: 0.53
+    847e991c735ca5648a685be68b0b321d: 1
+    ad55ae1c0a6046e47ac1d1728a784ec6: 1
+    f5d7e59ca798cdf42844db714c0a72f6: 20
+    01b601bc23c856e4fa9c6d5bab39178d: -32.8
     e9098abc4ef86af40bbcff7703c7f799: 0.27000841
+    066ca7dd320ece846b2157688dbe4262: 20
     8252361ef00170e4084ca3a1fd5869c0: -1.5838235e-11
     2913f07ea484a424091bf68ae9f0b32f: 10.437403
     5fea429e335400d468cfe6cfdf541bb6: 3.1596465
+    479d9b6fb286df44d99c9b267d510f2a: 1
+    b121d1efb20cdea4597ef1bbe6c1180e: -15
   m_TransitionOverrides: {}
 --- !u!244 &1268454967792143531
 AudioMixerEffectController:

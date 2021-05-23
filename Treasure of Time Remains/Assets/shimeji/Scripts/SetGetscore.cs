@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SetGetscore : MonoBehaviour
@@ -23,6 +24,9 @@ public class SetGetscore : MonoBehaviour
     [SerializeField] private int po_Orb;
     [SerializeField] private int po_Abi;
     [SerializeField] private int po_Ret;
+
+    [SerializeField] private AudioMixer _mix;
+    [SerializeField] private AnimationCurve _mixCurve;
 
     [SerializeField] private AudioSource _audio;
     [SerializeField] private AudioClip _bestSound;
@@ -61,7 +65,7 @@ public class SetGetscore : MonoBehaviour
         bonus.text = "x " + (num+1).ToString();
 
         //スコアの計算と反映
-        int sc = (orbNum * po_Orb + abi * po_Abi + ret * po_Ret) * (num + 1);
+        int sc = (orbNum * po_Orb + abi * po_Abi) * (num + 1) + ret * po_Ret;
         score.text = sc.ToString("N0");
 
         //ハイスコアの更新と反映
@@ -75,9 +79,17 @@ public class SetGetscore : MonoBehaviour
 
         
     }
+
+    private float count = 0;
+
     private void FixedUpdate()
     {
+        count += Time.deltaTime;
+        float db = _mixCurve.Evaluate(count);
 
+        _mix.SetFloat("MasterOto", db);
+
+        Debug.Log(db);
 
         alpha -= Time.deltaTime * flg;
         if (alpha <= 0) { alpha = 0; flg *= -1; }
