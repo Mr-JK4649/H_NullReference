@@ -19,7 +19,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         //[SerializeField] private Animator DeathCam;
 
         ThirdPersonCharacter TPC;
-
+        //TimeGauge TG;
+        Timerecover TC;
+        //ClockGauge CG;
         //[SerializeField] private GameObject Cam;
         //private Vector3 CamVectr;
 
@@ -80,7 +82,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public GameObject ThisObj;
         public TimeControl TimeLineeee;
 
-        private static int RetryCount = 0;
+        //private static int RetryCount = 0;
         public GameObject RetryText;
         public GameObject RetryObj;
         public GameObject RetryMinutes;
@@ -91,7 +93,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Start()
         {
             TPC = GetComponent<ThirdPersonCharacter>();
-
+            //TG = GetComponent<TimeGauge>();
+            TC = GetComponent<Timerecover>();
+            //CG = GetComponent<ClockGauge>();
             //プレハブをGameObject型で取得
             //Prefab = (GameObject)Resources.Load("HeroCameraSub");
             //HeroCameraSubプレハブを元に、インスタンスを生成
@@ -157,6 +161,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             //Debug.Log(Cam.transform.localPosition);
 
             //Debug.Log(g_clock[2].timeScale);
+
+            //if (TG.time == 0)
+            //{
+            //    TimeFlgon();
+            //}
+            if (TC.Clockgauges.time == 60 && !TimeFlg)
+            {
+                TimeFlgon();
+            }
+            //if (CG.time == 0)
+            //{
+            //    TimeFlgon();
+            //}
+            //Debug.Log(TC.timegauge.time);
+
 
             if (TimeFlg)
             {
