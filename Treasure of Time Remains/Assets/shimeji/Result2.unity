@@ -708,7 +708,7 @@ MonoBehaviour:
 
     200
 
-    -500'
+    -800'
 --- !u!222 &427309853
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18004,7 +18004,7 @@ MonoBehaviour:
   mozaik: {fileID: 1772671166}
   po_Orb: 500
   po_Abi: 200
-  po_Ret: -500
+  po_Ret: -800
   _mix: {fileID: 24100000, guid: f452ac8d3083d5449a2d7c1c795b7a73, type: 2}
   _mixCurve:
     serializedVersion: 2
