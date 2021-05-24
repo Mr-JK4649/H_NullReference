@@ -45,5 +45,8 @@ public class Timerecover : MonoBehaviour
         }
     }
 
-
+    public ClockGauge Clockgauges
+    {
+        get { return this.clockgauge; }  //取得用
+    }
 }
