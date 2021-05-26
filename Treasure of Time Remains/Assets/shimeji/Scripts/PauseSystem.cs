@@ -3,11 +3,13 @@ using UnityEngine.EventSystems;
 
 public class PauseSystem : MonoBehaviour
 {
+    //ポーズ画面パネル
     [SerializeField] private GameObject pausePanel;
 
-    //[SerializeField] private Button firstSelectButton;
+    //選択ボタン初期位置
     [SerializeField] private GameObject selectButton;
 
+    //音
     [SerializeField] private AudioSource _audio;
     [SerializeField] private AudioClip _sound;
 
