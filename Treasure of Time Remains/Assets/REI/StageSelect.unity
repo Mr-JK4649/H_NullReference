@@ -3220,7 +3220,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C6\u30FC\u30B8\u30BB\u30EC\u30AF\u30C8"
+  m_Text: "\u30D5\u30ED\u30A2\u30BB\u30EC\u30AF\u30C8"
 --- !u!222 &1409247054
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3471,6 +3471,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2800000, guid: 5e0718aa3ff21744982a477a7dbf1b0b, type: 3}
+          m_MethodName: 
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &1443195425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3655,7 +3666,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C6\u30FC\u30B8\uFF12\n"
+  m_Text: "\u30D5\u30ED\u30A2\uFF12\n"
 --- !u!222 &1462480455
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4962,7 +4973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1763560223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5371,7 +5382,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C6\u30FC\u30B8\uFF14\n"
+  m_Text: "\u30D5\u30ED\u30A2\uFF14\n"
 --- !u!222 &1883298647
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5407,7 +5418,7 @@ RectTransform:
   m_GameObject: {fileID: 1947035622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 713830120}
   m_RootOrder: 1
@@ -5436,8 +5447,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 642f568f1665d334ba47a552ae2cea1b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5690,14 +5701,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 64
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C6\u30FC\u30B8\uFF11\n"
+  m_Text: "\u30D5\u30ED\u30A2\uFF11"
 --- !u!222 &2028564775
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5775,7 +5786,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C6\u30FC\u30B8\uFF13\n"
+  m_Text: "\u30D5\u30ED\u30A2\uFF13\n"
 --- !u!222 &2051265477
 CanvasRenderer:
   m_ObjectHideFlags: 0
