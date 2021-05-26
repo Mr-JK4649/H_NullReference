@@ -20,5 +20,5 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _blurSizeXY: 1.5
+    - _blurSizeXY: 1.01
     m_Colors: []
