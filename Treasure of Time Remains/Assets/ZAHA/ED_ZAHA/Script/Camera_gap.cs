@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _Camera : MonoBehaviour
+public class Camera_gap : MonoBehaviour
 {
-    GameObject scen_camera;
+    [SerializeField] GameObject scen_camera;
     Vector3 init_pos;
     // Start is called before the first frame update
     void Start()
     {
-        init_pos = scen_camera.gameObject.transform.position;//カメラの初期座標保存
+        init_pos = scen_camera.gameObject.transform.localPosition;//カメラの初期座標保存
     }
 
     // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerStay(Collider other)
     {
-        //scenで落ちてきたオブジェクトのタグがFallObjだったら
-        if(other.gameObject.tag == "FallObj")
+        //シネマシーンカメラの振動でカメラがずれた時に補正させる処理
+        if (other.gameObject.tag == "FallObj")
         {
-            scen_camera.transform.position = init_pos;
+            init_pos.y = 0.00234383f;//カメラ初期ポジションのY座標変換
+            scen_camera.transform.localPosition = init_pos;
         }
     }
 }
