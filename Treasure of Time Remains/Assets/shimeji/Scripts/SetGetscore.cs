@@ -6,34 +6,33 @@ public class SetGetscore : MonoBehaviour
 {
     private string[] difficult = new string[4] { "★☆☆☆", "★★☆☆", "★★★☆", "★★★★" };
  
-    [SerializeField] private Text score;
-    [SerializeField] private Text hscore;
-    //[SerializeField] private Text result;
-    [SerializeField] private Image button;
-    [SerializeField] private Text next;
-    [SerializeField] private Text orb;
-    [SerializeField] private Text orbScore;
-    [SerializeField] private Text ability;
-    [SerializeField] private Text abilityScore;
-    [SerializeField] private Text retry;
-    [SerializeField] private Text retryScore;
-    //[SerializeField] private Text level;
-    //[SerializeField] private Text bonus;
-    [SerializeField] private GameObject mozaik;
+    [SerializeField] private Text score;    //スコアtext
+    [SerializeField] private Text hscore;   //ハイスコアtext
 
-    [SerializeField] private int po_Orb;
-    [SerializeField] private int po_Abi;
-    [SerializeField] private int po_Ret;
+    [SerializeField] private Image button;  //次のステージボタン
+    [SerializeField] private Text next;     //次のステージtext
+    [SerializeField] private Text orb;      //オーブ数text
+    [SerializeField] private Text orbScore; //オーブスコアtext
+    [SerializeField] private Text ability;      //ゲージ残量text
+    [SerializeField] private Text abilityScore; //ゲージ残量スコアtext
+    [SerializeField] private Text retry;        //リトライ回数text
+    [SerializeField] private Text retryScore;   //リトライ回数スコアtext
 
-    [SerializeField] private AudioMixer _mix;
-    [SerializeField] private AnimationCurve _mixCurve;
+    [SerializeField] private GameObject mozaik; //背景モザイク
 
-    [SerializeField] private AudioSource _audio;
-    [SerializeField] private AudioClip _bestSound;
-    [SerializeField] private AudioClip _sound;
+    [SerializeField] private int po_Orb;        //オーブ点数
+    [SerializeField] private int po_Abi;        //ゲージ点数
+    [SerializeField] private int po_Ret;        //リトライ点数
 
-    private float alpha = 1;
-    private float flg = 1;
+    [SerializeField] private AudioMixer _mix;           //SEボリューム変更ミキサー
+    [SerializeField] private AnimationCurve _mixCurve;  //音の変則カーブ
+
+    [SerializeField] private AudioSource _audio;        //スピーカ
+    [SerializeField] private AudioClip _bestSound;      //音
+    [SerializeField] private AudioClip _sound;          //音
+
+    private float alpha = 1;        //次のボタン点滅アルファ
+    private float flg = 1;          //次のボタンフラグ
 
     
 
@@ -50,7 +49,6 @@ public class SetGetscore : MonoBehaviour
         //最終ステージのみNextStageの文字を変える
         if (num == 3)
         {
-            //mozaik.SetActive(false);
             next.text = "タイトル";
         }
 
@@ -61,11 +59,11 @@ public class SetGetscore : MonoBehaviour
         abilityScore.text = (abi * po_Abi).ToString("N0");
         retry.text = ret.ToString();
         retryScore.text = (ret * po_Ret).ToString("N0");
-        //level.text = difficult[num];
-        //bonus.text = "x " + (num+1).ToString();
+
 
         //スコアの計算と反映
         int sc = orbNum * po_Orb + abi * po_Abi + ret * po_Ret;
+        if (sc < 0) sc = 0;
         score.text = sc.ToString("N0");
 
         //ハイスコアの更新と反映

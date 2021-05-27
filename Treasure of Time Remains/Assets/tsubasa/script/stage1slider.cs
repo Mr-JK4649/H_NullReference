@@ -5,38 +5,50 @@ using UnityEngine.UI;
 
 public class stage1slider : MonoBehaviour
 {
-    private float timeleft;
-    public bool startFlag = false;　//止めたいときはfalseを入れる
-    Slider _slider;
-    float _hp = 0;
+    float fulldistance;
+    [SerializeField]
+    private Transform player;
+    [SerializeField]
+    private Transform goal;
+    [SerializeField]
+    private Slider length;
 
     void Start()
     {
-        // スライダーを取得する
-        _slider = GameObject.Find("Slider").GetComponent<Slider>();
+        fulldistance = Vector3.Distance(player.position, goal.position);
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        if (startFlag)
-        {
-            //だいたい1秒ごとに処理を行う
-            timeleft -= Time.deltaTime;
-            if (timeleft <= 0.0)
-            {
-                timeleft = 1.0f;
-                _hp += 1f;
-                if (_hp > 20)
-                {
-
-                    //以下の記述だと元に戻る。他の処理をしたいときはここに書く
-                    _hp = 0;
-                }
-                // HPゲージに値を設定
-                _slider.value = _hp;
-            }
-        }
+        float dis = Vector3.Distance(player.position, goal.position);
+        float distovalue = dis / fulldistance;
+        length.value = 1 - distovalue;
     }
+    //    // スライダーを取得する
+    //    _slider = GameObject.Find("Slider").GetComponent<Slider>();
+    //}
+
+    //void Update()
+    //{
+    //    if (startFlag)
+    //    {
+    //        //だいたい1秒ごとに処理を行う
+    //        timeleft -= Time.deltaTime;
+    //        if (timeleft <= 0.0)
+    //        {
+    //            timeleft = 1.0f;
+    //            _hp += 1f;
+    //            if (_hp > 20)
+    //            {
+
+    //                //以下の記述だと元に戻る。他の処理をしたいときはここに書く
+    //                _hp = 0;
+    //            }
+    //            // HPゲージに値を設定
+    //            _slider.value = _hp;
+    //        }
+    //    }
+    //}
 
 }
 //    float hp = 20;
