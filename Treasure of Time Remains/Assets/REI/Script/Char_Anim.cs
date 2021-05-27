@@ -14,9 +14,4 @@ public class Char_Anim : MonoBehaviour
     {
         
     }
-
-    void select_button()
-    {
-        this.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 0);
-    }
 }
