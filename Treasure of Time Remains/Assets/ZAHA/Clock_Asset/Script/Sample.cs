@@ -24,6 +24,8 @@ public class Sample : MonoBehaviour
     [SerializeField]
     RectTransform ClockUI;
 
+    [SerializeField] GameObject time_clock_image;
+    ClockglowColor clock_glow_color;
 
     private const float Recovery = 0.2f;
 
@@ -52,6 +54,8 @@ public class Sample : MonoBehaviour
 
     void Start()
     {
+
+        clock_glow_color = time_clock_image.GetComponent<ClockglowColor>();
         //_2dEffectTransforms = new Transform[10];
 
         //ui_orb = UI_Orb.GetComponent<UI_Orb_prefab>();
@@ -77,6 +81,7 @@ public class Sample : MonoBehaviour
 
     void Update()
     {
+        clock_glow_color.Effect_Clock_Color_OFF();
         //     for (int i = 0; i < _2dEffects.Length; i++)
         //     {
         //Debug.Log(_2dEffects[i].animationflg);
@@ -238,6 +243,7 @@ public class Sample : MonoBehaviour
         if (effect.time >= _effectDuration)
         {
             effect.transform.gameObject.SetActive(false);
+            clock_glow_color.Effect_Clock_Color();//カラー入れる
         }
         effect.time += dt;
     }
