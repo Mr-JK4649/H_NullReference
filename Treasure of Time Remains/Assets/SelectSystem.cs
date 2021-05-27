@@ -27,6 +27,8 @@ public class SelectSystem : MonoBehaviour
 
     private void FixedUpdate()
     {
+        ScoreManager.Instance.retries = 0;
+
         GameObject go = eSys.currentSelectedGameObject.gameObject;
 
         for (int i = 0; i < buttons.Length - 1; i++)

@@ -52,6 +52,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-3463166696983561378
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StageSelect
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9b3956b7d6495db41ab4517742e9d104
+  m_Children: []
+  m_Volume: 89e710b8b68c89e41900abd6b5770785
+  m_Pitch: 7d23848a3e468394c9d4db191d495de1
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -26393836104011940}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-840725817516071769
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -62,6 +81,20 @@ AudioMixerEffectController:
   m_EffectID: 546a4be78f230cd46924e8b6f9b93e3d
   m_EffectName: Attenuation
   m_MixLevel: 33c92ab58c251294d9105930d4ba889a
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-26393836104011940
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: f01e2f6bd4400c140bd6569153d78b97
+  m_EffectName: Attenuation
+  m_MixLevel: 5fae1cb3e5245b4499118c127ece01e9
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -93,6 +126,7 @@ AudioMixerController:
     - d36d327dfdbe2b44d89f2556ecfbe8ac
     - 6bd41f46d04b79148b59cff533c9f0b9
     - 15ef43bb58ff6584e8944c96d4e5cad6
+    - 9b3956b7d6495db41ab4517742e9d104
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -110,6 +144,7 @@ AudioMixerGroupController:
   - {fileID: 4558444246793833425}
   - {fileID: -6618486772622184429}
   - {fileID: 5229944997280803705}
+  - {fileID: -3463166696983561378}
   m_Volume: e9098abc4ef86af40bbcff7703c7f799
   m_Pitch: e18813d59bd17c34888a4a23213f8fb0
   m_Send: 00000000000000000000000000000000
@@ -151,6 +186,7 @@ AudioMixerSnapshotController:
     ad86811620cb8a34bba8ba88e15981d5: 0.162
     326b436657f10af4c8ee3160aa344ab4: -8
     765c7097f256b7e4d91aabd7e75505ed: 10
+    89e710b8b68c89e41900abd6b5770785: -13.062761
     e39010c84409f1f43b6436eaed43c9db: 0.1
     1186301a52431f14089d9b8cab8bbea7: 86
     07b0fe5abf78b9140a2792b92562566d: 1
