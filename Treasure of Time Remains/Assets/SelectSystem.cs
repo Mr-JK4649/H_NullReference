@@ -34,22 +34,27 @@ public class SelectSystem : MonoBehaviour
             if (go == buttons[0])
             {
                 Level.text = "★☆☆☆";
+                ButtonOnOff(0);
             }
             else if (go == buttons[1])
             {
                 Level.text = "★★☆☆";
+                ButtonOnOff(1);
             }
             else if (go == buttons[2])
             {
                 Level.text = "★★★☆";
+                ButtonOnOff(2);
             }
             else if (go == buttons[3])
             {
                 Level.text = "★★★★";
+                ButtonOnOff(3);
             }
             else if (go == buttons[4])
             {
                 Level.text = "";
+                ButtonOnOff(4);
             }
         }
 
@@ -103,4 +108,20 @@ public class SelectSystem : MonoBehaviour
             ButtonNavChange(false);
         }
     }
+
+    void ButtonOnOff(int num)
+    {
+        for (int i = 0;i < 5;i++)
+        {
+            if (num == i)
+            {
+            buttons[i].GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                buttons[i].GetComponent<Image>().enabled = false;
+            }
+        }
+    }
+
 }
